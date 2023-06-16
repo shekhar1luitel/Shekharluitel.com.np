@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="Jesse A. Borden" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="css/img/jesse-min.png" />
+  <meta name="twitter:site" content="@jesseaborden" />
+  <meta name="twitter:card" content="Yo! I'm Jesse, and I'm a web developer." />
+  <meta name="twitter:description" content="Some info on what I've been up to and ways to check out my work." />
+  <meta name="twitter:url" content="jesseaborden.com" />
+
+  <title>Jesse A Borden</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.processed.min.css">
+  <link rel="shortcut icon" href="http://rs1017.pbsrc.com/albums/af297/iKP/Pixel%20Art/Isometric%20Pixel%20Art/SwanComputer_Assembled.png~c200">
+</head>
+<!-- Design heavily infulunced by https://dribbble.com/gabebecker -->
+<body>
+  <div id="app"></div>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+    <script src="js/app.processed.js"></script>
+    <script>
+      function isTouchSupported() {
+          var msTouchEnabled = window.navigator.msMaxTouchPoints;
+          var generalTouchEnabled = "ontouchstart" in document.createElement("div");
+
+          if (msTouchEnabled || generalTouchEnabled) {
+              return true;
+          }
+          return false;
+      }
+      if(isTouchSupported()) {
+        document.body.classList.add('touch');
+      }
+    </script>
+</body>
+
+</html>
