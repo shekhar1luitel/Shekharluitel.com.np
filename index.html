@@ -50,7 +50,169 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<style>
+		#colorlib-hero {
+			position: relative;
+			z-index: 0;
+		}
 
+		.flexslider .slides li {
+			height: 100vh;
+			background-size: cover;
+			background-position: center center;
+			position: relative;
+		}
+
+		.overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+		}
+
+		.slider-text-inner {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-start;
+			height: 100%;
+			position: relative;
+			z-index: 2;
+			padding: 0 15px;
+		}
+
+		.desc h1 {
+			font-size: 50px;
+			color: #fff;
+			font-weight: bold;
+			line-height: 1.2;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+		}
+
+		.desc p {
+			font-size: 18px;
+			margin-top: 5px;
+			text-align: left;
+			/* color: #fff; */
+		}
+
+		.btn-learn {
+			background-color: #ff5722; /* Accent color for buttons */
+			border: none;
+			padding: 10px 20px;
+			font-size: 16px;
+			color: #fff;
+			border-radius: 5px;
+		}
+
+		.btn-learn:hover {
+			background-color: #e64a19; /* Darker shade on hover */
+		}
+
+		.icon-download4, .icon-briefcase3 {
+			margin-left: 5px;
+		}
+		.about-desc, .skill-desc {
+			background-color: #f8f9fa; /* Light background for contrast */
+			padding: 30px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+		}
+
+		.heading-meta {
+			display: inline-block;
+			font-size: 14px;
+			color: #888;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		.colorlib-heading {
+			font-size: 32px;
+			color: #333;
+			margin-bottom: 20px;
+			font-weight: 700;
+			position: relative;
+		}
+
+		.colorlib-heading:after {
+			content: '';
+			width: 60px;
+			height: 4px;
+			background-color: #ff5722; /* Accent color */
+			position: absolute;
+			bottom: -10px;
+			left: 0;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.8;
+			color: #555;
+			margin-bottom: 20px;
+		}
+
+		strong {
+			color: #ff5722;
+		}
+
+		.about-desc p:last-child {
+			margin-bottom: 0;
+		}
+
+		.services {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 300px;
+		text-align: center;
+		padding: 20px;
+		border-radius: 8px;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.icon2 {
+			font-size: 40px;
+			margin-bottom: 15px;
+		}
+
+		h3 {
+			font-size: 20px;
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 767px) {
+			.desc h1 {
+				font-size: 36px;
+			}
+
+			.btn-learn {
+				padding: 8px 16px;
+				font-size: 14px;
+			}
+			.services {
+				height: auto;
+				padding: 30px;
+			}
+			.about-desc, .skill-desc {
+				padding: 20px;
+			}
+
+			.colorlib-heading {
+				font-size: 28px;
+			}
+
+			p {
+				font-size: 15px;
+			}
+		}
+	</style>
 	</head>
 	<body onload="initializeViz();">
 	<div id="colorlib-page">
@@ -93,39 +255,39 @@
 			<section id="colorlib-hero" class="js-fullheight" data-section="home">
 				<div class="flexslider js-fullheight">
 					<ul class="slides">
-				   	<li style="background-image: url(#);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Shekhar</h1>
-											   <p><a href="CV/Profile.pdf" class="btn btn-primary btn-learn" download>Download CV <i class="icon-download4"></i></a></p>
+						<li style="background-image: url(images/background1.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<div class="slider-text-inner js-fullheight">
+											<div class="desc">
+												<h1>Hi! <br>I'm Shekhar Luitel</h1>
+												<p><a href="CV/Profile.pdf" class="btn btn-primary btn-learn" download>Download CV <i class="icon-download4"></i></a></p>
 											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li style="background-image: url(#);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>I am <br>a Designer</h1>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li style="background-image: url(images/background2.jpg);">
+							<div class="overlay"></div>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
+										<div class="slider-text-inner">
+											<div class="desc">
+												<h1>I am <br>a Backend Developer</h1>
 												<p><a href="#about" class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>
 											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>			
 
 			<section class="colorlib-about" data-section="about" id="about">
 				<div class="colorlib-narrow-content">
@@ -134,10 +296,11 @@
 							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
 								<div class="col-md-12">
 									<div class="about-desc">
-										<span class="heading-meta">About Us</span>
+										<span class="heading-meta">About Me</span>
 										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Shekhar Luitel</strong>,as a profession I am a junior frontend developer but with a passion for coding I am a hunger Shark. A Detail-oriented and Motivated learner I am skilled and experience in web application development, information graphics, digital marketing, and content creation. Proficient in Bootstrap, graphic design, web design, HTML, front-end development and IOS developer. Dedicated to creating user-friendly and visually appealing websites and applications that meet clients' needs and exceed their expectations. Skilled in collaborating with clients and team members to achieve project goals. Currently seeking new opportunities on WEB DEVELOPMENT AND IOS DEVELOPMENT to further develop my skills and contribute to innovative development projects.</p>
-										<p> I am constantly seeking to improve my skills and knowledge in the field and stay up-to-date with the latest industry trends. Without any doubt I am a hardworking and fast learner, I am a dedicated worker with a strong work ethic and an eye for detail, making me a valuable addition to any team. If you are looking for a motivated and skilled developer, I would be delighted to discuss how I can contribute to your team.</p>
+										<p><strong>Hello, I'm Shekhar Luitel</strong>, a dedicated and passionate backend developer with a strong foundation in web application development. With a focus on creating scalable, secure, and efficient server-side applications, I specialize in optimizing database queries, developing robust APIs, and ensuring smooth communication between frontend and backend systems.</p>
+										<p>My expertise includes working with PHP, CodeIgniter, and relational databases, alongside a deep understanding of query optimization, server-side scripting, and API integration. I am highly skilled in solving complex backend challenges, always striving for clean and maintainable code that enhances performance and scalability.</p>
+										<p>With a collaborative mindset, I work closely with clients and team members to meet project goals and exceed expectations. I am continuously improving my skills and staying current with the latest trends in backend development, ensuring that the solutions I build are future-ready. If you're looking for a dedicated and detail-oriented backend developer to contribute to your team, I would love to discuss how I can help drive your next project to success.</p>
 									</div>
 								</div>
 							</div>
@@ -145,33 +308,25 @@
 								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 									<div class="services color-1">
 										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>Graphic Design</h3>
+										<h3>Relational Database Management</h3>
 									</div>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Web Design</h3>
+										<span class="icon2"><i class="icon-code"></i></span>
+										<h3>API Development</h3>
 									</div>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 									<div class="services color-3">
-										<span class="icon2"><i class="icon-android"></i></span>
-										<h3>OOPS Language</h3>
+										<span class="icon2"><i class="icon-cog"></i></span>
+										<h3>Server-side Scripting</h3>
 									</div>
 								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
+								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
 									<div class="services color-4">
-										<span class="icon2"><i class="icon-time"></i></span>
-										<h3>C-Programming</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-										<h2>In this early stage, I want you to know <br>that 5+ projects done sucessfully!</h2>
-										<a href="mailto:shekhar01luitel@gmail.com?subject=Hire Request&body=Please provide details of the project." class="btn-hire">Hire me</a>
+										<span class="icon2"><i class="icon-database"></i></span>
+										<h3>Database Optimization</h3>
 									</div>
 								</div>
 							</div>
@@ -194,30 +349,30 @@
 						<div class="col-md-6 text-center animate-box">
 							<div class="services color-1">
 								<span class="icon">
-									<i class="icon-bulb"></i>
+									<i class="icon-database"></i>
 								</span>
 								<div class="desc">
-									<h3>Innovative Ideas</h3>
-									<p> With a keen eye for design and a deep understanding of user behavior, I consistently push the boundaries of what is possible in web development.</p>
+									<h3>Database Management</h3>
+									<p>Proficient in designing, managing, and optimizing relational databases. Skilled in writing efficient queries, ensuring data integrity, and improving database performance for high-traffic web applications.</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 text-center animate-box">
 							<div class="services color-4">
 								<span class="icon">
-									<i class="icon-layers2"></i>
+									<i class="icon-code"></i>
 								</span>
 								<div class="desc">
-									<h3>Graphic Design</h3>
-									<p>I am a Designer with a strong eye for creating visually compelling designs that leave a lasting impressiona high level of creativity and attention to detail to every project.</p>
+									<h3>API Development</h3>
+									<p>Experienced in building robust, scalable, and secure RESTful APIs. Expertise in integrating APIs to ensure smooth communication between frontend and backend systems, and third-party services.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>				
 			</section>
 			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
+			<!-- <div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
 				<div class="overlay"></div>
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -241,110 +396,94 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
+				<div class="col-md-12 colorlib-narrow-content">
+					<div class="skill-desc">
+						<div class="row">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+								<span class="heading-meta">My Specialty</span>
+								<h2 class="colorlib-heading animate-box">My Skills</h2>
+							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<p>As a skilled developer, I excel in creating user-friendly and visually appealing websites and applications that meet clients' needs. With expertise in Bootstrap, HTML, and front-end development, I am dedicated to exceeding expectations. Additionally, my skills in information graphics, digital marketing, and content creation allow me to collaborate with clients and team members to achieve project goals.</p>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Java</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="50"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:50%">
-								    <span>50%</span>
-								  	</div>
+						<div class="row">
+							<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
+								<p>As a passionate backend developer, I specialize in building efficient, scalable, and secure web applications. With expertise in PHP, SQL, and server-side logic, I am dedicated to delivering high-performance solutions. My focus is on creating well-architected backend systems that seamlessly integrate with front-end interfaces, ensuring smooth user experiences.</p>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="progress-wrap">
+									<h3>PHP</h3>
+									<div class="progress">
+										<div class="progress-bar color-1" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+											<span>90%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="progress-wrap">
+									<h3>SQL & Databases</h3>
+									<div class="progress">
+										<div class="progress-bar color-2" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+											<span>85%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+								<div class="progress-wrap">
+									<h3>RESTful APIs</h3>
+									<div class="progress">
+										<div class="progress-bar color-3" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+											<span>80%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+								<div class="progress-wrap">
+									<h3>CodeIgniter</h3>
+									<div class="progress">
+										<div class="progress-bar color-4" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">
+											<span>75%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+								<div class="progress-wrap">
+									<h3>Laravel</h3>
+									<div class="progress">
+										<div class="progress-bar color-5" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width:65%">
+											<span>65%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
+								<div class="progress-wrap">
+									<h3>JavaScript</h3>
+									<div class="progress">
+										<div class="progress-bar color-6" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+											<span>60%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
+								<div class="progress-wrap">
+									<h3>Version Control (Git)</h3>
+									<div class="progress">
+										<div class="progress-bar color-1" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+											<span>85%</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>Basic C-Programming</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>SEO</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="40"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:40%">
-								    <span>40%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Canva</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>HTML5</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>CSS</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="30"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:30%">
-								    <span>30%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="progress-wrap">
-								<h3>WordPress</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="60"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="progress-wrap">
-								<h3>Magento</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="40"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:40%">
-								    <span>40%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+					</div>				
+				</div>				
 			</section>
 
 			<section class="colorlib-education" data-section="education">
@@ -444,7 +583,7 @@
 					<div class="row">
 						<div class="col-md-12">
 				         <div class="timeline-centered">
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					         <!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
 
 					               <div class="timeline-icon color-1">
@@ -456,7 +595,7 @@
 					                  <p>Admin Panel of <B>MSS</B> RPM</a> still lots of changes required on it. <br><strong>Username :</strong>shekhar<br><strong>Password :</strong>shekhar</p>
 					               </div>
 					            </div>
-					         </article>
+					         </article> -->
 
 
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
@@ -483,7 +622,7 @@
 					            </div>
 					         </article>
 
-					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+					         <!-- <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
 					            <div class="timeline-entry-inner">
 					               <div class="timeline-icon color-4">
 					                  <i class="icon-pen2"></i>
@@ -493,7 +632,7 @@
 					                  <p>Ganeshman Singh Multiple campus official website designed and developed with <a href="https://www.omkumarpandey.com.np/"><b>Om Kumar Pandey</b></a></p>
 					               </div>
 					            </div>
-					         </article>
+					         </article> -->
 
 					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
 					            <div class="timeline-entry-inner">
@@ -501,7 +640,8 @@
 					                  <i class="icon-pen2"></i>
 					               </div>
 					               <div class="timeline-label">
-					               	<h2><a href="https://www.rksmedicalservice.com/">RKS Medical Service </a></h2>
+					               	<!-- <h2><a href="https://www.rksmedicalservice.com/">RKS Medical Service </a></h2> -->
+					               	<h2><a href="#">RKS Medical Service </a></h2>
 					                  <p>RKS Medical Service offical Website. It is a pioneer in facilitating organized medical services in Nepal as well as foreign countries. Our roots are in facilating best Medical Services for better Future/health for candidates as well as patient to bring unique Medical Services. <br>In this project all the fontend part was handle by me.</p>
 					               </div>
 					            </div>
@@ -513,7 +653,8 @@
 					                  <i class="icon-pen2"></i>
 					               </div>
 					               <div class="timeline-label">
-					               	<h2><a href="https://alinainfotech.com/">Alina Infotech </a> <span> Magento 2.4.5.</span></h2>
+					               	<!-- <h2><a href="https://alinainfotech.com/">Alina Infotech </a> <span> Magento 2.4.5.</span></h2> -->
+					               	<h2><a href="#">Alina Infotech </a> <span> Magento 2.4.5.</span></h2>
 					                  <p>Alina Infotech offical Website. It is a young group of individuals with an aim to manage and deliver IT industry. <br>In this project I worked on UI part using Magento 2.4.5.</p>
 					               </div>
 					            </div>
@@ -543,6 +684,92 @@
 				</div>
 			</section>
 
+			<!-- <section class="colorlib-experience" data-section="experience">
+				<div class="colorlib-narrow-content">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
+							<span class="heading-meta">Experience</span>
+							<h2 class="colorlib-heading animate-box">Work Experience</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+				         <div class="timeline-centered">
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+
+					               <div class="timeline-icon color-1">
+					                  <i class="icon-pen2"></i>
+					               </div>
+
+					               <div class="timeline-label">
+					                  <h2><a href="#">Full Stack Developer</a> <span>2017-2018</span></h2>
+					                  <p>Tolerably earnestly middleton extremely distrusts she boy now not. Add and offered prepare how cordial two promise. Greatly who affixed suppose but enquire compact prepare all put. Added forth chief trees but rooms think may.</p>
+					               </div>
+					            </div>
+					         </article>
+
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-2">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Front End Developer at Google Company</a> <span>2017-2018</span></h2>
+					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-3">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">System Analyst</a> <span>2017-2018</span></h2>
+					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInTop">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-4">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">Creative Designer</a> <span>2017-2018</span></h2>
+					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-5">
+					                  <i class="icon-pen2"></i>
+					               </div>
+					               <div class="timeline-label">
+					               	<h2><a href="#">UI/UX Designer at Envato</a> <span>2017-2018</span></h2>
+					                  <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+					               </div>
+					            </div>
+					         </article>
+
+					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
+					            <div class="timeline-entry-inner">
+					               <div class="timeline-icon color-none">
+					               </div>
+					            </div>
+					         </article>
+					      </div>
+					   </div>
+				   </div>
+				</div>
+			</section> -->
+			
 			<section class="colorlib-contact" data-section="contact">
 				<div class="colorlib-narrow-content">
 					<div class="row">
@@ -580,30 +807,6 @@
 								</div>
 							</div>
 						</div>
-						<!-- <div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="contact.php" method="POST">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-								</div>
-								
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</section>
