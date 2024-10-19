@@ -220,6 +220,47 @@
 			margin-bottom: 0;
 		}
 
+		.social-links {
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+		}
+
+		.social-links li {
+			list-style: none;
+		}
+
+		.social-links li a {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			line-height: 50px;
+			border-radius: 50%;
+			background-color: #bdbbbb;
+			color: white;
+			font-size: 24px;
+			text-align: center;
+			transition: background-color 0.3s ease, transform 0.3s ease;
+		}
+
+		.social-links li a:hover {
+			background-color: #0077b5;
+			transform: scale(1.1);
+		}
+
+		.social-links li a i {
+			line-height: inherit;
+		}
+
+		.social-links li a.facebook:hover {
+			background-color: #4267B2;
+		}
+
+		#colorlib-aside .colorlib-footer ul li a{
+			background-color: antiquewhite !important;
+			color: black !important;
+		}
+
 		@media (max-width: 767px) {
 			.desc h1 {
 				font-size: 36px;
@@ -258,10 +299,17 @@
 				aria-expanded="false" aria-controls="navbar"><i></i></a>
 			<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
 				<div class="text-center">
-					<div class="author-img" style="background-image: url(images/about.jpg)"></div>
+					<!-- Author image with alt text -->
+					<div class="author-img" style="background-image: url(images/about.jpg)" alt="Shekhar Luitel, Backend Developer"></div>
+					
+					<!-- Name and Job Title reflecting Backend Developer -->
 					<h1 id="colorlib-logo"><a href="home.html">Shekhar Luitel</a></h1>
-					<span class="position"><a href="#">Junior Fontend Developer</a> From NEPAL</span>
+					<span class="position">
+						<a href="#">Junior Backend Developer</a> from Nepal
+					</span>
 				</div>
+			
+				<!-- Accessible navigation menu -->
 				<nav id="colorlib-main-menu" role="navigation" class="navbar">
 					<div id="navbar" class="collapse">
 						<ul>
@@ -272,22 +320,19 @@
 								<a href="#about" data-nav-section="about" aria-label="About Section">About</a>
 							</li>
 							<li>
-								<a href="#services" data-nav-section="services"
-									aria-label="Services Section">Services</a>
+								<a href="#services" data-nav-section="services" aria-label="Services Section">Services</a>
 							</li>
 							<li>
 								<a href="#skills" data-nav-section="skills" aria-label="Skills Section">Skills</a>
 							</li>
 							<li>
-								<a href="#education" data-nav-section="education"
-									aria-label="Education Section">Education</a>
+								<a href="#education" data-nav-section="education" aria-label="Education Section">Education</a>
 							</li>
 							<li>
-								<a href="#work-experience" data-nav-section="work-experience"
-									aria-label="Experience Section">Experience</a>
+								<a href="#work-experience" data-nav-section="work-experience" aria-label="Experience Section">Experience</a>
 							</li>
 							<li>
-								<a href="#projects" data-nav-section="projects" aria-label="Project">Project</a>
+								<a href="#projects" data-nav-section="projects" aria-label="Projects Section">Projects</a>
 							</li>
 							<li>
 								<a href="#contact" data-nav-section="contact" aria-label="Contact Section">Contact</a>
@@ -295,26 +340,29 @@
 						</ul>
 					</div>
 				</nav>
-
+			
+				<!-- Footer section with accessible social media links -->
 				<div class="colorlib-footer">
 					<p>
-						<small>&copy; Copyright
-							<script>
-								document.write(new Date().getFullYear());
-							</script>
-							Shekhar
+						<small>&copy; Copyright 
+							<script>document.write(new Date().getFullYear());</script> 
+							Shekhar Luitel
 						</small>
 					</p>
-					<ul>
-						<li style="background: #bdbbbb">
-							<a href="https://www.facebook.com/shekharluitel.IT"><i class="icon-facebook2"></i></a>
+					
+					<!-- Social links with descriptive aria labels -->
+					<ul class="social-links">
+						<li>
+							<a href="https://www.facebook.com/shekharluitel.IT" aria-label="Facebook Profile">
+								<i class="icon-facebook2"></i>
+							</a>
 						</li>
-						<!-- <li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li> -->
-						<li style="background: #bdbbbb">
-							<a href="https://www.linkedin.com/in/shekhar-luitel33/"><i class="icon-linkedin2"></i></a>
+						<li>
+							<a href="https://www.linkedin.com/in/shekhar-luitel33/" aria-label="LinkedIn Profile">
+								<i class="icon-linkedin2"></i>
+							</a>
 						</li>
-					</ul>
+					</ul>					
 				</div>
 			</aside>
 
@@ -631,12 +679,12 @@
 															at
 															<a href="http://nihareekacollege.edu.np/"
 																target="_blank">Nihareeka College</a>
-															and I am in the 3rd semester (as of 2023).
+															and I am in the 5th semester (as of 2023).
 														</li>
-														<li>
+														<!-- <li>
 															Achieved an SGPA of <strong>3.19</strong> in the
 															1st semester.
-														</li>
+														</li> -->
 													</ul>
 												</div>
 											</div>
@@ -765,7 +813,7 @@
 											</div>
 											<div class="timeline-label">
 												<h2>
-													<a href="#">Junior Backend Developer at Veda App</a>
+													<a href="https://veda-app.com/" target="_blank">Junior Backend Developer at Veda App</a>
 													<span>Dec 2023 - Present</span>
 												</h2>
 												<p>
@@ -787,7 +835,7 @@
 											</div>
 											<div class="timeline-label">
 												<h2>
-													<a href="#">Intern Backend Developer at Veda App</a>
+													<a href="https://veda-app.com/" target="_blank">Intern Backend Developer at Veda App</a>
 													<span>Jul 2023 - Dec 2023</span>
 												</h2>
 												<p>
@@ -808,7 +856,7 @@
 											</div>
 											<div class="timeline-label">
 												<h2>
-													<a href="#">Junior Web Developer at Infinite IT Solutions</a>
+													<a href="https://infiniteitsolutionsnepal.com/" target="_blank">Junior Web Developer at Infinite IT Solutions</a>
 													<span>Jul 2023 - Dec 2023</span>
 												</h2>
 												<p>
@@ -916,7 +964,7 @@
 											</div>
 											<div class="timeline-label">
 												<h2>
-													<a href="https://inkhead.co.uk/" target="_blank">WordPress Developer
+													<a href="#" target="_blank">WordPress Developer
 														for Inkhead</a>
 													<span>2023</span>
 												</h2>
@@ -1013,10 +1061,6 @@
 	<script src="js/owl.carousel.min.js"></script>
 	<!-- Counters -->
 	<script src="js/jquery.countTo.js"></script>
-	<!-- google ads-->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3799837880388047"
-		crossorigin="anonymous"></script>
-
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 </body>
