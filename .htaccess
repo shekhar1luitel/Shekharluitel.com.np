@@ -3,3 +3,11 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteCond %{THE_REQUEST} /home.html [NC]
 RewriteRule ^(.*)home.html$ /$1 [R=301,L]
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
