@@ -72,6 +72,10 @@
       href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/icomoon.css" />
@@ -136,91 +140,416 @@
       #colorlib-hero {
         position: relative;
         z-index: 0;
+        background: radial-gradient(circle at top left, #1e293b 0%, transparent 55%),
+          radial-gradient(circle at bottom right, rgba(79, 70, 229, 0.6) 0%, transparent 50%),
+          linear-gradient(135deg, #0f172a 0%, #1d2b64 45%, #020617 100%);
+        color: #e2e8f0;
+        overflow: hidden;
+      }
+
+      #colorlib-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+            rgba(148, 163, 184, 0.18) 1px,
+            transparent 0
+          ),
+          radial-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 0);
+        background-size: 24px 24px, 80px 80px;
+        opacity: 0.35;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      #colorlib-hero::after {
+        content: "";
+        position: absolute;
+        inset: 15% 10% -35% 40%;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.35), transparent 60%);
+        filter: blur(40px);
+        z-index: 0;
+        pointer-events: none;
       }
 
       .flexslider .slides li {
-        height: 100vh;
-        background-size: cover;
-        background-position: center center;
+        min-height: 100vh;
+        padding: 140px 0 120px;
         position: relative;
+        display: flex;
+        align-items: center;
       }
 
       .overlay {
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        inset: 0;
         z-index: 1;
+        background: linear-gradient(160deg, rgba(15, 23, 42, 0.85) 0%, rgba(79, 70, 229, 0.35) 100%);
+        mix-blend-mode: screen;
+        pointer-events: none;
       }
 
       .slider-text-inner {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        height: 100%;
         position: relative;
         z-index: 2;
-        padding: 0 15px;
+        padding: 0 20px;
+        width: 100%;
       }
 
-      .desc h1 {
-        font-size: 60px;
-        color: #fff;
-        font-weight: 700;
-        line-height: 1.2;
-        margin-bottom: 20px;
+      .hero-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 50px;
+        align-items: stretch;
+      }
+
+      .hero-content {
+        max-width: 640px;
+      }
+
+      .hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 16px;
+        border-radius: 999px;
+        font-size: 13px;
+        letter-spacing: 0.18em;
         text-transform: uppercase;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        background: rgba(148, 163, 184, 0.12);
+        color: #bfdbfe;
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        margin-bottom: 24px;
       }
 
-      .desc p {
-        font-size: 18px;
-        margin-top: 10px;
-        text-align: left;
+      .hero-eyebrow i {
+        font-size: 15px;
+        color: rgba(96, 165, 250, 0.95);
       }
 
-      .hero-tagline {
-        max-width: 480px;
-        color: rgba(255, 255, 255, 0.9);
+      .hero-title {
+        font-size: clamp(2.8rem, 4vw, 3.75rem);
+        line-height: 1.1;
+        font-weight: 700;
+        color: #f8fafc;
+        margin-bottom: 22px;
       }
 
-      .hero-cta {
+      .hero-lede {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(226, 232, 240, 0.9);
+        margin-bottom: 28px;
+      }
+
+      .hero-badges {
         display: flex;
         flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 36px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(94, 234, 212, 0.35);
+        background: rgba(16, 185, 129, 0.12);
+        color: #99f6e4;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      .hero-badge i {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 28px;
+      }
+
+      .btn-hero {
+        padding: 14px 28px;
+        border-radius: 14px;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 18px 35px rgba(15, 118, 110, 0.25);
+      }
+
+      .btn-hero:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 38px rgba(79, 70, 229, 0.25);
+      }
+
+      .btn-ghost {
+        background: rgba(15, 23, 42, 0.4);
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        color: #e2e8f0;
+        box-shadow: none;
+      }
+
+      .btn-ghost:hover {
+        background: rgba(51, 65, 85, 0.6);
+        color: #f8fafc;
+        border-color: rgba(148, 163, 184, 0.55);
+      }
+
+      .hero-footnote {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 28px;
+        color: rgba(203, 213, 225, 0.9);
+        font-size: 0.95rem;
+      }
+
+      .hero-footnote span {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .hero-footnote i {
+        color: rgba(96, 165, 250, 0.95);
+        font-size: 17px;
+      }
+
+      .hero-showcase {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .code-card {
+        position: relative;
+        border-radius: 18px;
+        padding: 24px;
+        background: rgba(15, 23, 42, 0.65);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 30px 60px rgba(2, 6, 23, 0.5);
+      }
+
+      .code-card::after {
+        content: "";
+        position: absolute;
+        inset: -20% 15% 55% 45%;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 60%);
+        filter: blur(28px);
+        z-index: -1;
+      }
+
+      .code-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+
+      .code-dots {
+        display: inline-flex;
+        gap: 6px;
+      }
+
+      .code-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: #f87171;
+        opacity: 0.85;
+      }
+
+      .code-dot:nth-child(2) {
+        background: #facc15;
+      }
+
+      .code-dot:nth-child(3) {
+        background: #34d399;
+      }
+
+      .code-filename {
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(226, 232, 240, 0.8);
+      }
+
+      .code-card-body {
+        font-family: "Fira Code", "Courier New", Courier, monospace;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #cbd5f5;
+        white-space: pre-wrap;
+        margin-bottom: 16px;
+      }
+
+      .code-card-footer {
+        font-size: 0.9rem;
+        color: rgba(148, 163, 184, 0.85);
+      }
+
+      .hero-quick-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 16px;
+      }
+
+      .hero-stat {
+        background: rgba(15, 23, 42, 0.58);
+        border: 1px solid rgba(59, 130, 246, 0.18);
+        border-radius: 16px;
+        padding: 18px 20px;
+        color: #e0f2fe;
+        box-shadow: inset 0 1px 0 rgba(148, 163, 184, 0.08);
+      }
+
+      .hero-stat-value {
+        display: block;
+        font-size: 1.85rem;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #f8fafc;
+      }
+
+      .hero-stat-label {
+        font-size: 0.95rem;
+        color: rgba(191, 219, 254, 0.85);
+        line-height: 1.4;
+      }
+
+      .mobile-nav-helper {
+        display: none;
+        margin: 0 24px 32px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.25);
+        color: #e2e8f0;
+        font-size: 0.95rem;
         gap: 12px;
         align-items: center;
       }
 
-      .btn-learn {
-        background-color: #007bff;
-        border: none;
-        padding: 12px 24px;
-        font-size: 16px;
-        color: #fff;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
+      .mobile-nav-helper i {
+        color: #60a5fa;
+        font-size: 18px;
       }
 
-      .btn-learn:hover {
-        background-color: #0056b3;
+      @media (max-width: 1200px) {
+        .flexslider .slides li {
+          padding: 120px 0 100px;
+        }
+
+        .hero-layout {
+          gap: 40px;
+        }
       }
 
-      .btn-outline {
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        background: transparent;
-        color: #fff;
+      @media (max-width: 991px) {
+        .hero-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-showcase {
+          max-width: 520px;
+        }
+
+        .hero-content {
+          max-width: none;
+        }
       }
 
-      .btn-outline:hover {
-        background: rgba(255, 255, 255, 0.12);
-        color: #fff;
+      @media (max-width: 768px) {
+        .flexslider .slides li {
+          padding: 110px 0 80px;
+        }
+
+        .hero-title {
+          font-size: clamp(2.4rem, 7vw, 3rem);
+        }
+
+        .hero-badges {
+          gap: 10px;
+        }
+
+        .hero-actions {
+          gap: 12px;
+        }
+
+        .hero-footnote {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .mobile-nav-helper {
+          display: flex;
+        }
+
+        .services {
+          height: auto;
+          padding: 30px;
+        }
+
+        .about-desc,
+        .skill-desc {
+          padding: 28px;
+        }
+
+        .section-heading {
+          font-size: 30px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+
+        .about-stat-card {
+          text-align: center;
+        }
+
+        .contact-intro {
+          padding: 24px;
+        }
       }
 
-      .icon-download4,
-      .icon-briefcase3 {
-        margin-left: 8px;
+      @media (max-width: 576px) {
+        .hero-layout {
+          gap: 32px;
+        }
+
+        .hero-actions .btn {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .hero-badge {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .about-desc,
+        .skill-desc {
+          padding: 24px;
+        }
+
+        .about-desc p,
+        .skill-desc p {
+          font-size: 14px;
+        }
+
+        .about-stat-card h3 {
+          font-size: 28px;
+        }
+
+        .services {
+          padding: 25px;
+        }
       }
 
       .about-desc,
@@ -428,47 +757,6 @@
         color: #333 !important;
       }
 
-      @media (max-width: 767px) {
-        .desc h1 {
-          font-size: 40px;
-        }
-
-        .btn-learn {
-          padding: 10px 20px;
-          font-size: 14px;
-        }
-
-        .services {
-          height: auto;
-          padding: 30px;
-        }
-
-        .about-desc,
-        .skill-desc {
-          padding: 20px;
-        }
-
-        .section-heading {
-          font-size: 30px;
-        }
-
-        p {
-          font-size: 15px;
-        }
-
-        .hero-cta {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        .about-stat-card {
-          text-align: center;
-        }
-
-        .contact-intro {
-          padding: 20px;
-        }
-      }
       ::-webkit-scrollbar {
         width: 8px;
       }
@@ -628,62 +916,85 @@
           <section id="hero-section" class="js-fullheight" data-section="home">
             <div class="flexslider js-fullheight">
               <ul class="slides">
-                <li style="">
+                <li>
                   <div class="overlay"></div>
                   <div class="container-fluid">
                     <div class="row">
                       <div
-                        class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text"
-                      >
-                        <div class="slider-text-inner js-fullheight">
-                          <div class="desc">
-                            <h1>Hi! <br />I'm Shekhar Luitel</h1>
-                            <p class="hero-tagline">
-                              I turn complex business rules into reliable
-                              backend systems, from high-performing APIs to
-                              streamlined data flows.
-                            </p>
-                            <div class="hero-cta">
-                              <a
-                                class="venobox btn btn-primary btn-learn"
-                                data-vbtype="iframe"
-                                data-autoplay="true"
-                                href="CV/resume.pdf"
-                              >
-                                View CV <i class="icon-download4"></i>
-                              </a>
-                              <a href="#contact" class="btn btn-learn btn-outline">
-                                Let's Talk <i class="icon-mail"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li style="">
-                  <div class="overlay"></div>
-                  <div class="container-fluid">
-                    <div class="row">
-                      <div
-                        class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text"
+                        class="col-lg-10 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12 js-fullheight slider-text"
                       >
                         <div class="slider-text-inner">
-                          <div class="desc">
-                            <h1>I am <br />a Backend Developer</h1>
-                            <p class="hero-tagline">
-                              Currently building student information systems at
-                              Veda App and helping teams ship resilient code
-                              faster.
-                            </p>
-                            <div class="hero-cta">
-                              <a href="#about" class="btn btn-primary btn-learn"
-                                >View Portfolio <i class="icon-briefcase3"></i
-                              ></a>
-                              <a href="mailto:admin@shekharluitel.com.np" class="btn btn-learn btn-outline"
-                                >Email Me <i class="icon-paperplane"></i
-                              ></a>
+                          <div class="hero-layout">
+                            <div class="desc hero-content">
+                              <span class="hero-eyebrow">
+                                <i class="icon-code-outline"></i>Backend Engineer &amp; DevOps Partner
+                              </span>
+                              <h1 class="hero-title">I build resilient platforms that scale with your ambitions.</h1>
+                              <p class="hero-lede">
+                                Nepal-based backend specialist turning product ideas into dependable APIs, release
+                                pipelines, and real-time insights for education and SaaS teams.
+                              </p>
+                              <div class="hero-badges">
+                                <span class="hero-badge"><i class="icon-code"></i>PHP 8 · Laravel</span>
+                                <span class="hero-badge"><i class="icon-stack2"></i>Microservices &amp; REST</span>
+                                <span class="hero-badge"><i class="icon-cog"></i>CI/CD Automation</span>
+                              </div>
+                              <div class="hero-actions">
+                                <a href="#projects" class="btn btn-primary btn-hero"
+                                  >View Recent Work <i class="icon-briefcase3"></i
+                                ></a>
+                                <a
+                                  class="venobox btn btn-ghost btn-hero"
+                                  data-vbtype="iframe"
+                                  data-autoplay="true"
+                                  href="CV/resume.pdf"
+                                >
+                                  Download CV <i class="icon-download4"></i>
+                                </a>
+                              </div>
+                              <div class="hero-footnote">
+                                <span><i class="icon-location2"></i>Biratnagar, Nepal · Remote-ready</span>
+                                <span>
+                                  <i class="icon-rocket"></i>Currently shipping learning platforms at Veda App
+                                </span>
+                              </div>
+                            </div>
+                            <div class="hero-showcase">
+                              <div class="code-card">
+                                <div class="code-card-header">
+                                  <span class="code-dots">
+                                    <span class="code-dot"></span>
+                                    <span class="code-dot"></span>
+                                    <span class="code-dot"></span>
+                                  </span>
+                                  <span class="code-filename">deploy.log</span>
+                                </div>
+                                <pre class="code-card-body">14:02  ✅  Unit & integration suites
+14:05  ✅  Container publish → registry
+14:07  🚀  Production release (blue/green)
+14:09  📈  Metrics streaming to Grafana</pre>
+                                <div class="code-card-footer">Last deploy assisted · 2 days ago</div>
+                              </div>
+                              <div class="hero-quick-stats">
+                                <div class="hero-stat">
+                                  <span class="hero-stat-value">4+ yrs</span>
+                                  <span class="hero-stat-label"
+                                    >Hardening APIs, data models, and release pipelines</span
+                                  >
+                                </div>
+                                <div class="hero-stat">
+                                  <span class="hero-stat-value">30+</span>
+                                  <span class="hero-stat-label"
+                                    >Cross-functional launches guided from prototype to prod</span
+                                  >
+                                </div>
+                                <div class="hero-stat">
+                                  <span class="hero-stat-value">99.9%</span>
+                                  <span class="hero-stat-label"
+                                    >Availability maintained across managed platforms</span
+                                  >
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -694,6 +1005,11 @@
               </ul>
             </div>
           </section>
+
+          <div class="mobile-nav-helper">
+            <i class="icon-menu5"></i>
+            <span>Tap the menu to jump between services, projects, and contact in seconds.</span>
+          </div>
 
           <section class="about-section" data-section="about" id="about">
             <div class="narrow-content">
@@ -1377,7 +1693,7 @@
             </div>
           </section>
 
-          <section class="experience-section" data-section="projects">
+          <section class="experience-section" data-section="projects" id="projects">
             <div class="narrow-content">
               <div class="row">
                 <div
