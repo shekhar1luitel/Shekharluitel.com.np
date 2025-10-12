@@ -121,16 +121,32 @@
     </header>
 
     <main>
-      <section id="hero" class="hero parallax" data-parallax="-0.3">
+      <section id="hero" class="hero parallax hero-immersive" data-parallax="-0.3">
+        <div class="hero-gradient hero-gradient--primary"></div>
+        <div class="hero-gradient hero-gradient--accent"></div>
+        <div class="hero-gridlines" aria-hidden="true"></div>
         <div class="hero-inner">
           <div class="hero-content">
-            <span class="eyebrow">Backend Developer from Nepal</span>
-            <h1 class="hero-title">Hi! I'm Shekhar Luitel.</h1>
-            <p class="hero-subtitle">I build resilient backend systems that scale with your roadmap.</p>
+            <span class="eyebrow hero-eyebrow">Backend Developer · API Architect</span>
+            <h1 class="hero-title">
+              <span class="hero-name">Shekhar Luitel</span>
+              <span class="hero-headline">I build expressive infrastructure for ambitious teams.</span>
+            </h1>
+            <p class="hero-subtitle">Backend Developer from Nepal</p>
             <p class="hero-summary">
-              Results-driven engineer crafting secure APIs, optimised databases, and automated delivery pipelines for high-impact
-              products across edtech and fintech.
+              I deliver resilient APIs, performant databases, and automated delivery pipelines that keep digital products
+              reliable—from MVP launch through enterprise scale.
             </p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <span class="hero-badge-label">Speciality</span>
+                <span class="hero-badge-value">Laravel · CodeIgniter · MySQL</span>
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-label">Focus</span>
+                <span class="hero-badge-value">High-availability APIs &amp; automation</span>
+              </div>
+            </div>
             <div class="hero-cta">
               <a class="btn btn-primary" href="CV/resume.pdf" target="_blank" rel="noopener" aria-label="Open resume in a new tab">
                 View Resume
@@ -156,21 +172,38 @@
             <div class="hero-canvas-wrapper">
               <canvas id="hero-canvas"></canvas>
               <span class="hero-canvas-glow"></span>
+              <span class="hero-canvas-glow hero-canvas-glow--secondary"></span>
+            </div>
+            <div class="hero-telemetry" role="presentation">
+              <div>
+                <span>Service Uptime</span>
+                <strong>99.98%</strong>
+              </div>
+              <div>
+                <span>Avg latency</span>
+                <strong>42ms</strong>
+              </div>
             </div>
             <div class="floating-card" role="presentation">
               <div class="floating-card-header">
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
+                <span class="floating-card-title">deploy.yml</span>
               </div>
-              <pre class="floating-card-body"><code>// deployment pipeline
-steps:
-  - run: composer test
-  - run: php artisan migrate --force
-  - run: php artisan config:cache
-  - run: php artisan queue:restart</code></pre>
+              <pre class="floating-card-body"><code>on: release
+jobs:
+  deploy:
+    - run: composer test --ansi
+    - run: php artisan migrate --force
+    - run: php artisan config:cache
+    - run: php artisan queue:restart</code></pre>
             </div>
           </div>
+        </div>
+        <div class="hero-scroll-hint" aria-hidden="true">
+          <span class="hero-scroll-dot"></span>
+          <span>Scroll to explore</span>
         </div>
       </section>
 
@@ -447,6 +480,7 @@ steps:
     </footer>
 
     <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+    <script src="https://unpkg.com/three@0.161.0/examples/js/loaders/GLTFLoader.js" defer></script>
     <script src="js/hero-scene.js" defer></script>
     <script>
       const header = document.querySelector('.site-header');
