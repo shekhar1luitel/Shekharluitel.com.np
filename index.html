@@ -140,9 +140,42 @@
 
       .flexslider .slides li {
         height: 100vh;
+        background: #0b1220;
         background-size: cover;
         background-position: center center;
         position: relative;
+        overflow: hidden;
+      }
+
+      .flexslider .slides li::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: radial-gradient(
+            circle at top left,
+            rgba(59, 130, 246, 0.55),
+            transparent 60%
+          ),
+          radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.4), transparent 55%);
+        mix-blend-mode: screen;
+        pointer-events: none;
+      }
+
+      .flexslider .slides li::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        background-size: 160px 160px, 160px 160px;
+        opacity: 0.4;
+        mix-blend-mode: overlay;
+        pointer-events: none;
       }
 
       .overlay {
@@ -151,7 +184,13 @@
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 1;
+        z-index: 2;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 15, 24, 0.95) 0%,
+          rgba(6, 64, 116, 0.8) 55%,
+          rgba(23, 37, 84, 0.9) 100%
+        );
       }
 
       .slider-text-inner {
@@ -175,6 +214,21 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       }
 
+      .hero-kicker {
+        display: inline-block;
+        font-size: 16px;
+        letter-spacing: 3px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+        color: rgba(148, 197, 255, 0.95);
+      }
+
+      .hero-heading {
+        text-transform: none;
+        font-size: 52px;
+      }
+
       .desc p {
         font-size: 18px;
         margin-top: 10px;
@@ -182,8 +236,30 @@
       }
 
       .hero-tagline {
-        max-width: 480px;
-        color: rgba(255, 255, 255, 0.9);
+        max-width: 520px;
+        color: rgba(226, 239, 255, 0.9);
+      }
+
+      .hero-meta {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        color: rgba(186, 214, 255, 0.9);
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .hero-meta i {
+        font-size: 16px;
+        color: rgba(96, 165, 250, 0.95);
       }
 
       .hero-cta {
@@ -216,6 +292,36 @@
       .btn-outline:hover {
         background: rgba(255, 255, 255, 0.12);
         color: #fff;
+      }
+
+      .hero-highlights {
+        margin: 25px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+        max-width: 520px;
+      }
+
+      .hero-highlights li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: rgba(224, 239, 255, 0.92);
+        font-size: 15px;
+        line-height: 1.5;
+      }
+
+      .hero-pill {
+        background: rgba(59, 130, 246, 0.2);
+        border: 1px solid rgba(59, 130, 246, 0.6);
+        border-radius: 999px;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(191, 219, 254, 0.95);
       }
 
       .icon-download4,
@@ -428,14 +534,45 @@
         color: #333 !important;
       }
 
+      .mobile-nav-helper {
+        display: none;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(11, 18, 32, 0.98);
+        backdrop-filter: blur(16px);
+        padding: 14px 20px;
+        border-radius: 0 0 16px 16px;
+        margin: 0 15px 25px;
+        color: rgba(226, 239, 255, 0.92);
+        box-shadow: 0 18px 40px rgba(5, 18, 36, 0.45);
+      }
+
+      .mobile-nav-helper strong {
+        color: rgba(147, 197, 253, 0.95);
+      }
+
       @media (max-width: 767px) {
         .desc h1 {
+          font-size: 42px;
+          text-transform: none;
+        }
+
+        .hero-heading {
           font-size: 40px;
         }
 
         .btn-learn {
           padding: 10px 20px;
           font-size: 14px;
+        }
+
+        .hero-cta {
+          gap: 10px;
+        }
+
+        .hero-highlights {
+          grid-template-columns: 1fr;
         }
 
         .services {
@@ -445,7 +582,7 @@
 
         .about-desc,
         .skill-desc {
-          padding: 20px;
+          padding: 28px;
         }
 
         .section-heading {
@@ -456,17 +593,81 @@
           font-size: 15px;
         }
 
-        .hero-cta {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
         .about-stat-card {
           text-align: center;
         }
 
         .contact-intro {
-          padding: 20px;
+          padding: 24px;
+        }
+
+        .mobile-nav-helper {
+          display: block;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .slider-text-inner {
+          padding: 0 20px;
+        }
+
+        .desc h1,
+        .hero-heading {
+          font-size: 34px;
+        }
+
+        .hero-tagline {
+          font-size: 16px;
+        }
+
+        .hero-highlights li {
+          font-size: 14px;
+          align-items: flex-start;
+        }
+
+        .hero-pill {
+          padding: 5px 12px;
+          font-size: 11px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .hero-cta .btn-learn {
+          width: 100%;
+          justify-content: center;
+          text-align: center;
+        }
+
+        .hero-meta {
+          gap: 8px 14px;
+          font-size: 12px;
+        }
+
+        .about-stats {
+          gap: 16px;
+        }
+
+        .about-desc,
+        .skill-desc {
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .about-desc p,
+        .skill-desc p {
+          font-size: 14px;
+        }
+
+        .about-stat-card h3 {
+          font-size: 28px;
+        }
+
+        .services {
+          padding: 25px;
         }
       }
       ::-webkit-scrollbar {
@@ -637,12 +838,33 @@
                       >
                         <div class="slider-text-inner js-fullheight">
                           <div class="desc">
-                            <h1>Hi! <br />I'm Shekhar Luitel</h1>
+                            <span class="hero-kicker">Backend Developer &amp; API Engineer</span>
+                            <h1 class="hero-heading">
+                              Hi, I'm Shekhar Luitel. I ship resilient digital products.
+                            </h1>
                             <p class="hero-tagline">
-                              I turn complex business rules into reliable
-                              backend systems, from high-performing APIs to
-                              streamlined data flows.
+                              Nepal-based engineer helping teams architect secure services, automate releases,
+                              and keep mission-critical platforms online 24/7.
                             </p>
+                            <ul class="hero-highlights">
+                              <li>
+                                <span class="hero-pill">API-First</span>
+                                REST &amp; GraphQL endpoints with human-friendly docs.
+                              </li>
+                              <li>
+                                <span class="hero-pill">DevOps</span>
+                                Dockerized pipelines, CI/CD, and zero-downtime rollouts.
+                              </li>
+                              <li>
+                                <span class="hero-pill">Data</span>
+                                Event-driven workflows, caching layers, and optimized SQL.
+                              </li>
+                            </ul>
+                            <div class="hero-meta">
+                              <span><i class="icon-location2"></i>Biratnagar, Nepal</span>
+                              <span><i class="icon-layers2"></i>Remote-friendly</span>
+                              <span><i class="icon-rocket"></i>Open to collaborations</span>
+                            </div>
                             <div class="hero-cta">
                               <a
                                 class="venobox btn btn-primary btn-learn"
@@ -671,12 +893,28 @@
                       >
                         <div class="slider-text-inner">
                           <div class="desc">
-                            <h1>I am <br />a Backend Developer</h1>
+                            <span class="hero-kicker">Building Future-Ready Platforms</span>
+                            <h1 class="hero-heading">
+                              I partner with teams to deliver scalable backend ecosystems.
+                            </h1>
                             <p class="hero-tagline">
-                              Currently building student information systems at
-                              Veda App and helping teams ship resilient code
-                              faster.
+                              Currently leading automation and performance initiatives at Veda App,
+                              mentoring engineers, and shaping cloud-native deployment stories.
                             </p>
+                            <ul class="hero-highlights">
+                              <li>
+                                <span class="hero-pill">Mentorship</span>
+                                Pair programming &amp; code reviews that elevate teams.
+                              </li>
+                              <li>
+                                <span class="hero-pill">Observability</span>
+                                SLO-driven monitoring, alerting, and on-call playbooks.
+                              </li>
+                              <li>
+                                <span class="hero-pill">Security</span>
+                                OWASP-aligned hardening and compliance-ready workflows.
+                              </li>
+                            </ul>
                             <div class="hero-cta">
                               <a href="#about" class="btn btn-primary btn-learn"
                                 >View Portfolio <i class="icon-briefcase3"></i
@@ -694,6 +932,10 @@
               </ul>
             </div>
           </section>
+
+          <div class="mobile-nav-helper">
+            <strong>Tip:</strong> Tap the menu icon to explore services, projects, and contact details.
+          </div>
 
           <section class="about-section" data-section="about" id="about">
             <div class="narrow-content">
