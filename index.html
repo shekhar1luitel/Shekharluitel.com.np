@@ -153,24 +153,9 @@
             </dl>
           </div>
           <div class="hero-visual" aria-hidden="true">
-            <div class="model-stage">
-              <div class="model-base">
-                <span class="model-ring"></span>
-                <span class="model-ring"></span>
-                <span class="model-ring"></span>
-              </div>
-              <div class="model-stack">
-                <div class="model-layer"></div>
-                <div class="model-layer"></div>
-                <div class="model-layer"></div>
-                <div class="model-layer"></div>
-              </div>
-              <div class="model-orbit">
-                <span class="model-node"></span>
-                <span class="model-node"></span>
-                <span class="model-node"></span>
-              </div>
-              <div class="model-core">SL</div>
+            <div class="hero-canvas-wrapper">
+              <canvas id="hero-canvas"></canvas>
+              <span class="hero-canvas-glow"></span>
             </div>
             <div class="floating-card" role="presentation">
               <div class="floating-card-header">
@@ -461,6 +446,8 @@ steps:
       <p>&copy; <span id="year"></span> Shekhar Luitel. Built with care in Nepal.</p>
     </footer>
 
+    <script src="https://unpkg.com/three@0.161.0/build/three.min.js" defer></script>
+    <script src="js/hero-scene.js" defer></script>
     <script>
       const header = document.querySelector('.site-header');
       const navToggle = document.querySelector('.nav-toggle');
