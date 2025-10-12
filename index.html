@@ -111,7 +111,8 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#stack">Stack</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -121,59 +122,81 @@
 
     <main>
       <section id="hero" class="hero parallax" data-parallax="-0.3">
-        <div class="hero-content">
-          <span class="eyebrow">Backend Developer</span>
-          <h1 class="hero-title">Crafting resilient infrastructure for modern products.</h1>
-          <p class="hero-subtitle">
-            I'm Shekhar, a Nepal-based engineer specialising in PHP ecosystems, cloud-ready architectures, and database design
-            that scales with your roadmap.
-          </p>
-          <div class="hero-cta">
-            <a class="btn btn-primary" href="CV/resume.pdf" target="_blank" rel="noopener" aria-label="Open resume in a new tab">
-              View Resume
-            </a>
-            <a class="btn btn-outline" href="mailto:admin@shekharluitel.com.np">Start a project</a>
+        <div class="hero-inner">
+          <div class="hero-content">
+            <span class="eyebrow">Backend Developer from Nepal</span>
+            <h1 class="hero-title">Hi! I'm Shekhar Luitel.</h1>
+            <p class="hero-subtitle">I build resilient backend systems that scale with your roadmap.</p>
+            <p class="hero-summary">
+              Results-driven engineer crafting secure APIs, optimised databases, and automated delivery pipelines for high-impact
+              products across edtech and fintech.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" href="CV/resume.pdf" target="_blank" rel="noopener" aria-label="Open resume in a new tab">
+                View Resume
+              </a>
+              <a class="btn btn-outline" href="mailto:admin@shekharluitel.com.np">Start a project</a>
+            </div>
+            <dl class="hero-metrics">
+              <div>
+                <dt>Production Launches</dt>
+                <dd>25+</dd>
+              </div>
+              <div>
+                <dt>API Integrations</dt>
+                <dd>60+</dd>
+              </div>
+              <div>
+                <dt>Databases Managed</dt>
+                <dd>12</dd>
+              </div>
+            </dl>
           </div>
-          <div class="hero-cards">
-            <article class="hero-card">
-              <span class="card-label">Production Projects</span>
-              <strong class="card-value">25+</strong>
-              <p>High-impact web platforms deployed with a maintainable backend core.</p>
-            </article>
-            <article class="hero-card">
-              <span class="card-label">API Integrations</span>
-              <strong class="card-value">60+</strong>
-              <p>Secure, well-documented interfaces powering mobile, web, and partner apps.</p>
-            </article>
-            <article class="hero-card">
-              <span class="card-label">Databases Managed</span>
-              <strong class="card-value">12</strong>
-              <p>Optimised MySQL clusters tuned for speed, observability, and resilience.</p>
-            </article>
-          </div>
-        </div>
-        <div class="floating-card">
-          <div class="floating-card-header">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-          </div>
-          <pre class="floating-card-body"><code>// deployment pipeline
+          <div class="hero-visual" aria-hidden="true">
+            <div class="model-stage">
+              <div class="model-base">
+                <span class="model-ring"></span>
+                <span class="model-ring"></span>
+                <span class="model-ring"></span>
+              </div>
+              <div class="model-stack">
+                <div class="model-layer"></div>
+                <div class="model-layer"></div>
+                <div class="model-layer"></div>
+                <div class="model-layer"></div>
+              </div>
+              <div class="model-orbit">
+                <span class="model-node"></span>
+                <span class="model-node"></span>
+                <span class="model-node"></span>
+              </div>
+              <div class="model-core">SL</div>
+            </div>
+            <div class="floating-card" role="presentation">
+              <div class="floating-card-header">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <pre class="floating-card-body"><code>// deployment pipeline
 steps:
   - run: composer test
   - run: php artisan migrate --force
   - run: php artisan config:cache
   - run: php artisan queue:restart</code></pre>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="about" class="section">
         <div class="section-intro">
-          <p class="section-eyebrow">About</p>
-          <h2 class="section-title">Engineering with empathy for maintainers.</h2>
+          <p class="section-eyebrow">About Me</p>
+          <h2 class="section-title">Who Am I?</h2>
           <p class="section-description">
-            From the first schema draft to the last deployment checklist, I approach backend development with disciplined
-            processes, clean abstractions, and precise documentation so your team can move quickly without surprises.
+            I'm a backend developer obsessed with building scalable, secure, and efficient systems. I translate product goals into
+            resilient infrastructure, precise APIs, and future-proof databases that help teams move fast without compromising on
+            quality.
           </p>
         </div>
         <div class="about-grid">
@@ -181,11 +204,20 @@ steps:
             <img src="images/profile.jpg" alt="Portrait of Shekhar Luitel" loading="lazy" />
           </div>
           <div class="about-details">
-            <h3>What partners appreciate</h3>
+            <p>
+              Hello, I'm Shekhar Luitel, a passionate and detail-oriented backend developer specialising in PHP, CodeIgniter, and
+              MySQL. I love optimising database performance, developing robust APIs, and ensuring seamless communication between the
+              frontend and backend.
+            </p>
+            <p>
+              I collaborate closely with clients and teammates, bringing disciplined processes, clean abstractions, and precise
+              documentation to every project. If you're looking for a dedicated engineer to strengthen your backend, let's build
+              something future-ready together.
+            </p>
             <ul class="detail-list">
-              <li>Comprehensive API blueprints and testing pipelines.</li>
-              <li>Zero-downtime deployment strategies for mission critical services.</li>
-              <li>Structured communication with product, design, and DevOps squads.</li>
+              <li>Database Management &amp; Optimisation</li>
+              <li>Secure RESTful API Development</li>
+              <li>Server-side scripting &amp; automation</li>
             </ul>
             <div class="tags">
               <span class="tag">Remote first</span>
@@ -197,122 +229,168 @@ steps:
         </div>
       </section>
 
-      <section id="services" class="section parallax parallax-secondary" data-parallax="0.2">
+      <section id="services" class="section parallax parallax-secondary" data-parallax="0.18">
         <div class="section-intro light">
           <p class="section-eyebrow">Services</p>
           <h2 class="section-title">Backend leadership for ambitious teams.</h2>
           <p class="section-description">
-            I help product teams launch faster with a reliable backend foundation, actionable telemetry, and automated workflows
-            that scale from MVP to enterprise.
+            I help product squads launch faster with reliable foundations, actionable telemetry, and automated workflows that scale
+            from MVP to enterprise.
           </p>
         </div>
         <div class="service-grid">
           <article class="service-card">
+            <h3>Database Management</h3>
+            <p>Designing and optimising relational databases, ensuring integrity, observability, and lightning-fast performance.</p>
+          </article>
+          <article class="service-card">
             <h3>API Architecture</h3>
-            <p>Designing RESTful and GraphQL interfaces with strong contracts, caching, and developer-first documentation.</p>
+            <p>Building secure RESTful interfaces with caching strategies, developer-first documentation, and testing pipelines.</p>
           </article>
           <article class="service-card">
             <h3>Platform Modernisation</h3>
             <p>Migrating monolithic CodeIgniter applications into modular Laravel services without operational disruption.</p>
           </article>
           <article class="service-card">
-            <h3>Data Reliability</h3>
-            <p>Auditing queries, normalising schemas, and implementing observability to keep business metrics accurate.</p>
-          </article>
-          <article class="service-card">
             <h3>DevOps Alignment</h3>
-            <p>Automating CI/CD pipelines, environment parity, and roll-back procedures for confident releases.</p>
+            <p>Automating CI/CD pipelines, environment parity, and rollback procedures for confident releases.</p>
           </article>
         </div>
       </section>
 
-      <section id="stack" class="section">
+      <section id="skills" class="section">
         <div class="section-intro">
-          <p class="section-eyebrow">Toolbox</p>
-          <h2 class="section-title">Technologies ready for your next sprint.</h2>
+          <p class="section-eyebrow">My Specialty</p>
+          <h2 class="section-title">Skills that power resilient backends.</h2>
           <p class="section-description">
-            A curated stack centred on PHP ecosystems, reinforced by tooling that keeps deployments predictable and codebases
-            maintainable.
+            I combine modern backend technologies with disciplined delivery practices to ship maintainable, high-performance
+            systems.
           </p>
         </div>
-        <div class="stack-grid">
-          <article class="stack-card">
-            <h3>Languages</h3>
-            <ul>
-              <li>PHP (Laravel, CodeIgniter)</li>
-              <li>JavaScript &amp; TypeScript</li>
-              <li>Python scripting</li>
-            </ul>
-          </article>
-          <article class="stack-card">
-            <h3>Data Layer</h3>
-            <ul>
-              <li>MySQL &amp; MariaDB</li>
-              <li>Redis caching</li>
-              <li>ElasticSearch integration</li>
-            </ul>
-          </article>
-          <article class="stack-card">
-            <h3>Infrastructure</h3>
-            <ul>
-              <li>Dockerised workflows</li>
-              <li>CI/CD with GitHub Actions</li>
-              <li>Linux server hardening</li>
-            </ul>
-          </article>
-          <article class="stack-card">
-            <h3>Practices</h3>
-            <ul>
-              <li>Test automation &amp; coverage</li>
-              <li>12-factor app principles</li>
-              <li>Observability dashboards</li>
-            </ul>
-          </article>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Core Skills</h3>
+            <p>
+              PHP, Laravel, CodeIgniter, MySQL, SQL, JavaScript, jQuery, HTML, CSS, Git, API development &amp; integration,
+              Postman, Ubuntu, Spatie, Breeze, XAMPP, Laragon.
+            </p>
+          </div>
+          <div class="skill-matrix">
+            <div class="skill-bar">
+              <span>PHP</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 90%"></span></div>
+              <span class="skill-value">90%</span>
+            </div>
+            <div class="skill-bar">
+              <span>SQL &amp; Databases</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 85%"></span></div>
+              <span class="skill-value">85%</span>
+            </div>
+            <div class="skill-bar">
+              <span>RESTful APIs</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 80%"></span></div>
+              <span class="skill-value">80%</span>
+            </div>
+            <div class="skill-bar">
+              <span>CodeIgniter</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 75%"></span></div>
+              <span class="skill-value">75%</span>
+            </div>
+            <div class="skill-bar">
+              <span>Laravel</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 65%"></span></div>
+              <span class="skill-value">65%</span>
+            </div>
+            <div class="skill-bar">
+              <span>JavaScript</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 60%"></span></div>
+              <span class="skill-value">60%</span>
+            </div>
+            <div class="skill-bar">
+              <span>Version Control (Git)</span>
+              <div class="skill-meter" aria-hidden="true"><span style="--value: 85%"></span></div>
+              <span class="skill-value">85%</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="experience" class="section parallax parallax-tertiary" data-parallax="-0.15">
+      <section id="education" class="section parallax parallax-tertiary" data-parallax="-0.12">
         <div class="section-intro light">
-          <p class="section-eyebrow">Experience</p>
-          <h2 class="section-title">Building secure, scalable backends since 2018.</h2>
+          <p class="section-eyebrow">Education</p>
+          <h2 class="section-title">Academic journey.</h2>
           <p class="section-description">
-            Every engagement is anchored in mentorship, maintainability, and measurable improvements for engineering teams.
+            Foundations in computer science and hardware give me the range to solve complex backend challenges with clarity.
           </p>
         </div>
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-point"></div>
             <div class="timeline-content">
-              <p class="timeline-period">2022 — Present · Veda App</p>
-              <h3>Lead Backend Developer</h3>
-              <p>
-                Architected microservice-ready PHP modules, introduced service contracts, and set up observability stacks that
-                cut incident response time by 40%.
-              </p>
+              <p class="timeline-period">Bachelor of Computer Application (BCA)</p>
+              <h3>Nihareeka College</h3>
+              <p>Currently pursuing BCA with a focus on backend engineering and database design.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-point"></div>
             <div class="timeline-content">
-              <p class="timeline-period">2020 — 2022 · Freelance</p>
-              <h3>Backend Consultant</h3>
-              <p>
-                Delivered API platforms, payment integrations, and analytics services for edtech and fintech startups across
-                Nepal and beyond.
-              </p>
+              <p class="timeline-period">Diploma in Computer Hardware and Networking</p>
+              <h3>The COIT Institute</h3>
+              <p>Certified in August 2019 with hands-on knowledge of infrastructure and system maintenance.</p>
             </div>
           </div>
           <div class="timeline-item">
             <div class="timeline-point"></div>
             <div class="timeline-content">
-              <p class="timeline-period">2018 — 2020 · Early Roles</p>
-              <h3>PHP Developer</h3>
-              <p>
-                Built and maintained CRM modules, automated reporting, and migrated legacy CodeIgniter projects to Laravel with
-                staged rollouts.
-              </p>
+              <p class="timeline-period">Higher Secondary Education in Management</p>
+              <h3>National Examination Board</h3>
+              <p>Strengthened analytical and leadership skills through business and management studies.</p>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-point"></div>
+            <div class="timeline-content">
+              <p class="timeline-period">Secondary Education Examination (SEE)</p>
+              <h3>Biratnagar, Nepal</h3>
+              <p>Laid the groundwork for a technology-focused career and continuous learning mindset.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section">
+        <div class="section-intro">
+          <p class="section-eyebrow">Experience</p>
+          <h2 class="section-title">Professional timeline.</h2>
+          <p class="section-description">
+            I partner with cross-functional teams to ship reliable, observable, and scalable systems from discovery to deployment.
+          </p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <span class="experience-period">June 2025 – Present</span>
+            <h3>Mid Backend Developer · Veda App</h3>
+            <p>
+              Leading backend development for exam result ledger and Connect IPS payment systems, ensuring reliability, security,
+              and scale.
+            </p>
+          </article>
+          <article class="experience-card">
+            <span class="experience-period">December 2023 – June 2025</span>
+            <h3>Junior Backend Developer · Veda App</h3>
+            <p>Developed and maintained Laravel &amp; MySQL services with secure, optimised CodeIgniter extensions.</p>
+          </article>
+          <article class="experience-card">
+            <span class="experience-period">July 2023 – December 2023</span>
+            <h3>Intern Backend Developer · Veda App</h3>
+            <p>Built APIs, optimised databases, and delivered performance improvements during a focused backend internship.</p>
+          </article>
+          <article class="experience-card">
+            <span class="experience-period">January 2023 – July 2023</span>
+            <h3>Junior Web Developer · Infinite IT Solutions</h3>
+            <p>Delivered responsive interfaces, squashed bugs, and supported deployments for client-facing web products.</p>
+          </article>
         </div>
       </section>
 
@@ -360,10 +438,21 @@ steps:
           </p>
         </div>
         <div class="cta-actions">
-          <a class="btn btn-primary" href="mailto:admin@shekharluitel.com.np">Email Shekhar</a>
-          <a class="btn btn-outline" href="https://www.linkedin.com/in/shekharluitel" target="_blank" rel="noopener"
-            >Connect on LinkedIn</a
-          >
+          <div class="contact-card">
+            <h3>Contact Me</h3>
+            <ul>
+              <li><span>Email:</span> <a href="mailto:admin@shekharluitel.com.np">admin@shekharluitel.com.np</a></li>
+              <li><span>Phone:</span> <a href="tel:+9779846684310">+977 9846684310</a></li>
+              <li><span>Location:</span> Biratnagar, Morang, Nepal</li>
+            </ul>
+          </div>
+          <div class="cta-links">
+            <a class="btn btn-primary" href="mailto:admin@shekharluitel.com.np">Email Shekhar</a>
+            <a class="btn btn-outline" href="https://www.linkedin.com/in/shekharluitel" target="_blank" rel="noopener"
+              >Connect on LinkedIn</a
+            >
+            <a class="btn btn-ghost" href="CV/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          </div>
         </div>
       </section>
     </main>
