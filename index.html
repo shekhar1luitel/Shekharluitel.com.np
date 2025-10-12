@@ -181,6 +181,18 @@
         text-align: left;
       }
 
+      .hero-tagline {
+        max-width: 480px;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .hero-cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
       .btn-learn {
         background-color: #007bff;
         border: none;
@@ -193,6 +205,17 @@
 
       .btn-learn:hover {
         background-color: #0056b3;
+      }
+
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        background: transparent;
+        color: #fff;
+      }
+
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
       }
 
       .icon-download4,
@@ -249,6 +272,35 @@
 
       .about-desc p:last-child {
         margin-bottom: 0;
+      }
+
+      .about-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .about-stat-card {
+        background: #f7f9fc;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.05);
+        text-align: left;
+      }
+
+      .about-stat-card h3 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: #007bff;
+      }
+
+      .about-stat-card span {
+        display: block;
+        color: #555;
+        font-size: 15px;
+        letter-spacing: 0.4px;
       }
 
       .services {
@@ -320,6 +372,57 @@
         background-color: #3b5998;
       }
 
+      .tech-stack {
+        margin-top: 35px;
+      }
+
+      .tech-stack-title {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 12px;
+        color: #888;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      .tech-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .tech-badge {
+        padding: 8px 14px;
+        border-radius: 30px;
+        background: linear-gradient(135deg, #eef2ff 0%, #e1e9ff 100%);
+        color: #2f3b59;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        box-shadow: 0 8px 16px rgba(102, 126, 234, 0.18);
+      }
+
+      .contact-intro {
+        background: linear-gradient(135deg, #ffffff 0%, #f3f6ff 100%);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+        margin-bottom: 30px;
+      }
+
+      .contact-intro p {
+        margin-bottom: 15px;
+      }
+
+      .contact-intro ul {
+        padding-left: 18px;
+        margin-bottom: 0;
+      }
+
+      .contact-intro li {
+        margin-bottom: 8px;
+      }
+
       #sidebar .footer ul li a {
         background-color: #e9ecef !important;
         color: #333 !important;
@@ -351,6 +454,19 @@
 
         p {
           font-size: 15px;
+        }
+
+        .hero-cta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .about-stat-card {
+          text-align: center;
+        }
+
+        .contact-intro {
+          padding: 20px;
         }
       }
       ::-webkit-scrollbar {
@@ -522,7 +638,12 @@
                         <div class="slider-text-inner js-fullheight">
                           <div class="desc">
                             <h1>Hi! <br />I'm Shekhar Luitel</h1>
-                            <p>
+                            <p class="hero-tagline">
+                              I turn complex business rules into reliable
+                              backend systems, from high-performing APIs to
+                              streamlined data flows.
+                            </p>
+                            <div class="hero-cta">
                               <a
                                 class="venobox btn btn-primary btn-learn"
                                 data-vbtype="iframe"
@@ -531,7 +652,10 @@
                               >
                                 View CV <i class="icon-download4"></i>
                               </a>
-                            </p>
+                              <a href="#contact" class="btn btn-learn btn-outline">
+                                Let's Talk <i class="icon-mail"></i>
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -548,11 +672,19 @@
                         <div class="slider-text-inner">
                           <div class="desc">
                             <h1>I am <br />a Backend Developer</h1>
-                            <p>
+                            <p class="hero-tagline">
+                              Currently building student information systems at
+                              Veda App and helping teams ship resilient code
+                              faster.
+                            </p>
+                            <div class="hero-cta">
                               <a href="#about" class="btn btn-primary btn-learn"
                                 >View Portfolio <i class="icon-briefcase3"></i
                               ></a>
-                            </p>
+                              <a href="mailto:admin@shekharluitel.com.np" class="btn btn-learn btn-outline"
+                                >Email Me <i class="icon-paperplane"></i
+                              ></a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -603,6 +735,24 @@
                           discuss how I can contribute to your next project's
                           success.
                         </p>
+                        <div class="about-stats">
+                          <div class="about-stat-card">
+                            <h3>4+</h3>
+                            <span>Years crafting production-ready backends</span>
+                          </div>
+                          <div class="about-stat-card">
+                            <h3>30+</h3>
+                            <span>Successful launches with cross-functional teams</span>
+                          </div>
+                          <div class="about-stat-card">
+                            <h3>99.9%</h3>
+                            <span>Uptime maintained across managed platforms</span>
+                          </div>
+                          <div class="about-stat-card">
+                            <h3>24h</h3>
+                            <span>Average turnaround for critical production fixes</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -690,6 +840,36 @@
                     </div>
                   </div>
                 </div>
+                <div class="col-md-6 text-center animate-box">
+                  <div class="services color-2">
+                    <span class="icon">
+                      <i class="icon-chart"></i>
+                    </span>
+                    <div class="desc">
+                      <h3>Performance Engineering</h3>
+                      <p>
+                        Profiling bottlenecks, tuning queries, and implementing
+                        caching strategies that keep mission-critical features
+                        fast.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 text-center animate-box">
+                  <div class="services color-3">
+                    <span class="icon">
+                      <i class="icon-shield"></i>
+                    </span>
+                    <div class="desc">
+                      <h3>DevOps &amp; Reliability</h3>
+                      <p>
+                        Automating deployments, monitoring uptime, and
+                        hardening infrastructure to deliver dependable
+                        experiences.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
@@ -718,6 +898,18 @@
                       high-performance solutions that seamlessly integrate with
                       front-end interfaces for smooth user experiences.
                     </p>
+                    <div class="tech-stack">
+                      <span class="tech-stack-title">Core Tech Stack</span>
+                      <div class="tech-badges">
+                        <span class="tech-badge">PHP 8+</span>
+                        <span class="tech-badge">Laravel &amp; CodeIgniter</span>
+                        <span class="tech-badge">REST &amp; GraphQL APIs</span>
+                        <span class="tech-badge">MySQL &amp; PostgreSQL</span>
+                        <span class="tech-badge">Redis &amp; Queues</span>
+                        <span class="tech-badge">Dockerized Deployments</span>
+                        <span class="tech-badge">CI/CD Automation</span>
+                      </div>
+                    </div>
                   </div>
                   <div
                     class="col-md-6 animate-box"
@@ -1309,6 +1501,23 @@
                 </div>
               </div>
               <div class="row">
+                <div
+                  class="col-md-7 animate-box"
+                  data-animate-effect="fadeInRight"
+                >
+                  <div class="contact-intro">
+                    <p>
+                      Ready to collaborate on your next platform, API, or
+                      systems integration? I love partnering with teams who
+                      value clean code and measurable outcomes.
+                    </p>
+                    <ul>
+                      <li>Project kickoffs and technical discovery workshops</li>
+                      <li>Backend audits with actionable recommendations</li>
+                      <li>Long-term retainers for mission-critical support</li>
+                    </ul>
+                  </div>
+                </div>
                 <div class="col-md-5">
                   <!-- Email Section -->
                   <div
