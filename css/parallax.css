@@ -261,22 +261,38 @@ main {
   padding: clamp(7rem, 12vw, 12rem) 7vw clamp(6rem, 10vw, 9rem);
   position: relative;
   overflow: hidden;
-  background-image: linear-gradient(135deg, rgba(4, 7, 16, 0.95) 0%, rgba(4, 6, 18, 0.88) 45%, rgba(8, 13, 34, 0.7) 100%),
-    url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
+  background:
+    radial-gradient(140% 140% at 12% 8%, rgba(91, 141, 246, 0.24), transparent 55%),
+    radial-gradient(120% 120% at 82% 6%, rgba(142, 123, 255, 0.26), transparent 60%),
+    linear-gradient(160deg, rgba(4, 7, 16, 0.95) 0%, rgba(6, 10, 24, 0.92) 42%, rgba(3, 6, 18, 0.88) 100%);
   background-position: center calc(50% + var(--parallax-offset, 0px));
-  background-attachment: fixed;
 }
 
+.hero::before,
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 15% 20%, rgba(91, 141, 246, 0.45), transparent 50%),
-    radial-gradient(circle at 90% 10%, rgba(128, 127, 255, 0.4), transparent 55%);
-  opacity: 0.65;
-  z-index: -1;
   pointer-events: none;
+  z-index: -1;
+}
+
+.hero::before {
+  background: radial-gradient(60% 60% at 50% 38%, rgba(64, 88, 255, 0.3), transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0.75;
+}
+
+.hero::after {
+  background: repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.04) 0px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px,
+      transparent 16px
+    ),
+    radial-gradient(80% 60% at 20% 82%, rgba(98, 142, 255, 0.2), transparent 65%);
+  opacity: 0.35;
 }
 
 .hero-inner {
@@ -400,138 +416,67 @@ main {
   position: relative;
   display: grid;
   place-items: center;
+  width: min(520px, 90vw);
 }
 
-.model-stage {
+.hero-canvas-wrapper {
   position: relative;
-  width: min(340px, 70vw);
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  perspective: 1200px;
-}
-
-.model-base {
-  position: absolute;
-  inset: auto 8%;
-  bottom: 8%;
-  display: grid;
-  place-items: center;
-  gap: 0.7rem;
-}
-
-.model-ring {
-  display: block;
   width: 100%;
-  border-radius: 50%;
-  border: 1px solid rgba(110, 150, 255, 0.25);
-  box-shadow: 0 0 28px rgba(104, 150, 255, 0.35);
-  animation: pulse 6s ease-in-out infinite;
-}
-
-.model-ring:nth-child(2) {
-  width: 80%;
-  animation-delay: -1.8s;
-}
-
-.model-ring:nth-child(3) {
-  width: 60%;
-  animation-delay: -3.2s;
-}
-
-.model-stack {
-  position: relative;
+  aspect-ratio: 1;
+  border-radius: 32px;
+  background: radial-gradient(120% 120% at 30% 20%, rgba(91, 141, 246, 0.22), transparent 60%),
+    radial-gradient(120% 120% at 70% 80%, rgba(97, 220, 255, 0.18), transparent 55%),
+    rgba(8, 12, 28, 0.85);
+  box-shadow: 0 38px 60px rgba(6, 10, 28, 0.65);
+  border: 1px solid rgba(104, 122, 214, 0.35);
+  overflow: hidden;
   transform-style: preserve-3d;
-  animation: stack-tilt 14s ease-in-out infinite;
 }
 
-.model-layer {
-  width: 180px;
-  height: 32px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(58, 92, 180, 0.9), rgba(40, 68, 148, 0.75));
-  border: 1px solid rgba(130, 160, 250, 0.45);
-  box-shadow: 0 16px 30px rgba(8, 12, 30, 0.45);
-  transform-origin: center;
-  margin: 12px 0;
+#hero-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  mix-blend-mode: screen;
 }
 
-.model-layer:nth-child(1) {
-  transform: translateZ(-40px);
+.hero-canvas-glow {
+  position: absolute;
+  inset: auto -20% -16% -20%;
+  height: 45%;
+  background: radial-gradient(60% 70% at 50% 0%, rgba(98, 142, 255, 0.65), transparent 70%);
+  filter: blur(60px);
   opacity: 0.75;
+  pointer-events: none;
+  animation: pulseGlow 14s ease-in-out infinite;
 }
 
-.model-layer:nth-child(2) {
-  transform: translateZ(-10px);
-  opacity: 0.85;
-}
-
-.model-layer:nth-child(3) {
-  transform: translateZ(20px);
-}
-
-.model-layer:nth-child(4) {
-  transform: translateZ(50px);
-  opacity: 0.95;
-}
-
-.model-core {
+.hero-visual .floating-card {
   position: absolute;
-  inset: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 120px;
-  border-radius: 24px;
-  background: var(--accent-gradient);
-  display: grid;
-  place-items: center;
-  font-family: 'Fira Code', monospace;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  box-shadow: 0 18px 40px rgba(12, 18, 46, 0.6);
-  color: white;
-}
-
-.model-orbit {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-  animation: orbit 10s linear infinite;
-}
-
-.model-node {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: rgba(98, 142, 255, 0.9);
-  box-shadow: 0 0 24px rgba(98, 142, 255, 0.6);
-}
-
-.model-node:nth-child(1) {
-  transform: rotateY(35deg) translateZ(140px) rotateX(25deg);
-}
-
-.model-node:nth-child(2) {
-  transform: rotateY(-45deg) translateZ(160px) rotateX(-10deg);
-}
-
-.model-node:nth-child(3) {
-  transform: rotateY(120deg) translateZ(150px) rotateX(15deg);
-}
-
-.floating-card {
-  margin-top: 2.5rem;
-  width: min(360px, 100%);
+  right: -6%;
+  bottom: -6%;
+  width: min(260px, 70%);
+  margin: 0;
   border-radius: 18px;
-  background: rgba(4, 6, 16, 0.78);
-  border: 1px solid rgba(104, 112, 142, 0.25);
-  box-shadow: 0 28px 45px rgba(6, 10, 28, 0.65);
+  background: rgba(4, 6, 16, 0.85);
+  border: 1px solid rgba(104, 112, 142, 0.35);
+  box-shadow: 0 22px 50px rgba(6, 10, 28, 0.55);
   overflow: hidden;
   transform: translateY(0);
-  animation: float 8s ease-in-out infinite;
+  animation: float 9s ease-in-out infinite;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-6%);
+  }
 }
 
 .floating-card-header {
@@ -567,34 +512,6 @@ main {
   }
   50% {
     transform: translateY(-18px);
-  }
-}
-
-@keyframes orbit {
-  to {
-    transform: rotateY(360deg);
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 0.4;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.08);
-  }
-}
-
-@keyframes stack-tilt {
-  0%,
-  100% {
-    transform: rotateX(18deg) rotateY(-18deg);
-  }
-  50% {
-    transform: rotateX(-12deg) rotateY(22deg);
   }
 }
 
@@ -1031,9 +948,11 @@ main {
     margin-top: 2rem;
   }
 
-  .floating-card {
-    margin-left: auto;
-    margin-right: auto;
+  .hero-visual .floating-card {
+    position: relative;
+    inset: auto;
+    width: min(320px, 100%);
+    margin: 2rem auto 0;
   }
 
   .parallax {
