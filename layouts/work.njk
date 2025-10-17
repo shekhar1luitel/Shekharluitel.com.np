@@ -1,0 +1,31 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<section>
+  <header>
+    <h1>{{ title }}</h1>
+    {% if description %}<p tone="muted">{{ description }}</p>{% endif %}
+  </header>
+  <div data-project-grid>
+    {% for project in collections.projects %}
+      <project-card elev="1">
+        <h2><a href="{{ project.url }}">{{ project.data.title }}</a></h2>
+        <p>{{ project.data.summary }}</p>
+        {% if project.data.tech %}
+        <tag-list>
+          {% for tech in project.data.tech %}
+            <span tone="muted">{{ tech }}</span>
+          {% endfor %}
+        </tag-list>
+        {% endif %}
+        <p data-meta>
+          {% set linkCount = 0 %}
+          {% if project.data.links.live %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.live }}">Live</a>{% endif %}
+          {% if project.data.links.repo %}{% if linkCount > 0 %} · {% endif %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.repo }}">Code</a>{% endif %}
+          {% if project.data.links.caseStudy %} · <a href="{{ project.url }}">Case study</a>{% endif %}
+        </p>
+      </project-card>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

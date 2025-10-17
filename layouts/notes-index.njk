@@ -1,0 +1,61 @@
+{% extends "base.njk" %}
+{% set tagOptions = collections.notes | uniqueTags %}
+
+{% block content %}
+<section>
+  <header>
+    <h1>{{ title }}</h1>
+    {% if description %}<p tone="muted">{{ description }}</p>{% endif %}
+  </header>
+  <form data-tag-filter aria-label="Filter notes by tag">
+    <label for="tag-select">Filter by tag</label>
+    <select id="tag-select" name="tag" data-tag-select>
+      <option value="all">All topics</option>
+      {% for tag in tagOptions %}
+        <option value="{{ tag }}">{{ tag | formatTag }}</option>
+      {% endfor %}
+    </select>
+  </form>
+  <ul data-note-list>
+    {% for note in collections.notes %}
+      <li data-tags="{% if note.data.tags %}{{ note.data.tags | join(' ') }}{% endif %}">
+        <article>
+          <header>
+            <h2><a href="{{ note.url }}">{{ note.data.title }}</a></h2>
+            <p data-meta>{{ note.date | readableDate }}</p>
+          </header>
+          <p tone="muted">{{ note.data.excerpt }}</p>
+          {% if note.data.tags %}
+          <tag-list>
+            {% for tag in note.data.tags %}
+              <span tone="muted">{{ tag | formatTag }}</span>
+            {% endfor %}
+          </tag-list>
+          {% endif %}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script type="module">
+    const select = document.querySelector('[data-tag-select]');
+    const items = Array.from(document.querySelectorAll('[data-note-list] > li'));
+    if (select && items.length) {
+      select.addEventListener('change', () => {
+        const value = select.value;
+        items.forEach((item) => {
+          if (value === 'all') {
+            item.hidden = false;
+            return;
+          }
+          const tags = (item.dataset.tags || '').split(/\s+/).filter(Boolean);
+          item.hidden = !tags.includes(value);
+        });
+      });
+    }
+  </script>
+{% endblock %}

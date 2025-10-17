@@ -1,0 +1,56 @@
+{% extends "base.njk" %}
+{% set nav = namespace(newer = null, older = null) %}
+{% for item in collections.notes %}
+  {% if item.url == page.url %}
+    {% if not loop.first %}{% set nav.newer = collections.notes[loop.index0 - 1] %}{% endif %}
+    {% if not loop.last %}{% set nav.older = collections.notes[loop.index0 + 1] %}{% endif %}
+  {% endif %}
+{% endfor %}
+
+{% block headExtra %}
+  {{ super() }}
+  <meta property="article:published_time" content="{{ page.date | dateToRfc3339 }}">
+  {% if updated %}<meta property="article:modified_time" content="{{ updated | dateToRfc3339 }}">{% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title | escape }}",
+    "datePublished": "{{ page.date | dateToRfc3339 }}",
+    {% if updated %}"dateModified": "{{ updated | dateToRfc3339 }}",
+    {% endif %}"description": "{{ excerpt | escape }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.name }}"
+    },
+    "mainEntityOfPage": "{{ site.url }}{{ page.url }}"
+  }
+  </script>
+{% endblock %}
+
+{% block content %}
+<article data-prose>
+  <header>
+    <h1>{{ title }}</h1>
+    <p data-meta>{{ page.date | readableDate }}</p>
+    {% if tags %}
+    <tag-list>
+      {% for tag in tags %}
+        <span tone="muted">{{ tag | formatTag }}</span>
+      {% endfor %}
+    </tag-list>
+    {% endif %}
+  </header>
+  {{ content | safe }}
+  <nav data-pagination aria-label="More notes">
+    <ul>
+      {% if nav.older %}
+        <li><a href="{{ nav.older.url }}">← {{ nav.older.data.title }}</a></li>
+      {% endif %}
+      {% if nav.newer %}
+        <li><a href="{{ nav.newer.url }}">{{ nav.newer.data.title }} →</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</article>
+{% endblock %}

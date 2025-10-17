@@ -1,0 +1,80 @@
+{% extends "base.njk" %}
+
+{% block headExtra %}
+  {{ super() }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "jobTitle": "Software Engineer",
+    "description": "{{ site.description }}",
+    "sameAs": [
+      "{{ site.author.social.github }}",
+      "{{ site.author.social.linkedin }}",
+      "{{ site.author.social.x }}",
+      "{{ site.author.social.mastodon }}"
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block content %}
+<section data-hero>
+  <note-pad>
+    <h1>Namaste, I'm {{ site.name }}.</h1>
+    <p>Builder of education-tech tools connecting students, educators, and institutions with resilient software.</p>
+    <p>I work across Python/FastAPI, SQLAlchemy, Postgres, PHP (CodeIgniter & Laravel), and emerging AI copilots.</p>
+    <p>
+      <a href="/work/" variant="solid">Explore work</a>
+      <a href="/notes/" variant="ghost">Read notes</a>
+    </p>
+  </note-pad>
+</section>
+<section>
+  <header>
+    <h2>Featured projects</h2>
+    <p tone="muted">A quick tour of platforms and integrations I've shipped recently.</p>
+  </header>
+  <div data-project-strip>
+    {% for project in collections.featuredProjects %}
+      <project-card elev="1">
+        <h3><a href="{{ project.url }}">{{ project.data.title }}</a></h3>
+        <p>{{ project.data.summary }}</p>
+        {% if project.data.tech %}
+        <tag-list>
+          {% for tech in project.data.tech %}
+            <span tone="muted">{{ tech }}</span>
+          {% endfor %}
+        </tag-list>
+        {% endif %}
+        <p>
+          {% set linkCount = 0 %}
+          {% if project.data.links.live %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.live }}">Live</a>{% endif %}
+          {% if project.data.links.repo %}{% if linkCount > 0 %} · {% endif %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.repo }}">Code</a>{% endif %}
+        </p>
+      </project-card>
+    {% endfor %}
+  </div>
+  <p tone="muted"><a href="/work/">View all projects →</a></p>
+</section>
+<section>
+  <header>
+    <h2>Latest notes</h2>
+    <p tone="muted">Fresh thinking on classless CSS, backend craftsmanship, and learning logs.</p>
+  </header>
+  <ul data-note-list>
+    {% for note in collections.recentNotes %}
+      <li>
+        <article>
+          <h3><a href="{{ note.url }}">{{ note.data.title }}</a></h3>
+          <p tone="muted">{{ note.data.excerpt }}</p>
+          <p data-meta>{{ note.date | readableDate }}</p>
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+  <p tone="muted"><a href="/notes/">Browse all notes →</a></p>
+</section>
+{% endblock %}
