@@ -1,0 +1,26 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<article data-prose>
+  <header>
+    <h1>{{ title }}</h1>
+    {% if summary %}<p tone="muted">{{ summary }}</p>{% endif %}
+    {% if tech %}
+    <tag-list>
+      {% for item in tech %}
+        <span tone="muted">{{ item }}</span>
+      {% endfor %}
+    </tag-list>
+    {% endif %}
+    {% if links %}
+    <p data-meta>
+      {% set linkCount = 0 %}
+      {% if links.live %}{% set linkCount = linkCount + 1 %}<a href="{{ links.live }}">Launch project</a>{% endif %}
+      {% if links.repo %}{% if linkCount > 0 %} · {% endif %}<a href="{{ links.repo }}">View source</a>{% endif %}
+    </p>
+    {% endif %}
+  </header>
+  {{ content | safe }}
+  <p tone="muted"><a href="/work/">← Back to all projects</a></p>
+</article>
+{% endblock %}

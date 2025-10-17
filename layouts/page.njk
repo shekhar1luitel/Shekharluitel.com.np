@@ -1,0 +1,27 @@
+{% extends "base.njk" %}
+
+{% block headExtra %}
+  {{ super() }}
+  {% if page.url == "/about/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "knowsAbout": ["Python", "FastAPI", "SQLAlchemy", "Education technology"],
+    "alumniOf": "Loksewa Quiz Hub"
+  }
+  </script>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<article data-prose>
+  <header>
+    <h1>{{ title }}</h1>
+    {% if subtitle %}<p tone="muted">{{ subtitle }}</p>{% endif %}
+  </header>
+  {{ content | safe }}
+</article>
+{% endblock %}

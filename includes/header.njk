@@ -1,0 +1,23 @@
+<site-header role="banner">
+  <div data-brand>
+    <a href="/" rel="home">{{ site.name }}</a>
+    <p tone="muted">Builder of education-tech tools in Nepal.</p>
+  </div>
+  <nav aria-label="Primary" role="navigation">
+    <ul>
+      {% for item in navigation %}
+        <li>
+          <a href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <form data-theme-picker>
+    <label for="theme-select">Theme</label>
+    <select id="theme-select" name="theme-select" data-theme-select>
+      {% for option in site.themeOptions %}
+        <option value="{{ option }}">{{ option | capitalize }}</option>
+      {% endfor %}
+    </select>
+  </form>
+</site-header>

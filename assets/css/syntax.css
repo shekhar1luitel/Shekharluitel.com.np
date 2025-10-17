@@ -1,0 +1,44 @@
+/* Syntax highlighting overrides */
+pre code {
+  display: block;
+  overflow-x: auto;
+}
+
+.hljs {
+  background: transparent;
+  color: inherit;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: color-mix(in srgb, var(--text-soft) 80%, transparent);
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: var(--accent);
+}
+
+.hljs-string,
+.hljs-title,
+.hljs-section,
+.hljs-type {
+  color: color-mix(in srgb, var(--accent) 80%, var(--text) 20%);
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet {
+  color: color-mix(in srgb, var(--accent) 65%, var(--text) 35%);
+}
+
+.hljs-addition {
+  background: rgba(40, 167, 69, 0.15);
+}
+
+.hljs-deletion {
+  background: rgba(220, 53, 69, 0.15);
+}

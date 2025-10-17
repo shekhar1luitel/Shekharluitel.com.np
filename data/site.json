@@ -1,0 +1,18 @@
+{
+  "name": "Shekhar Luitel",
+  "url": "https://shekharluitel.com.np",
+  "language": "en",
+  "title": "Shekhar Luitel · Builder of education-tech tools",
+  "description": "Portfolio and writing of Shekhar Luitel — builder of education-tech tools blending Python, FastAPI, and thoughtful UX.",
+  "author": {
+    "name": "Shekhar Luitel",
+    "email": "hello@shekharluitel.com.np",
+    "social": {
+      "github": "https://github.com/shekharluitel",
+      "linkedin": "https://www.linkedin.com/in/shekharluitel",
+      "x": "https://x.com/shekharluitel",
+      "mastodon": "https://hachyderm.io/@shekharluitel"
+    }
+  },
+  "themeOptions": ["system", "light", "dark", "berry", "blueprint"]
+}

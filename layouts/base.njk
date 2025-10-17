@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="{{ site.language }}" data-theme="system">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {{ site.name }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <meta name="generator" content="Eleventy">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="alternate" type="application/atom+xml" title="Notes feed" href="/feed.xml">
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:type" content="{% if ogType %}{{ ogType }}{% elseif page.url startsWith '/notes/' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/img/social-card.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:creator" content="@shekharluitel">
+  <meta name="twitter:title" content="{{ title or site.title }}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}/img/social-card.svg">
+  <script>
+    (function () {
+      if (typeof window === 'undefined') return;
+      const storedTheme = window.localStorage && window.localStorage.getItem('site-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = storedTheme && storedTheme !== 'system' ? storedTheme : (prefersDark ? 'dark' : 'light');
+      document.documentElement.dataset.theme = storedTheme || 'system';
+      document.documentElement.dataset.resolvedTheme = initialTheme;
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light dark;
+    }
+    html {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fdfdfd;
+      color: #1c1c1c;
+      min-height: 100%;
+    }
+    @media (prefers-color-scheme: dark) {
+      html {
+        background: #0f1117;
+        color: #f6f7fb;
+      }
+    }
+    body {
+      margin: 0;
+    }
+    [data-skip-link] {
+      position: absolute;
+      inset-block-start: 0.5rem;
+      inset-inline-start: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: CanvasText;
+      color: Canvas;
+      clip-path: inset(0 round 0.5rem);
+      transform: translateY(-150%);
+      transition: transform 0.2s ease;
+      z-index: 10;
+    }
+    [data-skip-link]:focus {
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="preload" href="/css/base.css" as="style">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/themes.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  {% block headExtra %}{% endblock %}
+</head>
+<body>
+  <a href="#main" data-skip-link>Skip to content</a>
+  {% include "header.njk" %}
+  <main id="main" tabindex="-1">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+  {% include "footer.njk" %}
+  <script src="/js/theme.js" type="module" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

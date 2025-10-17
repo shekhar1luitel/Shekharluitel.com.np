@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Shekhar Luitel portfolio card</title>
+  <desc id="desc">A gradient card introducing Shekhar Luitel as a builder of education-tech tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#11131b" />
+      <stop offset="100%" stop-color="#1f2850" />
+    </linearGradient>
+  </defs>
+  <rect fill="url(#bg)" width="1200" height="630" rx="48" />
+  <rect x="80" y="80" width="1040" height="470" rx="36" fill="none" stroke="#2f6fed" stroke-width="6" />
+  <text x="600" y="300" fill="#ffffff" font-size="88" font-family="'Segoe UI', 'Inter', sans-serif" text-anchor="middle" font-weight="700">Shekhar Luitel</text>
+  <text x="600" y="380" fill="#c4247a" font-size="40" font-family="'Segoe UI', 'Inter', sans-serif" text-anchor="middle">Builder of education-tech tools</text>
+  <line x1="80" y1="520" x2="1120" y2="520" stroke="#c4247a" stroke-width="6" stroke-linecap="round" />
+</svg>
