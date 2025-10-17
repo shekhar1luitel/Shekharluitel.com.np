@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Shekhar Luitel - Backend Developer Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#101010" />
     <link rel="manifest" href="/manifest.json" />
     <link
       rel="shortcut icon"
@@ -30,13 +30,21 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="ne_NP" />
-    <meta property="og:title" content="Shekhar Luitel - Backend Developer Portfolio" />
     <meta
       property="og:description"
       content="Shekhar Luitel is an experienced backend developer specializing in PHP and CodeIgniter, creating powerful, efficient web applications. Explore his portfolio to see examples of his work."
     />
     <meta property="og:url" content="https://shekharluitel.com.np" />
     <meta property="og:site_name" content="Shekhar Luitel - Backend Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Shekhar Luitel is an experienced backend developer specializing in PHP and CodeIgniter, creating powerful, efficient web applications. Explore his portfolio to see examples of his work."
+    />
+    <meta property="og:url" content="https://shekharluitel.com.np" />
+    <meta
+      property="og:site_name"
+      content="Shekhar Luitel - Backend Developer Portfolio"
+    />
     <meta
       property="og:image"
       content="https://shekharluitel.com.np/images/profile.jpg"
@@ -98,70 +106,90 @@
     </script>
   </head>
   <body>
-    <portfolio-page data-theme="midnight" id="top">
-      <site-header data-kind="primary">
-        <nav aria-label="Primary">
-          <a data-role="brand" href="#top">Shekhar Luitel</a>
+    <div class="page" id="top">
+      <aside class="sidebar" data-state="closed">
+        <div class="sidebar__brand">
+          <a class="brand" href="#top" aria-label="Shekhar Luitel home">
+            <span>Shekhar</span>
+            <span>Luitel</span>
+          </a>
           <button
+            class="nav-toggle"
             type="button"
-            data-role="toggle"
             aria-expanded="false"
             aria-controls="primary-navigation"
           >
             Menu
           </button>
-          <menu id="primary-navigation" data-state="closed">
-            <a href="#home" data-nav="home">Home</a>
-            <a href="#about" data-nav="about">About</a>
-            <a href="#services" data-nav="services">Services</a>
-            <a href="#skills" data-nav="skills">Skills</a>
-            <a href="#education" data-nav="education">Education</a>
-            <a href="#experience" data-nav="experience">Experience</a>
-            <a href="#projects" data-nav="projects">Projects</a>
-            <a href="#contact" data-nav="contact">Contact</a>
-          </menu>
+        </div>
+        <nav id="primary-navigation" aria-label="Primary" class="sidebar__nav">
+          <a href="#home" data-nav="home">Home</a>
+          <a href="#about" data-nav="about">About</a>
+          <a href="#services" data-nav="services">Services</a>
+          <a href="#skills" data-nav="skills">Skills</a>
+          <a href="#education" data-nav="education">Education</a>
+          <a href="#experience" data-nav="experience">Experience</a>
+          <a href="#projects" data-nav="projects">Projects</a>
+          <a href="#contact" data-nav="contact">Contact</a>
         </nav>
-      </site-header>
+        <div class="sidebar__footer">
+          <p>Based in Biratnagar, Nepal.</p>
+          <div class="sidebar__social">
+            <a
+              href="https://www.linkedin.com/in/shekharluitel"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a
+              href="https://twitter.com/shekharluitel"
+              target="_blank"
+              rel="noopener"
+              >Twitter</a
+            >
+          </div>
+        </div>
+      </aside>
 
       <main>
-        <hero-section id="home" data-section="home">
-          <picture>
-            <img
-              src="images/profile.jpg"
-              alt="Portrait of Shekhar Luitel"
-              width="320"
-              height="320"
-              loading="lazy"
-            />
-          </picture>
-          <article>
-            <p data-role="subtitle">Backend Developer</p>
+        <section id="home" class="section hero" data-section>
+          <div class="hero__content">
+            <p class="eyebrow">Backend Developer</p>
             <h1>Hi, I'm Shekhar Luitel</h1>
             <p>
               Backend developer from Biratnagar, Nepal with a focus on building
               reliable, scalable, and secure web applications powered by PHP,
               CodeIgniter, Laravel, and well-architected databases.
             </p>
-            <div data-actions>
+            <div class="hero__actions">
               <a
-                data-variant="primary"
+                class="button button--primary"
                 href="CV/resume.pdf"
                 target="_blank"
                 rel="noopener"
+                >View CV</a
               >
-                View CV
-              </a>
-              <a data-variant="secondary" href="#projects">View Portfolio</a>
+              <a class="button" href="#projects">View Portfolio</a>
             </div>
-          </article>
-        </hero-section>
+          </div>
+          <figure class="hero__portrait">
+            <img
+              src="images/profile.jpg"
+              alt="Portrait of Shekhar Luitel"
+              width="360"
+              height="360"
+              loading="lazy"
+            />
+            <figcaption>Mid Backend Developer at Veda App</figcaption>
+          </figure>
+        </section>
 
-        <section id="about" data-section="about">
-          <header>
+        <section id="about" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">About</p>
             <h2>Who Am I?</h2>
-            <p>About Me</p>
           </header>
-          <about-panel>
+          <div class="section__body">
             <p>
               <strong>Hello, I'm Shekhar Luitel</strong>, a passionate and
               detail-oriented backend developer with a strong foundation in
@@ -186,112 +214,119 @@
               to join your team, I would love to discuss how I can contribute to
               your next project's success.
             </p>
-          </about-panel>
+          </div>
         </section>
 
-        <section id="services" data-section="services">
-          <header>
+        <section id="services" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Services</p>
             <h2>Here are some of my expertise</h2>
-            <p>What I do?</p>
           </header>
-          <service-grid>
-            <service-card data-icon="database">
-              <strong>Database Management</strong>
-              <span>
+          <div class="grid grid--services">
+            <article class="tile">
+              <h3>Database Management</h3>
+              <p>
                 Designing and optimizing relational databases, ensuring data
                 integrity and high-performance for web applications.
-              </span>
-            </service-card>
-            <service-card data-icon="api">
-              <strong>API Development</strong>
-              <span>
+              </p>
+            </article>
+            <article class="tile">
+              <h3>API Development</h3>
+              <p>
                 Building robust, scalable, and secure RESTful APIs to ensure
                 seamless communication between systems.
-              </span>
-            </service-card>
-            <service-card data-icon="server">
-              <strong>Server-Side Scripting</strong>
-              <span>
+              </p>
+            </article>
+            <article class="tile">
+              <h3>Server-Side Scripting</h3>
+              <p>
                 Developing maintainable server-side logic that powers
                 data-driven features and reliable application flows.
-              </span>
-            </service-card>
-            <service-card data-icon="optimize">
-              <strong>Database Optimization</strong>
-              <span>
+              </p>
+            </article>
+            <article class="tile">
+              <h3>Database Optimization</h3>
+              <p>
                 Fine-tuning queries, indexes, and data models to keep
                 applications responsive under heavy usage.
-              </span>
-            </service-card>
-          </service-grid>
+              </p>
+            </article>
+          </div>
         </section>
 
-        <section id="skills" data-section="skills">
-          <header>
-            <h2>My Skills</h2>
-            <p>My Specialty</p>
+        <section id="skills" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Skills</p>
+            <h2>My Specialty</h2>
           </header>
-          <skill-gallery>
+          <div class="section__body">
             <p>
               I specialize in building efficient, scalable, and secure web
               applications. With expertise in modern backend technologies, I am
               dedicated to delivering high-performance solutions that seamlessly
               integrate with front-end interfaces for smooth user experiences.
             </p>
-            <skill-strip>
-              <skill-meter data-skill="PHP">
-                <label for="skill-php">PHP</label>
-                <meter id="skill-php" min="0" max="100" value="90">
-                  90 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="SQL &amp; Databases">
-                <label for="skill-sql">SQL &amp; Databases</label>
-                <meter id="skill-sql" min="0" max="100" value="85">
-                  85 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="RESTful APIs">
-                <label for="skill-apis">RESTful APIs</label>
-                <meter id="skill-apis" min="0" max="100" value="80">
-                  80 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="CodeIgniter">
-                <label for="skill-codeigniter">CodeIgniter</label>
-                <meter id="skill-codeigniter" min="0" max="100" value="75">
-                  75 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="Laravel">
-                <label for="skill-laravel">Laravel</label>
-                <meter id="skill-laravel" min="0" max="100" value="65">
-                  65 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="JavaScript">
-                <label for="skill-javascript">JavaScript</label>
-                <meter id="skill-javascript" min="0" max="100" value="60">
-                  60 out of 100
-                </meter>
-              </skill-meter>
-              <skill-meter data-skill="Version Control (Git)">
-                <label for="skill-git">Version Control (Git)</label>
-                <meter id="skill-git" min="0" max="100" value="85">
-                  85 out of 100
-                </meter>
-              </skill-meter>
-            </skill-strip>
-          </skill-gallery>
+            <div class="skill-grid">
+              <div class="skill">
+                <div class="skill__label">
+                  <span>PHP</span>
+                  <span>90%</span>
+                </div>
+                <meter min="0" max="100" value="90">90 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>SQL &amp; Databases</span>
+                  <span>85%</span>
+                </div>
+                <meter min="0" max="100" value="85">85 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>RESTful APIs</span>
+                  <span>80%</span>
+                </div>
+                <meter min="0" max="100" value="80">80 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>CodeIgniter</span>
+                  <span>75%</span>
+                </div>
+                <meter min="0" max="100" value="75">75 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>Laravel</span>
+                  <span>65%</span>
+                </div>
+                <meter min="0" max="100" value="65">65 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>JavaScript</span>
+                  <span>60%</span>
+                </div>
+                <meter min="0" max="100" value="60">60 out of 100</meter>
+              </div>
+              <div class="skill">
+                <div class="skill__label">
+                  <span>Version Control (Git)</span>
+                  <span>85%</span>
+                </div>
+                <meter min="0" max="100" value="85">85 out of 100</meter>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="education" data-section="education">
-          <header>
+        <section id="education" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Education</p>
             <h2>My Academic Journey</h2>
-            <p>Education</p>
           </header>
-          <education-panel>
-            <details>
+          <div class="section__body stack">
+            <details open>
               <summary>Bachelor of Computer Application (BCA)</summary>
               <p>
                 A comprehensive undergraduate degree focused on building a
@@ -301,7 +336,12 @@
               <ul>
                 <li>
                   Currently pursuing at
-                  <a href="http://nihareekacollege.edu.np/" target="_blank" rel="noopener">Nihareeka College</a>
+                  <a
+                    href="http://nihareekacollege.edu.np/"
+                    target="_blank"
+                    rel="noopener"
+                    >Nihareeka College</a
+                  >
                   (5th semester, as of 2022).
                 </li>
               </ul>
@@ -327,7 +367,12 @@
               <ul>
                 <li>
                   Graduated from
-                  <a href="https://lordbuddha.edu.np/" target="_blank" rel="noopener">Lord Buddha School</a>
+                  <a
+                    href="https://lordbuddha.edu.np/"
+                    target="_blank"
+                    rel="noopener"
+                    >Lord Buddha School</a
+                  >
                   in 2021 with a CGPA of 3.35.
                 </li>
               </ul>
@@ -341,21 +386,26 @@
               <ul>
                 <li>
                   Graduated from
-                  <a href="https://lordbuddha.edu.np/" target="_blank" rel="noopener">Lord Buddha School</a>
+                  <a
+                    href="https://lordbuddha.edu.np/"
+                    target="_blank"
+                    rel="noopener"
+                    >Lord Buddha School</a
+                  >
                   in 2019 with a GPA of 3.60.
                 </li>
               </ul>
             </details>
-          </education-panel>
+          </div>
         </section>
 
-        <section id="experience" data-section="experience">
-          <header>
+        <section id="experience" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Experience</p>
             <h2>Professional Experience</h2>
-            <p>Work Experience</p>
           </header>
-          <experience-timeline>
-            <timeline-item data-role="experience">
+          <div class="section__body stack">
+            <article class="timeline-item">
               <h3>
                 <a href="https://veda-app.com/" target="_blank" rel="noopener"
                   >Mid Backend Developer at Veda App</a
@@ -366,8 +416,8 @@
                 Lead backend development for exam result ledger and Connect IPS
                 payment systems, ensuring high reliability and scalability.
               </p>
-            </timeline-item>
-            <timeline-item data-role="experience">
+            </article>
+            <article class="timeline-item">
               <h3>
                 <a href="https://veda-app.com/" target="_blank" rel="noopener"
                   >Junior Backend Developer at Veda App</a
@@ -375,10 +425,11 @@
               </h3>
               <time datetime="2023-12">December 2023 – June 2025</time>
               <p>
-                Developed and maintained backend systems using Laravel and MySQL.
+                Developed and maintained backend systems using Laravel and
+                MySQL.
               </p>
-            </timeline-item>
-            <timeline-item data-role="experience">
+            </article>
+            <article class="timeline-item">
               <h3>
                 <a href="https://veda-app.com/" target="_blank" rel="noopener"
                   >Intern Backend Developer at Veda App</a
@@ -390,10 +441,13 @@
                 API development, database management, and performance
                 optimization.
               </p>
-            </timeline-item>
-            <timeline-item data-role="experience">
+            </article>
+            <article class="timeline-item">
               <h3>
-                <a href="https://infiniteitsolutionsnepal.com/" target="_blank" rel="noopener"
+                <a
+                  href="https://infiniteitsolutionsnepal.com/"
+                  target="_blank"
+                  rel="noopener"
                   >Junior Web Developer at Infinite IT Solutions</a
                 >
               </h3>
@@ -401,19 +455,22 @@
               <p>
                 Built responsive web interfaces using HTML, CSS, and JavaScript.
               </p>
-            </timeline-item>
-          </experience-timeline>
+            </article>
+          </div>
         </section>
 
-        <section id="projects" data-section="projects">
-          <header>
+        <section id="projects" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Projects</p>
             <h2>Side Projects</h2>
-            <p>Personal &amp; Freelance Projects</p>
           </header>
-          <project-trail>
-            <timeline-item data-role="project">
+          <div class="section__body stack">
+            <article class="timeline-item">
               <h3>
-                <a href="https://www.youtube.com/@sashwat_um" target="_blank" rel="noopener"
+                <a
+                  href="https://www.youtube.com/@sashwat_um"
+                  target="_blank"
+                  rel="noopener"
                   >YouTube Content Creator</a
                 >
               </h3>
@@ -423,118 +480,131 @@
                 subscribers, focusing on content creation, video editing, and
                 community engagement.
               </p>
-            </timeline-item>
-            <timeline-item data-role="project">
+            </article>
+            <article class="timeline-item">
               <h3>Magento UI Developer for Alina Infotech</h3>
               <time datetime="2023">2023</time>
               <p>
                 Contributed to UI development for a Magento 2.4.5 website,
                 enhancing responsiveness and user experience.
               </p>
-            </timeline-item>
-            <timeline-item data-role="project">
+            </article>
+            <article class="timeline-item">
               <h3>WordPress Developer for Inkhead</h3>
               <time datetime="2023">2023</time>
               <p>
                 Updated and maintained a WordPress site, improving functionality
                 and adding client-requested features to enhance performance.
               </p>
-            </timeline-item>
-          </project-trail>
+            </article>
+            <article class="timeline-item">
+              <h3>Freelance Backend Solutions</h3>
+              <time datetime="2022">2022 – 2024</time>
+              <p>
+                Delivered tailored backend solutions for multiple clients,
+                focusing on scalable architectures and secure integrations.
+              </p>
+            </article>
+          </div>
         </section>
 
-        <section id="contact" data-section="contact">
-          <header>
-            <h2>Contact Me</h2>
-            <p>Get in Touch</p>
+        <section id="contact" class="section" data-section>
+          <header class="section__header">
+            <p class="section__eyebrow">Contact</p>
+            <h2>Let’s work together</h2>
           </header>
-          <contact-panel>
-            <contact-list>
-              <a href="mailto:admin@shekharluitel.com.np?subject=Hire Request&amp;body=Please provide details of the project." aria-label="Email Shekhar Luitel">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill="currentColor"
-                    d="M2 5.75A1.75 1.75 0 0 1 3.75 4h16.5A1.75 1.75 0 0 1 22 5.75v12.5A1.75 1.75 0 0 1 20.25 20H3.75A1.75 1.75 0 0 1 2 18.25zm1.75-.25a.25.25 0 0 0-.25.25v.56l8.5 5.07l8.5-5.07V5.75a.25.25 0 0 0-.25-.25zM21 7.82l-8.23 4.9a.75.75 0 0 1-.77 0L3.75 7.82v10.43c0 .138.112.25.25.25h16.5a.25.25 0 0 0 .25-.25z"
-                  />
-                </svg>
-                admin@shekharluitel.com.np
+          <div class="section__body contact">
+            <p>
+              Looking for a backend developer to join your team or build your
+              next product? Reach out and let's create something impactful.
+            </p>
+            <div class="contact__list">
+              <a
+                href="mailto:admin@shekharluitel.com.np?subject=Hire%20Request&amp;body=Please%20provide%20details%20of%20the%20project."
+                aria-label="Email Shekhar Luitel"
+              >
+                <span>Email</span>
+                <span>admin@shekharluitel.com.np</span>
               </a>
               <span>
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill="currentColor"
-                    d="M12 2a7 7 0 0 0-7 7c0 5.25 6.19 11.2 6.45 11.45a.78.78 0 0 0 1.1 0C12.81 20.2 19 14.25 19 9a7 7 0 0 0-7-7m0 9.5A2.5 2.5 0 1 1 14.5 9A2.5 2.5 0 0 1 12 11.5"
-                  />
-                </svg>
-                Biratnagar, Morang, Nepal
+                <span>Location</span>
+                <span>Biratnagar, Morang, Nepal</span>
               </span>
               <a href="tel:+9779846684310" aria-label="Call Shekhar Luitel">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    fill="currentColor"
-                    d="M6.62 10.79a15.9 15.9 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24a11.36 11.36 0 0 0 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1a17 17 0 0 1-17-17a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1a11.36 11.36 0 0 0 .57 3.57a1 1 0 0 1-.25 1Z"
-                  />
-                </svg>
-                +977 9846684310
+                <span>Phone</span>
+                <span>+977 9846684310</span>
               </a>
-            </contact-list>
-          </contact-panel>
+            </div>
+          </div>
         </section>
-      </main>
 
-      <site-footer>
-        <p>&copy; <span id="year"></span> Shekhar Luitel. All rights reserved.</p>
-        <nav aria-label="Social links">
-          <a href="https://www.linkedin.com/in/shekharluitel" target="_blank" rel="noopener"
-            >LinkedIn</a
-          >
-          <a href="https://twitter.com/shekharluitel" target="_blank" rel="noopener"
-            >Twitter</a
-          >
-        </nav>
-      </site-footer>
-    </portfolio-page>
+        <footer class="site-footer">
+          <p>
+            &copy; <span id="year"></span> Shekhar Luitel. All rights reserved.
+          </p>
+        </footer>
+      </main>
+    </div>
 
     <button class="back-to-top hidden" type="button" aria-label="Back to top">
       ↑
     </button>
 
     <script>
-      const navToggle = document.querySelector("button[data-role='toggle']");
-      const navMenu = document.querySelector("menu#primary-navigation");
-      const navLinks = navMenu.querySelectorAll('a[data-nav]');
-      const backToTop = document.querySelector('.back-to-top');
-      const year = document.getElementById('year');
+      const sidebar = document.querySelector(".sidebar");
+      const toggle = document.querySelector(".nav-toggle");
+      const navLinks = document.querySelectorAll(
+        "#primary-navigation a[data-nav]",
+      );
+      const backToTop = document.querySelector(".back-to-top");
+      const year = document.getElementById("year");
       year.textContent = new Date().getFullYear();
 
-      const closeMenu = () => {
-        navMenu.dataset.state = 'closed';
-        navToggle.setAttribute('aria-expanded', 'false');
+      const closeSidebar = () => {
+        sidebar.dataset.state = "closed";
+        toggle?.setAttribute("aria-expanded", "false");
       };
 
-      navToggle?.addEventListener('click', () => {
-        const isOpen = navMenu.dataset.state === 'open';
-        navMenu.dataset.state = isOpen ? 'closed' : 'open';
-        navToggle.setAttribute('aria-expanded', String(!isOpen));
+      toggle?.addEventListener("click", () => {
+        const isOpen = sidebar.dataset.state === "open";
+        sidebar.dataset.state = isOpen ? "closed" : "open";
+        toggle.setAttribute("aria-expanded", String(!isOpen));
       });
 
       navLinks.forEach((link) =>
-        link.addEventListener('click', () => {
-          closeMenu();
-        })
+        link.addEventListener("click", () => {
+          closeSidebar();
+        }),
       );
 
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeSidebar();
+        }
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          sidebar.dataset.state === "open" &&
+          !sidebar.contains(event.target) &&
+          event.target !== toggle
+        ) {
+          closeSidebar();
+        }
+      });
+
       const sections = Array.from(
-        document.querySelectorAll('[data-section]')
+        document.querySelectorAll("[data-section]"),
       ).map((section) => ({
         id: section.id,
         element: section,
       }));
 
       const highlightCurrentSection = () => {
-        let current = sections.find(({ id }) => Boolean(id))?.id;
-        const offset = 120;
+        let current = sections[0]?.id;
+        const offset = 160;
         const scrollPos = window.scrollY + offset;
+
         sections.forEach(({ id, element }) => {
           if (element.offsetTop <= scrollPos) {
             current = id;
@@ -544,24 +614,24 @@
         navLinks.forEach((link) => {
           const isActive = link.dataset.nav === current;
           if (isActive) {
-            link.setAttribute('aria-current', 'page');
+            link.setAttribute("aria-current", "page");
           } else {
-            link.removeAttribute('aria-current');
+            link.removeAttribute("aria-current");
           }
         });
       };
 
       const toggleBackToTop = () => {
-        backToTop.classList.toggle('hidden', window.scrollY < 400);
+        backToTop.classList.toggle("hidden", window.scrollY < 400);
       };
 
-      document.addEventListener('scroll', () => {
+      document.addEventListener("scroll", () => {
         highlightCurrentSection();
         toggleBackToTop();
       });
 
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
 
       highlightCurrentSection();
