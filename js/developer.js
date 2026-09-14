@@ -330,5 +330,35 @@ Current: Shipping high-availability core mobile APIs and enterprise platforms at
     });
   }, { passive: true });
 
+  // 7. Interactive Reader Reactions (No fake metrics, real local interaction)
+  const reactionButtons = document.querySelectorAll('.devto-reaction-btn');
+  reactionButtons.forEach(btn => {
+    const slug = btn.getAttribute('data-slug');
+    if (!slug) return;
+    const isLiked = localStorage.getItem('article_like_' + slug) === 'true';
+    if (isLiked) {
+      btn.classList.add('liked');
+      const label = btn.querySelector('.reaction-label');
+      if (label) label.textContent = 'Liked';
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const currentlyLiked = btn.classList.contains('liked');
+      if (currentlyLiked) {
+        btn.classList.remove('liked');
+        localStorage.removeItem('article_like_' + slug);
+        const label = btn.querySelector('.reaction-label');
+        if (label) label.textContent = 'Like';
+      } else {
+        btn.classList.add('liked');
+        localStorage.setItem('article_like_' + slug, 'true');
+        const label = btn.querySelector('.reaction-label');
+        if (label) label.textContent = 'Liked';
+      }
+    });
+  });
+
 })();
 
