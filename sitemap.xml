@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://shekharluitel.com.np/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://shekharluitel.com.np/resume/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shekharluitel.com.np/images/profile.jpg</image:loc>
+      <image:title>Shekhar Luitel — Full Stack Developer Portfolio</image:title>
+      <image:caption>Shekhar Luitel, Full Stack Developer at Veda App specializing in PHP, Laravel, Symfony, React, and MySQL.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://shekharluitel.com.np/blog/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://shekharluitel.com.np/images/atlassian-community-kathmandu.jpg</image:loc>
+      <image:title>Shekhar Luitel — Engineering Notes &amp; Publications</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shekharluitel.com.np/resume/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://shekharluitel.com.np/blog/atlassian-community-kathmandu-bitbucket-ai/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shekharluitel.com.np/images/atlassian-community-kathmandu.jpg</image:loc>
+      <image:title>Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</image:title>
+      <image:caption>Shekhar Luitel and Saroj Poddar discussing AI-native DevOps at The Soaltee Kathmandu</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://shekharluitel.com.np/blog/ai-first-product-hermes-agents-om-prakash/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shekharluitel.com.np/images/hermes-agents-om-prakash.jpg</image:loc>
+      <image:title>From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</image:title>
+      <image:caption>Om Prakash Sharma presenting Hermes Agents and multi-agent systems at ACE Lalitpur</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://shekharluitel.com.np/blog/three-years-at-veda-app-journey/</loc>
-    <lastmod>2026-09-14</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://shekharluitel.com.np/images/profile.jpg</image:loc>
+      <image:title>From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App</image:title>
+      <image:caption>Shekhar Luitel career milestone retrospective at Veda App</image:caption>
+    </image:image>
   </url>
 </urlset>
-
