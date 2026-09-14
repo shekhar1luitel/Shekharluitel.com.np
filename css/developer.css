@@ -1116,6 +1116,187 @@ a {
   border-radius: var(--radius-full);
   font-size: 0.74rem;
   font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.blog-badge-atlassian {
+  background: rgba(14, 165, 233, 0.12);
+  border-color: rgba(14, 165, 233, 0.35);
+  color: #38bdf8;
+}
+
+.blog-badge-linux {
+  background: rgba(245, 158, 11, 0.12);
+  border-color: rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.blog-badge-git {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.blog-badge-career {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.35);
+  color: #a78bfa;
+}
+
+/* Blog Publication Toolbar & Category Filtering */
+.blog-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.blog-search-box {
+  position: relative;
+  max-width: 520px;
+}
+
+.blog-search-box input {
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  border-radius: var(--radius-full);
+  padding: 0.7rem 1.25rem 0.7rem 2.6rem;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.blog-search-box input:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+.blog-search-box .search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
+.blog-categories-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  user-select: none;
+}
+
+.category-pill:hover {
+  border-color: var(--border-active);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.category-pill.active {
+  background: rgba(56, 189, 248, 0.12);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.18);
+}
+
+.category-pill .pill-count {
+  font-size: 0.72rem;
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1rem 0.45rem;
+  border-radius: var(--radius-full);
+}
+
+/* Featured Spotlight Card on /blog/ */
+.featured-spotlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin-bottom: 2.75rem;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+.featured-spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo));
+}
+
+.featured-spotlight-card:hover {
+  border-color: var(--border-active);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+@media (min-width: 860px) {
+  .featured-spotlight-card {
+    grid-template-columns: 1.25fr 0.95fr;
+    align-items: center;
+  }
+}
+
+.featured-spotlight-image {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  max-height: 280px;
+}
+
+.featured-spotlight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-card.hidden {
+  display: none !important;
+}
+
+.empty-results-msg {
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  grid-column: 1 / -1;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md);
 }
 
 .blog-card-title {

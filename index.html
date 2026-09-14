@@ -90,7 +90,7 @@
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#experience" class="nav-link">Experience</a></li>
           <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#blog" class="nav-link">Blog</a></li>
+          <li><a href="/blog/" class="nav-link">Blog ↗</a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#education" class="nav-link">Education</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -476,17 +476,64 @@
     <section id="blog" class="section" style="background: rgba(255, 255, 255, 0.015);">
       <div class="container">
         <div class="section-header">
-          <p class="section-eyebrow">// 04. Technical Writing & Insights</p>
-          <h2 class="section-title">Blog & Engineering Notes</h2>
-          <p class="section-desc">Practical guides on developer toolchains, AI systems, event reflections, and lessons learned scaling production infrastructure.</p>
+          <p class="section-eyebrow">// 04. Technical Publication</p>
+          <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <h2 class="section-title">Blog & Engineering Notes</h2>
+              <p class="section-desc">Practical guides on Atlassian Community events, autonomous AI systems, developer toolchains, and backend architecture.</p>
+            </div>
+            <a href="/blog/" class="btn btn-sm btn-outline">
+              <span>View All 5 Articles with Filter & Search ↗</span>
+            </a>
+          </div>
         </div>
 
         <div class="blog-grid">
-          <!-- Article 1: Omarchy & Arch Linux -->
+          <!-- Article 1: Atlassian Community Kathmandu -->
           <article class="blog-card">
             <div>
               <div class="blog-card-meta">
-                <span class="blog-badge">Linux & Dev Tools</span>
+                <span class="blog-badge blog-badge-atlassian">Atlassian Community Event</span>
+                <span>5 min read · Jun 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Highlights from the Atlassian Community event at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's AI transformation, Rovo Dev, automated pull request workflows, and memories captured with the Nepal tech community.
+              </p>
+            </div>
+            <div class="blog-card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Event Review (Photos)</span>
+              <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="blog-read-link">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 2: Atlassian ACE Lalitpur -->
+          <article class="blog-card">
+            <div>
+              <div class="blog-card-meta">
+                <span class="blog-badge blog-badge-atlassian">Atlassian Community Event</span>
+                <span>6 min read · Jul 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="/blog/ai-first-product-hermes-agents-om-prakash/">From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                Key insights and moments from Om Prakash Sharma's session at ACE Lalitpur (Atlassian Community Event). How multi-agent orchestration, Jira/Confluence integrations, and Model Context Protocol (MCP) platforms streamline software delivery.
+              </p>
+            </div>
+            <div class="blog-card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">ACE Lalitpur (Photos)</span>
+              <a href="/blog/ai-first-product-hermes-agents-om-prakash/" class="blog-read-link">Read Article →</a>
+            </div>
+          </article>
+
+          <!-- Article 3: Omarchy & Arch Linux -->
+          <article class="blog-card">
+            <div>
+              <div class="blog-card-meta">
+                <span class="blog-badge blog-badge-linux">Linux & Workstation</span>
                 <span>8 min read · Sep 2026</span>
               </div>
               <h3 class="blog-card-title">
@@ -502,71 +549,11 @@
             </div>
           </article>
 
-          <!-- Article 2: Atlassian Event -->
+          <!-- Article 4: Why I Use This Command -->
           <article class="blog-card">
             <div>
               <div class="blog-card-meta">
-                <span class="blog-badge">Event Reflection</span>
-                <span>5 min read · Aug 2026</span>
-              </div>
-              <h3 class="blog-card-title">
-                <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</a>
-              </h3>
-              <p class="blog-card-excerpt">
-                Highlights from the Atlassian Community event at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's AI transformation, Rovo Dev, automated pull request workflows, and memories captured with the Nepal tech community.
-              </p>
-            </div>
-            <div class="blog-card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Event Review (Photos)</span>
-              <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="blog-read-link">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- Article 3: AI First / Hermes Agents -->
-          <article class="blog-card">
-            <div>
-              <div class="blog-card-meta">
-                <span class="blog-badge">AI Engineering</span>
-                <span>6 min read · Aug 2026</span>
-              </div>
-              <h3 class="blog-card-title">
-                <a href="/blog/ai-first-product-hermes-agents-om-prakash/">From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</a>
-              </h3>
-              <p class="blog-card-excerpt">
-                Key insights and moments from Om Prakash Sharma's session at ACE Lalitpur on architecting autonomous AI agents. How multi-agent orchestration, structured context windows, and Hermes agentic workflows streamline software product delivery.
-              </p>
-            </div>
-            <div class="blog-card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Tech Session (Photos)</span>
-              <a href="/blog/ai-first-product-hermes-agents-om-prakash/" class="blog-read-link">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- Article 4: Veda 3 Years Retrospective -->
-          <article class="blog-card">
-            <div>
-              <div class="blog-card-meta">
-                <span class="blog-badge">Career & Architecture</span>
-                <span>7 min read · Sep 2026</span>
-              </div>
-              <h3 class="blog-card-title">
-                <a href="/blog/three-years-at-veda-app-journey/">From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App</a>
-              </h3>
-              <p class="blog-card-excerpt">
-                An honest retrospective on starting as an engineering intern in 2023 while finishing my BCA degree, transitioning into a full-stack developer role, optimizing heavy MySQL queries, and shipping REST APIs supporting 50k+ active users.
-              </p>
-            </div>
-            <div class="blog-card-footer">
-              <span style="font-size: 0.8rem; color: var(--text-muted);">Personal Journey</span>
-              <a href="/blog/three-years-at-veda-app-journey/" class="blog-read-link">Read Article →</a>
-            </div>
-          </article>
-
-          <!-- Article 5: Why I Use This Command -->
-          <article class="blog-card">
-            <div>
-              <div class="blog-card-meta">
-                <span class="blog-badge">Git & Productivity</span>
+                <span class="blog-badge blog-badge-git">Git & Productivity</span>
                 <span>4 min read · Sep 2026</span>
               </div>
               <h3 class="blog-card-title">
@@ -581,7 +568,36 @@
               <a href="/blog/why-i-use-git-huddle-command-daily-standups/" class="blog-read-link">Read Article →</a>
             </div>
           </article>
+
+          <!-- Article 5: Veda 3 Years Retrospective -->
+          <article class="blog-card">
+            <div>
+              <div class="blog-card-meta">
+                <span class="blog-badge blog-badge-career">Career & Architecture</span>
+                <span>7 min read · Sep 2026</span>
+              </div>
+              <h3 class="blog-card-title">
+                <a href="/blog/three-years-at-veda-app-journey/">From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App</a>
+              </h3>
+              <p class="blog-card-excerpt">
+                An honest retrospective on starting as an engineering intern in 2023 while finishing my BCA degree, transitioning into a full-stack developer role, optimizing heavy MySQL queries, and shipping REST APIs supporting 50k+ active users.
+              </p>
+            </div>
+            <div class="blog-card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Personal Journey</span>
+              <a href="/blog/three-years-at-veda-app-journey/" class="blog-read-link">Read Article →</a>
+            </div>
+          </article>
         </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="/blog/" class="btn btn-lg btn-primary" style="display: inline-flex; align-items: center; gap: 0.75rem; padding: 0.9rem 2.25rem; font-size: 1.05rem;">
+            <span>📖 Explore Dedicated Blog Hub with Categories & Search (5 Articles)</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
       </div>
     </section>
 
