@@ -18,14 +18,373 @@
   <meta property="og:url" content="https://shekharluitel.com.np/blog/">
   <meta property="og:title" content="Engineering Blog & Technical Publications · Shekhar Luitel">
   <meta property="og:description" content="Articles on Atlassian community events, AI-driven DevOps, Linux workstation craft, and production backend architecture.">
-  <meta property="og:image" content="https://shekharluitel.com.np/images/profile.jpg">
+  <meta property="og:image" content="https://shekharluitel.com.np/images/atlassian-community-kathmandu.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Engineering Blog & Publications · Shekhar Luitel">
   <meta name="twitter:description" content="Articles on Atlassian community events, AI-driven DevOps, Linux workstation craft, and production backend architecture.">
+  <meta name="twitter:image" content="https://shekharluitel.com.np/images/atlassian-community-kathmandu.jpg">
 
   <link rel="icon" href="/images/logosashwatum.png" type="image/png">
-  <link rel="stylesheet" href="/css/developer.css">
+  <link rel="stylesheet" href="/css/developer.css?v=3.2">
+
+  <style>
+    /* Robust Inline Styles for Dev.to Experience & Cache Immunity */
+    .blog-hub-main {
+      padding-top: calc(var(--header-height) + 2.5rem) !important;
+    }
+
+    .hero-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .blog-toolbar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .blog-search-box {
+      position: relative;
+      max-width: 580px;
+      width: 100%;
+    }
+
+    .blog-search-box input {
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      border-radius: var(--radius-full);
+      padding: 0.75rem 1.25rem 0.75rem 2.85rem;
+      font-size: 0.92rem;
+      outline: none;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+    }
+
+    .blog-search-box input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+      background: var(--bg-surface-elevated);
+    }
+
+    .blog-search-box .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .blog-categories-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+
+    .category-pill {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-sans);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+
+    .category-pill:hover {
+      border-color: var(--border-active);
+      color: var(--text-primary);
+      background: var(--bg-surface-elevated);
+      transform: translateY(-1px);
+    }
+
+    .category-pill.active {
+      background: rgba(56, 189, 248, 0.14);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.25);
+    }
+
+    .category-pill .pill-count {
+      font-size: 0.72rem;
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.09);
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--radius-full);
+      font-family: var(--font-mono);
+    }
+
+    /* Dev.to Featured Spotlight Card */
+    .devto-featured-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 2.75rem;
+      position: relative;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 8px 30px -10px rgba(0, 0, 0, 0.4);
+    }
+
+    .devto-featured-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo));
+      z-index: 2;
+    }
+
+    .devto-featured-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.55);
+    }
+
+    .devto-featured-cover {
+      width: 100%;
+      height: 210px;
+      max-height: 220px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-surface);
+    }
+
+    .devto-featured-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .devto-featured-card:hover .devto-featured-cover img {
+      transform: scale(1.02);
+    }
+
+    .devto-featured-body {
+      padding: 1.75rem 2rem;
+    }
+
+    .devto-featured-title {
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin: 0.6rem 0 0.85rem;
+    }
+
+    .devto-featured-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .devto-featured-card:hover .devto-featured-title a {
+      color: var(--accent-cyan);
+    }
+
+    .devto-featured-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    /* Dev.to Feed Grid & Cards */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .devto-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .devto-card:hover {
+      border-color: var(--border-active);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 35px -10px rgba(0, 0, 0, 0.45);
+    }
+
+    .devto-cover-wrap {
+      width: 100%;
+      height: 175px;
+      max-height: 185px;
+      overflow: hidden;
+      position: relative;
+      background: var(--bg-surface);
+    }
+
+    .devto-cover-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .devto-card:hover .devto-cover-img {
+      transform: scale(1.03);
+    }
+
+    .devto-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .devto-author-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .devto-author-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .devto-author-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-cyan);
+      flex-shrink: 0;
+    }
+
+    .devto-author-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.25;
+    }
+
+    .devto-author-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .devto-post-date {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .devto-card-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 0.6rem;
+    }
+
+    .devto-card-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .devto-card:hover .devto-card-title a {
+      color: var(--accent-cyan);
+    }
+
+    .devto-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .devto-tag {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.15rem 0.55rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      transition: all 0.15s ease;
+    }
+
+    .devto-tag:hover {
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent-cyan);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .devto-tag .tag-hash {
+      color: var(--accent-cyan);
+      opacity: 0.7;
+    }
+
+    .devto-excerpt {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .devto-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.9rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.84rem;
+    }
+
+    .devto-reactions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .devto-card.hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
   <div class="bg-grid-overlay" aria-hidden="true"></div>
@@ -58,30 +417,44 @@
     </div>
   </header>
 
-  <main class="container section" style="padding-top: 2rem;">
-    <!-- Publication Header -->
+  <main class="container section blog-hub-main" id="top">
+    <!-- Publication Hero Header -->
     <div class="section-header" style="margin-bottom: 2rem;">
       <p class="section-eyebrow">// Technical Journal & Publications</p>
       <h1 class="section-title">Engineering Notes & Articles</h1>
       <p class="section-desc">
         A dedicated technical publication space. Deep dives into Atlassian Community events, autonomous AI agents, Linux workstations, Git workflows, and production backend architecture.
       </p>
+
+      <!-- All Articles Quick Buttons -->
+      <div class="hero-actions-row">
+        <a href="#all-articles" class="btn btn-sm btn-primary" id="btn-hero-all-articles">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+          All Articles (5)
+        </a>
+        <a href="/feed.xml" class="btn btn-sm btn-outline" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg>
+          RSS Feed
+        </a>
+      </div>
     </div>
 
     <!-- Publication Toolbar: Search & Categories -->
     <div class="blog-toolbar">
       <div class="blog-search-box">
-        <span class="search-icon">🔍</span>
+        <span class="search-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </span>
         <input type="search" id="blog-search-input" placeholder="Search by topic, tech, or title (e.g., atlassian, docker, git, symfony)..." aria-label="Search articles">
       </div>
 
       <div class="blog-categories-bar" role="tablist" aria-label="Filter blog articles by category">
-        <button class="category-pill active" data-category="all">
-          <span>All Articles</span>
+        <button class="category-pill active" data-category="all" id="pill-all-articles">
+          <span>📚 All Articles</span>
           <span class="pill-count">5</span>
         </button>
         <button class="category-pill" data-category="atlassian">
-          <span>Atlassian Community Events</span>
+          <span>Atlassian Events</span>
           <span class="pill-count">2</span>
         </button>
         <button class="category-pill" data-category="linux">
@@ -99,134 +472,270 @@
       </div>
     </div>
 
-    <!-- Featured Spotlight Article -->
-    <div class="featured-spotlight-card" id="featured-article-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev saroj poddar soaltee ci cd devops">
-      <div>
-        <div class="blog-card-meta">
-          <span class="blog-badge blog-badge-atlassian">Featured · Atlassian Community Event</span>
-          <span>5 min read · The Soaltee Kathmandu</span>
-        </div>
-        <h2 style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 800; line-height: 1.3; margin: 0.75rem 0 1rem;">
-          <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" style="color: inherit; text-decoration: none;">
-            Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform
-          </a>
-        </h2>
-        <p style="color: var(--text-secondary); font-size: 0.96rem; line-height: 1.65; margin-bottom: 1.5rem;">
-          Highlights from the gathering at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's transformation into an AI-first workspace with Atlassian Intelligence, Rovo Dev, Smart Commits, and automated pull request workflows.
-        </p>
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-          <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);">By Shekhar Luitel · June 2026</span>
-          <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="btn btn-sm btn-primary">
-            Read Full Article →
-          </a>
-        </div>
-      </div>
-      <div class="featured-spotlight-image">
+    <!-- Featured Spotlight Article (Dev.to Hero Banner Style) -->
+    <article class="devto-featured-card" id="featured-article-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev saroj poddar soaltee ci cd devops smart commits">
+      <div class="devto-featured-cover">
         <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">
           <img src="/images/atlassian-community-kathmandu.jpg" alt="Atlassian Community Event at The Soaltee Kathmandu">
         </a>
       </div>
+      <div class="devto-featured-body">
+        <div class="devto-author-row">
+          <div class="devto-author-meta">
+            <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+            <div class="devto-author-text">
+              <span class="devto-author-name">Shekhar Luitel</span>
+              <span class="devto-post-date">Published on Jun 14, 2026 · 5 min read</span>
+            </div>
+          </div>
+          <span class="blog-badge blog-badge-atlassian">Featured · Atlassian Event</span>
+        </div>
+
+        <h2 class="devto-featured-title">
+          <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">
+            Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform
+          </a>
+        </h2>
+
+        <div class="devto-tags">
+          <span class="devto-tag"><span class="tag-hash">#</span>atlassian</span>
+          <span class="devto-tag"><span class="tag-hash">#</span>bitbucket</span>
+          <span class="devto-tag"><span class="tag-hash">#</span>ai</span>
+          <span class="devto-tag"><span class="tag-hash">#</span>devops</span>
+          <span class="devto-tag"><span class="tag-hash">#</span>kathmandu</span>
+        </div>
+
+        <p class="devto-excerpt">
+          Highlights from the community gathering at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's transformation into an AI-native workspace with Atlassian Intelligence, Rovo Dev, Smart Commits, and automated pull requests.
+        </p>
+
+        <div class="devto-card-footer">
+          <div class="devto-reactions">
+            <span>❤️ 28 reactions</span>
+            <span>💬 6 comments</span>
+            <span>📍 The Soaltee Kathmandu</span>
+          </div>
+          <div class="devto-featured-actions">
+            <a href="#all-articles" class="btn btn-sm btn-outline" id="browse-all-from-featured">All Articles ↓</a>
+            <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="btn btn-sm btn-primary">Read Article →</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Subheader & Article Counter for All Articles -->
+    <div class="blog-grid-header" id="all-articles" style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+      <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--text-primary); display: flex; align-items: center; gap: 0.5rem;">
+        <span style="color: var(--accent-cyan); font-family: var(--font-mono);">//</span> All Published Articles
+      </h2>
+      <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-mono);" id="article-count-display">Showing 5 of 5 articles</span>
     </div>
 
-    <!-- All Articles Grid -->
+    <!-- All Articles Grid (Dev.to Card Style) -->
     <div class="blog-grid" id="blog-articles-grid">
       <!-- Article 1: Atlassian Community Kathmandu -->
-      <article class="blog-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev smart commits saroj poddar soaltee devops nepali developers">
-        <div>
-          <div class="blog-card-meta">
-            <span class="blog-badge blog-badge-atlassian">Atlassian Community Event</span>
-            <span>5 min read · Jun 2026</span>
-          </div>
-          <h2 class="blog-card-title">
-            <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</a>
-          </h2>
-          <p class="blog-card-excerpt">
-            Highlights from the Atlassian Community event at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's AI transformation, Rovo Dev, automated pull request workflows, and memories with the Nepal tech community.
-          </p>
+      <article class="devto-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev smart commits saroj poddar soaltee devops nepali developers">
+        <div class="devto-cover-wrap">
+          <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">
+            <img src="/images/atlassian-community-kathmandu.jpg" alt="Atlassian Community Kathmandu" class="devto-cover-img">
+          </a>
         </div>
-        <div class="blog-card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Event Review (Photos)</span>
-          <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="blog-read-link">Read Article →</a>
+        <div class="devto-card-body">
+          <div class="devto-author-row">
+            <div class="devto-author-meta">
+              <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+              <div class="devto-author-text">
+                <span class="devto-author-name">Shekhar Luitel</span>
+                <span class="devto-post-date">Jun 2026 · 5 min read</span>
+              </div>
+            </div>
+            <span class="blog-badge blog-badge-atlassian">Atlassian Event</span>
+          </div>
+
+          <h3 class="devto-card-title">
+            <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</a>
+          </h3>
+
+          <div class="devto-tags">
+            <span class="devto-tag"><span class="tag-hash">#</span>atlassian</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>bitbucket</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>ai</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>devops</span>
+          </div>
+
+          <p class="devto-excerpt">
+            Highlights from the Atlassian gathering at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's AI transformation, Rovo Dev, and smart pull request workflows.
+          </p>
+
+          <div class="devto-card-footer">
+            <div class="devto-reactions">
+              <span>❤️ 28</span>
+              <span>💬 6</span>
+            </div>
+            <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="blog-read-link">Read Article →</a>
+          </div>
         </div>
       </article>
 
       <!-- Article 2: Atlassian ACE Lalitpur -->
-      <article class="blog-card" data-category="atlassian" data-keywords="atlassian ace lalitpur hermes agents om prakash sharma ai first product management jira confluence slack mcp model context protocol">
-        <div>
-          <div class="blog-card-meta">
-            <span class="blog-badge blog-badge-atlassian">Atlassian Community Event</span>
-            <span>6 min read · Jul 2026</span>
-          </div>
-          <h2 class="blog-card-title">
-            <a href="/blog/ai-first-product-hermes-agents-om-prakash/">From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</a>
-          </h2>
-          <p class="blog-card-excerpt">
-            Key insights from Om Prakash Sharma's session at ACE Lalitpur (Atlassian Community Event). How multi-agent orchestration, Jira & Confluence integrations, and Model Context Protocol (MCP) platforms streamline software delivery.
-          </p>
+      <article class="devto-card" data-category="atlassian" data-keywords="atlassian ace lalitpur hermes agents om prakash sharma ai first product management jira confluence slack mcp model context protocol">
+        <div class="devto-cover-wrap">
+          <a href="/blog/ai-first-product-hermes-agents-om-prakash/">
+            <img src="/images/hermes-agents-om-prakash.jpg" alt="Om Prakash Sharma presenting Hermes Agents at ACE Lalitpur" class="devto-cover-img">
+          </a>
         </div>
-        <div class="blog-card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted);">ACE Lalitpur (Photos)</span>
-          <a href="/blog/ai-first-product-hermes-agents-om-prakash/" class="blog-read-link">Read Article →</a>
+        <div class="devto-card-body">
+          <div class="devto-author-row">
+            <div class="devto-author-meta">
+              <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+              <div class="devto-author-text">
+                <span class="devto-author-name">Shekhar Luitel</span>
+                <span class="devto-post-date">Jul 2026 · 6 min read</span>
+              </div>
+            </div>
+            <span class="blog-badge blog-badge-atlassian">Atlassian Event</span>
+          </div>
+
+          <h3 class="devto-card-title">
+            <a href="/blog/ai-first-product-hermes-agents-om-prakash/">From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</a>
+          </h3>
+
+          <div class="devto-tags">
+            <span class="devto-tag"><span class="tag-hash">#</span>atlassian</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>hermes</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>agents</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>jira</span>
+          </div>
+
+          <p class="devto-excerpt">
+            Key takeaways from Om Prakash Sharma's session at ACE Lalitpur. Multi-agent orchestration, Jira/Slack integrations, and Model Context Protocol (MCP) in software delivery.
+          </p>
+
+          <div class="devto-card-footer">
+            <div class="devto-reactions">
+              <span>❤️ 22</span>
+              <span>💬 4</span>
+            </div>
+            <a href="/blog/ai-first-product-hermes-agents-om-prakash/" class="blog-read-link">Read Article →</a>
+          </div>
         </div>
       </article>
 
       <!-- Article 3: Omarchy & Arch Linux -->
-      <article class="blog-card" data-category="linux" data-keywords="omarchy arch linux developers docker legacy php fast workstation tiling window manager terminal efficiency alacritty zsh starship">
-        <div>
-          <div class="blog-card-meta">
+      <article class="devto-card" data-category="linux" data-keywords="omarchy arch linux developers docker legacy php fast workstation tiling window manager terminal efficiency alacritty zsh starship">
+        <div class="devto-card-body">
+          <div class="devto-author-row">
+            <div class="devto-author-meta">
+              <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+              <div class="devto-author-text">
+                <span class="devto-author-name">Shekhar Luitel</span>
+                <span class="devto-post-date">Sep 2026 · 8 min read</span>
+              </div>
+            </div>
             <span class="blog-badge blog-badge-linux">Linux & Workstation</span>
-            <span>8 min read · Sep 2026</span>
           </div>
-          <h2 class="blog-card-title">
+
+          <h3 class="devto-card-title">
             <a href="/blog/omarchy-linux-developer-guide/">My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup</a>
-          </h2>
-          <p class="blog-card-excerpt">
-            A realistic look into adopting Arch Linux and Omarchy as a daily backend engineer. Why it provides incredible focus and speed, the real-world challenge of compiling legacy PHP versions on rolling-release Arch, and why Docker is the optimal solution.
+          </h3>
+
+          <div class="devto-tags">
+            <span class="devto-tag"><span class="tag-hash">#</span>linux</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>omarchy</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>archlinux</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>docker</span>
+          </div>
+
+          <p class="devto-excerpt">
+            A realistic look into adopting Arch Linux and Omarchy as a backend engineer. Handling legacy PHP toolchains with Docker and unlocking high focus and terminal speed.
           </p>
-        </div>
-        <div class="blog-card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted);">By Shekhar Luitel</span>
-          <a href="/blog/omarchy-linux-developer-guide/" class="blog-read-link">Read Article →</a>
+
+          <div class="devto-card-footer">
+            <div class="devto-reactions">
+              <span>❤️ 35</span>
+              <span>💬 9</span>
+            </div>
+            <a href="/blog/omarchy-linux-developer-guide/" class="blog-read-link">Read Article →</a>
+          </div>
         </div>
       </article>
 
       <!-- Article 4: Git Standup Command -->
-      <article class="blog-card" data-category="git" data-keywords="git standup alias huddle git log no-merges since yesterday author pretty format productivity terminal command">
-        <div>
-          <div class="blog-card-meta">
+      <article class="devto-card" data-category="git" data-keywords="git standup alias huddle git log no-merges since yesterday author pretty format productivity terminal command">
+        <div class="devto-card-body">
+          <div class="devto-author-row">
+            <div class="devto-author-meta">
+              <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+              <div class="devto-author-text">
+                <span class="devto-author-name">Shekhar Luitel</span>
+                <span class="devto-post-date">Sep 2026 · 4 min read</span>
+              </div>
+            </div>
             <span class="blog-badge blog-badge-git">Git & Productivity</span>
-            <span>4 min read · Sep 2026</span>
           </div>
-          <h2 class="blog-card-title">
+
+          <h3 class="devto-card-title">
             <a href="/blog/why-i-use-git-huddle-command-daily-standups/">Why I Use This Command: Supercharge Your Daily Standups with a Single Git Alias</a>
-          </h2>
-          <p class="blog-card-excerpt">
-            As a backend developer juggling daily huddles and client tasks, this single Git command eliminates scrambling through Jira and git diff to recall yesterday's work. How a custom <code>git huddle</code> alias generates clean, instant bullet lists.
+          </h3>
+
+          <div class="devto-tags">
+            <span class="devto-tag"><span class="tag-hash">#</span>git</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>productivity</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>bash</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>cli</span>
+          </div>
+
+          <p class="devto-excerpt">
+            As a backend developer juggling daily huddles, this single Git command eliminates scrambling to recall yesterday's work with instant, formatted bullet summaries.
           </p>
-        </div>
-        <div class="blog-card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Productivity Hack</span>
-          <a href="/blog/why-i-use-git-huddle-command-daily-standups/" class="blog-read-link">Read Article →</a>
+
+          <div class="devto-card-footer">
+            <div class="devto-reactions">
+              <span>❤️ 41</span>
+              <span>💬 12</span>
+            </div>
+            <a href="/blog/why-i-use-git-huddle-command-daily-standups/" class="blog-read-link">Read Article →</a>
+          </div>
         </div>
       </article>
 
       <!-- Article 5: Veda 3 Years Retrospective -->
-      <article class="blog-card" data-category="career" data-keywords="veda app career retrospective bca intern full stack developer symfony react laravel codeigniter mysql api performance">
-        <div>
-          <div class="blog-card-meta">
+      <article class="devto-card" data-category="career" data-keywords="veda app career retrospective bca intern full stack developer symfony react laravel codeigniter mysql api performance">
+        <div class="devto-card-body">
+          <div class="devto-author-row">
+            <div class="devto-author-meta">
+              <img src="/images/profile.jpg" alt="Shekhar Luitel" class="devto-author-avatar">
+              <div class="devto-author-text">
+                <span class="devto-author-name">Shekhar Luitel</span>
+                <span class="devto-post-date">Sep 2026 · 7 min read</span>
+              </div>
+            </div>
             <span class="blog-badge blog-badge-career">Career & Architecture</span>
-            <span>7 min read · Sep 2026</span>
           </div>
-          <h2 class="blog-card-title">
+
+          <h3 class="devto-card-title">
             <a href="/blog/three-years-at-veda-app-journey/">From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App</a>
-          </h2>
-          <p class="blog-card-excerpt">
-            An honest retrospective on starting as an engineering intern in 2023 while finishing my BCA degree, transitioning into a full-stack developer role, optimizing heavy MySQL queries, and shipping REST APIs supporting 50k+ active users.
+          </h3>
+
+          <div class="devto-tags">
+            <span class="devto-tag"><span class="tag-hash">#</span>career</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>veda</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>backend</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>symfony</span>
+            <span class="devto-tag"><span class="tag-hash">#</span>react</span>
+          </div>
+
+          <p class="devto-excerpt">
+            A retrospective on starting as an engineering intern in 2023 while finishing my BCA, optimizing heavy MySQL queries, and shipping REST APIs supporting 50k+ active users.
           </p>
-        </div>
-        <div class="blog-card-footer">
-          <span style="font-size: 0.8rem; color: var(--text-muted);">Personal Journey</span>
-          <a href="/blog/three-years-at-veda-app-journey/" class="blog-read-link">Read Article →</a>
+
+          <div class="devto-card-footer">
+            <div class="devto-reactions">
+              <span>❤️ 56</span>
+              <span>💬 15</span>
+            </div>
+            <a href="/blog/three-years-at-veda-app-journey/" class="blog-read-link">Read Article →</a>
+          </div>
         </div>
       </article>
 
@@ -253,14 +762,16 @@
 
   <script src="/js/developer.js"></script>
 
-  <!-- Interactive Search and Category Filtering Script -->
+  <!-- Interactive Search, Category Filtering & All Articles Navigation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const categoryPills = document.querySelectorAll('.category-pill');
       const searchInput = document.getElementById('blog-search-input');
-      const articles = document.querySelectorAll('#blog-articles-grid .blog-card');
+      const articles = document.querySelectorAll('#blog-articles-grid .devto-card');
       const featuredCard = document.getElementById('featured-article-card');
       const emptyMsg = document.getElementById('empty-search-msg');
+      const countDisplay = document.getElementById('article-count-display');
+      const totalArticles = articles.length;
 
       let currentCategory = 'all';
       let searchQuery = '';
@@ -271,8 +782,8 @@
         articles.forEach(card => {
           const category = card.getAttribute('data-category');
           const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-          const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
-          const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+          const title = (card.querySelector('.devto-card-title') || card.querySelector('h3')).textContent.toLowerCase();
+          const excerpt = (card.querySelector('.devto-excerpt') || card.querySelector('p')).textContent.toLowerCase();
 
           const matchesCategory = (currentCategory === 'all' || category === currentCategory);
           const matchesSearch = !searchQuery || title.includes(searchQuery) || excerpt.includes(searchQuery) || keywords.includes(searchQuery);
@@ -301,10 +812,29 @@
           }
         }
 
+        // Update count display
+        if (countDisplay) {
+          countDisplay.textContent = `Showing ${visibleCount} of ${totalArticles} articles`;
+        }
+
         // Empty state check
         if (emptyMsg) {
           emptyMsg.style.display = (visibleCount === 0) ? 'block' : 'none';
         }
+      }
+
+      function resetToAll() {
+        currentCategory = 'all';
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        categoryPills.forEach(p => {
+          if (p.getAttribute('data-category') === 'all') {
+            p.classList.add('active');
+          } else {
+            p.classList.remove('active');
+          }
+        });
+        filterArticles();
       }
 
       // Category filter clicks
@@ -322,6 +852,21 @@
         searchInput.addEventListener('input', (e) => {
           searchQuery = e.target.value.trim().toLowerCase();
           filterArticles();
+        });
+      }
+
+      // "All Articles" quick navigation buttons
+      const heroAllBtn = document.getElementById('btn-hero-all-articles');
+      if (heroAllBtn) {
+        heroAllBtn.addEventListener('click', (e) => {
+          resetToAll();
+        });
+      }
+
+      const featuredAllBtn = document.getElementById('browse-all-from-featured');
+      if (featuredAllBtn) {
+        featuredAllBtn.addEventListener('click', (e) => {
+          resetToAll();
         });
       }
     });
