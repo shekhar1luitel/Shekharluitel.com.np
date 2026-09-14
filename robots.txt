@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://shekharluitel.com.np/sitemap.xml
+

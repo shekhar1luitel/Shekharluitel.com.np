@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup · Shekhar Luitel</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <meta name="description" content="My journey learning Omarchy & Arch Linux as a backend engineer. Why it boosted my daily productivity, the hurdle of compiling older PHP versions on rolling-release Arch, and why Docker is the cleanest solution.">
+  <meta name="keywords" content="Omarchy, Arch Linux for developers, Linux developer workflow, Omarchy usages, Docker for legacy PHP, Arch Linux PHP setup, Shekhar Luitel">
+  <meta name="author" content="Shekhar Luitel">
+  <link rel="canonical" href="https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/">
+  <meta property="og:title" content="My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup">
+  <meta property="og:description" content="A realistic look into adopting Arch Linux and Omarchy as a developer, plus why Docker is essential for legacy PHP stacks.">
+  <meta property="og:image" content="https://shekharluitel.com.np/images/profile.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My Experience Learning Omarchy & Arch Linux · Shekhar Luitel">
+  <meta name="twitter:description" content="Why Omarchy and Arch Linux became my go-to productive developer environment.">
+
+  <link rel="icon" href="/images/logosashwatum.png" type="image/png">
+  <link rel="stylesheet" href="/css/developer.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup",
+    "description": "My journey learning Omarchy & Arch Linux as a backend engineer. Why it boosted my daily productivity, the hurdle of compiling older PHP versions on rolling-release Arch, and why Docker is the cleanest solution.",
+    "author": {
+      "@type": "Person",
+      "name": "Shekhar Luitel",
+      "url": "https://shekharluitel.com.np"
+    },
+    "datePublished": "2026-09-10",
+    "dateModified": "2026-09-14",
+    "mainEntityOfPage": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/",
+    "publisher": {
+      "@type": "Person",
+      "name": "Shekhar Luitel"
+    }
+  }
+  </script>
+  <style>
+    .article-container { max-width: 820px; margin: 0 auto; padding-block: 2.5rem 5rem; }
+    .article-header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.75rem; }
+    .article-meta { display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem; font-family: var(--font-mono); }
+    .article-body { color: var(--text-secondary); font-size: 1.08rem; line-height: 1.8; }
+    .article-body h2 { color: var(--text-primary); font-size: 1.6rem; margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+    .article-body h3 { color: var(--text-primary); font-size: 1.3rem; margin: 2rem 0 0.75rem; }
+    .article-body p { margin-bottom: 1.5rem; }
+    .article-body ul, .article-body ol { margin: 1rem 0 1.5rem 1.5rem; }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body pre { background: var(--bg-terminal); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.25rem; overflow-x: auto; margin: 1.5rem 0; font-family: var(--font-mono); font-size: 0.9rem; color: var(--terminal-text); }
+    .article-body code { font-family: var(--font-mono); background: rgba(56, 189, 248, 0.1); color: var(--accent-cyan); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.88em; }
+    .article-body blockquote { border-left: 3px solid var(--accent-cyan); padding-left: 1.25rem; margin: 1.75rem 0; font-style: italic; color: var(--text-muted); }
+    .article-back-nav { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; font-family: var(--font-mono); }
+    .article-back-nav:hover { color: var(--accent-cyan); }
+  </style>
+</head>
+<body>
+  <div class="bg-grid-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand-link" aria-label="Shekhar Luitel homepage">
+        <img src="/images/profile.jpg" alt="Shekhar Luitel" class="brand-avatar">
+        <span>shekhar<span class="brand-code">.dev</span></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="/#about" class="nav-link">About</a></li>
+          <li><a href="/#experience" class="nav-link">Experience</a></li>
+          <li><a href="/#projects" class="nav-link">Projects</a></li>
+          <li><a href="/blog/" class="nav-link active">Blog</a></li>
+          <li><a href="/#skills" class="nav-link">Skills</a></li>
+          <li><a href="/#contact" class="nav-link">Contact</a></li>
+          <li><a href="/resume/" class="btn btn-sm btn-outline" target="_blank" rel="noopener">Resume ↗</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container article-container">
+    <a href="/blog/" class="article-back-nav">← Back to all articles</a>
+
+    <header class="article-header">
+      <div class="blog-card-meta" style="margin-bottom: 0.5rem;">
+        <span class="blog-badge">Linux & Dev Tools</span>
+        <span>8 min read</span>
+      </div>
+      <h1 class="section-title" style="margin-top: 0.5rem; font-size: clamp(1.9rem, 3.5vw, 2.75rem);">
+        My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup (And Why I Use Docker for Legacy PHP)
+      </h1>
+      <div class="article-meta">
+        <span>By Shekhar Luitel</span>
+        <span>·</span>
+        <span>Published: Sep 10, 2026</span>
+        <span>·</span>
+        <span>Engineering Notes</span>
+      </div>
+    </header>
+
+    <article class="article-body">
+      <p>
+        I wouldn't call myself an Arch Linux guru or master. Rather, I am a backend developer who decided to dive into <strong>Arch Linux</strong> and <strong>Omarchy</strong> to see if it could genuinely improve my daily development speed. After months of daily use across client tasks and production codebases, the verdict is clear: <strong>it is remarkably productive</strong>.
+      </p>
+
+      <p>
+        Stripping away desktop bloat, eliminating window clutter, and configuring a keyboard-driven workflow transformed how I work. However, it wasn't without real learning curves — especially when dealing with older PHP versions on a bleeding-edge system. Here is an honest recap of my experience and what worked best.
+      </p>
+
+      <h2>1. Why Learning Omarchy & Arch Linux Was Worth It</h2>
+      <p>
+        Before switching, my development machine constantly felt bogged down by background processes, bloated desktop managers, and mouse gymnastics. Omarchy offered a focused, minimal alternative:
+      </p>
+      <ul>
+        <li><strong>Ultra-Light Resource Footprint:</strong> Idle system consumes ~350MB of RAM. The remaining 97%+ of my memory is completely available for heavy MySQL instances, Redis caches, and compilation tasks.</li>
+        <li><strong>Keyboard-First Speed:</strong> Tiling window managers make navigation instantaneous. You move between your code editor, database terminal, and browser without ever having to touch a mouse or hunt for windows.</li>
+        <li><strong>Native Command Execution:</strong> Shell commands, Git operations, and tests run natively on the Linux kernel with zero virtualization latency compared to WSL2 or macOS Docker abstractions.</li>
+      </ul>
+
+      <blockquote>
+        "Once your system responds instantly to every keystroke without lag, it's very hard to go back to heavy, bloated desktop environments."
+      </blockquote>
+
+      <h2>2. The Real-World Challenge: Older PHP Versions on Arch</h2>
+      <p>
+        Arch Linux is famous for being a <strong>rolling-release distribution</strong>. This means you always get the latest Linux kernel, the latest GCC, the newest OpenSSL 3+, and current ICU libraries.
+      </p>
+
+      <p>
+        For modern stacks like <strong>PHP 8.2+</strong>, <strong>Laravel 11</strong>, and <strong>Symfony 7</strong>, this is amazing — everything installs cleanly via <code>pacman</code> and executes at blistering speed.
+      </p>
+
+      <p>
+        However, in real-world backend jobs, you often have to support or maintain existing legacy codebases (such as projects on PHP 7.4 or CodeIgniter 3). That's where I ran into a real problem:
+      </p>
+
+      <ul>
+        <li>Trying to download or compile older PHP packages from the AUR (Arch User Repository) frequently failed because older PHP builds rely on deprecated OpenSSL 1.1 APIs and older C libraries.</li>
+        <li>Manually symlinking older libraries or patching makefiles risked corrupting system dependencies.</li>
+        <li>Fighting package conflicts on the host OS was wasting time that should have been spent coding.</li>
+      </ul>
+
+      <h2>3. The Solution: Keep Arch Clean and Use Docker for Legacy PHP</h2>
+      <p>
+        After experimenting, the golden rule became clear: <strong>never pollute your Arch host system trying to force legacy versions to compile natively</strong>.
+      </p>
+
+      <p>
+        Instead, the most productive workflow is:
+      </p>
+      <ol>
+        <li><strong>Host System:</strong> Keep Arch Linux lean, fast, and equipped with the latest native PHP 8+ and modern tools (Neovim, VS Code, Git, Starship).</li>
+        <li><strong>Legacy Projects:</strong> Run them inside lightweight <strong>Docker containers</strong> using <code>docker compose</code>.</li>
+      </ol>
+
+      <p>
+        A simple <code>docker-compose.yml</code> handles legacy PHP (e.g. PHP 7.4-fpm + Nginx + MySQL) in complete isolation:
+      </p>
+
+      <pre><code>services:
+  app:
+    image: php:7.4-fpm-alpine
+    volumes:
+      - ./:/var/www/html
+    restart: unless-stopped
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app</code></pre>
+
+      <p>
+        With this separation, legacy projects spin up in seconds without breaking host libraries, and your Arch workstation stays pristine, stable, and blisteringly fast.
+      </p>
+
+      <h2>4. My Daily Productivity Setup</h2>
+      <p>
+        A few tools that tie the whole setup together:
+      </p>
+      <ul>
+        <li><strong>Terminal:</strong> Alacritty with JetBrains Mono Nerd Font.</li>
+        <li><strong>Shell & Navigation:</strong> Zsh + Starship prompt + <code>zoxide</code> for rapid directory jumping.</li>
+        <li><strong>Git Workflow:</strong> Custom aliases like <code>git huddle</code> to instantly review yesterday's commits.</li>
+        <li><strong>Containers:</strong> Docker daemon running locally with rootless permissions.</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>
+        Adopting Omarchy and Arch Linux isn't about bragging rights — it's about building an environment that respects your time and lets you focus on code. If you're considering the switch, go for it! Just remember: use Docker for older runtime versions, and enjoy the speed.
+      </p>
+    </article>
+
+    <!-- Relevant Posts Section -->
+    <section class="related-posts-section">
+      <h3 class="related-posts-header">
+        <span>📖</span> Relevant Engineering Notes & Articles
+      </h3>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div>
+            <div class="blog-card-meta">
+              <span class="blog-badge">Git & Productivity</span>
+              <span>4 min read</span>
+            </div>
+            <h4 class="blog-card-title">
+              <a href="/blog/why-i-use-git-huddle-command-daily-standups/">Why I Use This Command: Supercharge Your Daily Standups</a>
+            </h4>
+            <p class="blog-card-excerpt">
+              How a custom Git alias saves hours during daily huddles by fetching a clean bullet list of yesterday's commits.
+            </p>
+          </div>
+          <div class="blog-card-footer">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Productivity Hack</span>
+            <a href="/blog/why-i-use-git-huddle-command-daily-standups/" class="blog-read-link">Read Article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div>
+            <div class="blog-card-meta">
+              <span class="blog-badge">Event Reflection</span>
+              <span>5 min read</span>
+            </div>
+            <h4 class="blog-card-title">
+              <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">Inside Atlassian Community Kathmandu: Bitbucket AI</a>
+            </h4>
+            <p class="blog-card-excerpt">
+              Reflections and photos from the Atlassian Kathmandu event on AI-driven CI/CD and Bitbucket's evolution.
+            </p>
+          </div>
+          <div class="blog-card-footer">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Event Review (Photos)</span>
+            <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/" class="blog-read-link">Read Article →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Shekhar Luitel. Built with craft, performance, and clean code.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/shekhar-luitel33/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="/blog/">Blog</a>
+        <a href="/resume/">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/developer.js"></script>
+</body>
+</html>

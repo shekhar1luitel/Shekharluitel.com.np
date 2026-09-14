@@ -37,10 +37,12 @@
   const navMenu = document.getElementById('nav-menu');
 
   if (mobileMenuBtn && navMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       navMenu.classList.toggle('open');
       const isOpen = navMenu.classList.contains('open');
       mobileMenuBtn.setAttribute('aria-expanded', isOpen);
+      mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
     });
 
     // Close on nav click
@@ -48,51 +50,116 @@
       link.addEventListener('click', () => {
         navMenu.classList.remove('open');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.textContent = '☰';
       });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('open') && !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        navMenu.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.textContent = '☰';
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        mobileMenuBtn.textContent = '☰';
+      }
     });
   }
 
   // 3. Interactive Developer Terminal
+  const terminalCard = document.querySelector('.terminal-card');
   const terminalBody = document.getElementById('terminal-body');
   const terminalInput = document.getElementById('terminal-input');
   const quickCmdBtns = document.querySelectorAll('.quick-cmd-btn');
+
+  // Focus terminal input on card click
+  if (terminalCard && terminalInput) {
+    terminalCard.addEventListener('click', (e) => {
+      if (!e.target.closest('button') && !e.target.closest('a')) {
+        terminalInput.focus();
+      }
+    });
+  }
 
   const commands = {
     help: () => `Available commands:
   <span class="command-highlight">bio</span>        - Learn about Shekhar Luitel
   <span class="command-highlight">skills</span>     - View technical stack & engineering specialties
-  <span class="command-highlight">experience</span> - View career history & current role at Veda App
-  <span class="command-highlight">projects</span>   - Discover key production systems built
+  <span class="command-highlight">experience</span> - View career history & 3+ years timeline
+  <span class="command-highlight">projects</span>   - Discover key production systems (Veda, Symphony, Aabhyas)
+  <span class="command-highlight">aabhyas</span>    - Explore Aabhyas Nepal Exam Prep platform
+  <span class="command-highlight">huddle</span>     - View the daily standup Git alias trick
+  <span class="command-highlight">blog</span>       - Read latest tech articles & event reflections
   <span class="command-highlight">education</span>  - Check BCA completion & academic credentials
   <span class="command-highlight">contact</span>    - Show direct email, phone, and LinkedIn
-  <span class="command-highlight">curl resume</span>- Direct link to view & download full CV
+  <span class="command-highlight">resume</span>     - Open clean printable CV / Resume (/resume/)
   <span class="command-highlight">clear</span>      - Clear terminal screen`,
 
     bio: () => `Shekhar Luitel · Full Stack Developer (Mid Backend - Jr. Frontend)
+Experience: 3+ years in production environments (ed-tech, multi-tenant SaaS, API microservices).
 Location: Biratnagar / Lalitpur, Nepal
-Specialization: High-performance PHP (Laravel, CodeIgniter), React, MySQL, and scalable RESTful APIs.
-Current: Shipping high-availability core mobile APIs & payment engines at Veda App (वेद).`,
+Specialization: High-throughput PHP 8+ (Symfony, Laravel, CodeIgniter), React.js, MySQL, and resilient RESTful APIs.
+Current: Shipping high-availability core mobile APIs and enterprise platforms at Veda App (वेद).`,
 
     skills: () => `Engineering Stack:
-  ▹ Backend:  PHP 8+, Laravel, CodeIgniter 3/4, RESTful APIs, HMVC/MVC
-  ▹ Frontend: JavaScript (ES6+), React.js, Vue.js, Modern CSS/Tailwind
-  ▹ Database: MySQL, Schema Design, Indexing, Query Optimization
-  ▹ Arch:     Multi-tenant SaaS, Role-Based Access Control (RBAC), ConnectIPS
-  ▹ DevOps:   Linux/Ubuntu, Git/GitHub, Postman, Laragon, XAMPP`,
+  ▹ Backend:  PHP 8+, Symfony, Laravel, CodeIgniter, RESTful APIs, HMVC/MVC
+  ▹ Frontend: JavaScript (ES6+), React.js, Tailwind CSS, Modern CSS, Responsive UI
+  ▹ Database: MySQL, Schema Normalization, Composite Indexing, Query Tuning, ACID
+  ▹ Arch:     Multi-tenant ERP Architecture, Institutional Core SaaS, Audit Trails
+  ▹ DevOps:   Arch Linux (Omarchy), Docker, Postman, Git (Enterprise Repos), Nginx`,
 
-    experience: () => `Career Timeline:
+    experience: () => `Career Timeline (3+ Years Production Engineering):
   [2025–Present] Full Stack Developer @ Veda App (वेद)
-                → Lead backend APIs + React/Vue integrations, high availability.
+                → Lead core mobile APIs + React frontend portals, high concurrency.
   [2023–2025]    Back End Developer @ Veda App (वेद)
-                → Scalable REST APIs, query optimization, database modeling.
+                → Scalable REST endpoints, query optimization, enterprise services.
   [2023]         Jr. Web Developer @ Infinite IT Solutions
-                → Responsive web delivery, Git version control, collaborative UI.`,
+                → Responsive web delivery, collaborative releases, version control.`,
 
-    projects: () => `Highlighted Production Projects:
-  1. Veda App Multi-Tenant Core & Mobile APIs (PHP/Laravel/MySQL)
-  2. ConnectIPS & Fee Payment Gateway Automation Engine
-  3. School Examination Result Ledger & Grading System
-  4. Role-Based Access Control (RBAC) & Tenant Data Isolation`,
+    projects: () => `Highlighted Production Systems:
+  1. Veda App (वेद) Core & Mobile APIs (CodeIgniter / PHP / MySQL)
+     → https://veda-app.com
+     → High-availability backend powering hundreds of schools & colleges + 50k+ mobile users.
+  2. Veda Inventory Symphony (Symfony / React / PHP / MySQL)
+     → https://inventory.ingrails.com
+     → Multi-tenant enterprise inventory, procurement, and institutional asset ERP.
+  3. Aabhyas App — Nepal Competitive Exam Prep (Laravel / React)
+     → https://aabhyas.app/
+     → Focused exam preparation platform with live mock testing and percentile analytics.
+  4. Tech Content & Community Creator (Sashwat UM - 600+ Subscribers)
+     → Video walkthroughs, developer tutorials, and community initiatives.`,
+
+    aabhyas: () => {
+      window.open('https://aabhyas.app/', '_blank');
+      return `Opening Aabhyas App (https://aabhyas.app/)... Built with Laravel & React.`;
+    },
+
+    huddle: () => `Daily Standup Git Command & Alias:
+  Command:
+    git log --all --no-merges --since="yesterday" --author="Shekhar" --pretty=format:"* %s"
+
+  Set as global alias:
+    git config --global alias.huddle 'log --all --no-merges --since="yesterday" --author="Shekhar" --pretty=format:"* %s"'
+
+  Usage:
+    git huddle
+  → Outputs an instant clean bullet list of all yesterday's commits across all branches!
+  → Read full post at /blog/why-i-use-git-huddle-command-daily-standups/`,
+
+    blog: () => `Recent Engineering Notes & Articles:
+  1. [Guide] My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup
+  2. [Event] Inside Atlassian Community Kathmandu: Bitbucket Evolution with AI & Rovo Dev
+  3. [Event] Building AI-First Product Organizations with Hermes Agents (Om Prakash Sharma)
+  4. [Story] From Intern to Full Stack Developer: 3 Years of Backend Engineering at Veda
+  5. [Git]   Why I Use This Command: Supercharge Your Daily Standups with a Git Alias
+  → Scroll to the #blog section to read the full articles!`,
 
     education: () => `Academic Credentials:
   ✓ Bachelor of Computer Applications (BCA) · Nihareeka College [Completed / Graduated]
@@ -102,12 +169,26 @@ Current: Shipping high-availability core mobile APIs & payment engines at Veda A
   ✉ Email:    shekharluitelofficial@gmail.com
   ☎ Phone:    +977 9846684310
   🔗 LinkedIn: https://www.linkedin.com/in/shekhar-luitel33/
-  🐙 GitHub:   https://github.com/shekhar1luitel`,
+  🏢 Enterprise Codebases: Maintained in private corporate repositories.`,
+
+    resume: () => {
+      window.open('/resume/', '_blank');
+      return `Opening resume page (/resume/)...`;
+    },
 
     'curl resume': () => {
-      window.open('/CV/resume.html', '_blank');
-      return `Opening resume page (/CV/resume.html)...`;
+      window.open('/resume/', '_blank');
+      return `Opening resume page (/resume/)...`;
     },
+
+    cv: () => {
+      window.open('/resume/', '_blank');
+      return `Opening resume page (/resume/)...`;
+    },
+
+    ls: () => commands.help(),
+    dir: () => commands.help(),
+    about: () => commands.bio(),
 
     clear: () => {
       if (terminalBody) {
@@ -127,7 +208,7 @@ Current: Shipping high-availability core mobile APIs & payment engines at Veda A
     echoLine.innerHTML = `<span class="prompt-symbol">shekhar@portfolio:~$</span> <span class="command-highlight">${escapeHTML(cleanCmd)}</span>`;
     terminalBody.appendChild(echoLine);
 
-    if (cleanCmd === 'clear') {
+    if (cleanCmd === 'clear' || cleanCmd === 'cls') {
       commands.clear();
       return;
     }
