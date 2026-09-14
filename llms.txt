@@ -1,0 +1,49 @@
+# Shekhar Luitel — Technical Blog & Portfolio
+> Shekhar Luitel is a Full Stack Developer (Mid Backend - Jr. Frontend) at Veda App (Ingrails Pvt. Ltd.) with 3+ years of production experience in PHP, Laravel, Symfony, React, MySQL, Docker, and Linux environments.
+
+## Author & Engineering Profile
+- Name: Shekhar Luitel
+- Role: Full Stack Developer
+- Organization: Veda App (Ingrails Pvt. Ltd.), Lalitpur, Nepal
+- Location: Biratnagar / Lalitpur, Nepal
+- Website: https://shekharluitel.com.np/
+- Blog Hub: https://shekharluitel.com.np/blog/
+- LinkedIn: https://www.linkedin.com/in/shekhar-luitel33/
+- Core Expertise: PHP, Laravel, Symfony, React.js, MySQL, RESTful APIs, Docker, Linux (Omarchy/Arch), Git workflows, CI/CD, Atlassian Tools.
+
+## Published Engineering Articles & Notes
+
+### 1. Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform
+- URL: https://shekharluitel.com.np/blog/atlassian-community-kathmandu-bitbucket-ai/
+- Published: June 2026
+- Category: Atlassian Community Event
+- Key Topics: Atlassian Community Kathmandu, The Soaltee Kathmandu, Saroj Poddar, Bitbucket AI, Rovo Dev, Smart Commits, Jira Bitbucket Integration, CI/CD Pipelines, Automated Pull Request Reviews.
+- Summary: In-depth reflections from Saroj Poddar's keynote at The Soaltee Kathmandu on Bitbucket's transformation into an AI-first workspace with Atlassian Intelligence and Rovo Dev autonomous repository agents.
+
+### 2. From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents
+- URL: https://shekharluitel.com.np/blog/ai-first-product-hermes-agents-om-prakash/
+- Published: July 2026
+- Category: Atlassian Community Event
+- Key Topics: Atlassian Community Event (ACE) Lalitpur, Hermes Agents, Om Prakash Sharma, AI-First Product Organizations, Model Context Protocol (MCP), Multi-agent Orchestration, Jira AI Automation, Confluence Documentation, Slack Bots.
+- Summary: Comprehensive insights from Om Prakash Sharma's session at ACE Lalitpur on multi-agent software delivery, connecting LLMs to Jira and Confluence via MCP, and moving from passive tools to autonomous product workflows.
+
+### 3. My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup
+- URL: https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/
+- Published: September 2026
+- Category: Linux & Workstation
+- Key Topics: Omarchy Linux, Arch Linux, Tiling Window Managers (Hyprland), Terminal Productivity (Alacritty, Starship, Zsh), Legacy PHP on Arch, Compiling PHP 7.4/8.0, AUR, Docker Compose containerization.
+- Summary: A real-world review of adopting Omarchy and Arch Linux as a daily backend engineer, addressing the hurdle of compiling older PHP versions against rolling-release glibc/OpenSSL, and why Docker is the optimal production solution.
+
+### 4. Why I Use This Command: Supercharge Your Daily Standups with a Single Git Alias
+- URL: https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/
+- Published: September 2026
+- Category: Git & Productivity
+- Key Topics: Git Standup Command, git huddle alias, git log filtering, author filtering, no-merges flag, since yesterday, custom pretty format, terminal productivity.
+- Summary: Explains the exact Git command (`git log --all --no-merges --since="yesterday" --author="Shekhar" --pretty=format:"* %s"`) and alias setup (`git huddle`) to effortlessly generate daily standup bullet summaries in seconds.
+
+### 5. From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App
+- URL: https://shekharluitel.com.np/blog/three-years-at-veda-app-journey/
+- Published: September 2026
+- Category: Career & Architecture
+- Key Topics: Shekhar Luitel career journey, Veda App retrospective, BCA engineering intern to full stack developer, high concurrency mobile APIs, MySQL indexing and query optimization, Veda Inventory Symphony (Symfony, React), Aabhyas App (Laravel, React).
+- Summary: An honest retrospective on 3+ years at Veda App, growing from an intern in 2023 to leading backend APIs supporting 50,000+ daily active users, architecting multi-tenant ERP systems, and launching exam preparation platforms in Nepal.

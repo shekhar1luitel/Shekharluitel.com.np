@@ -10,16 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <meta name="description" content="A dedicated publication space by Shekhar Luitel covering Atlassian Community events in Nepal, AI-native developer workflows, Omarchy and Arch Linux workstation setups, and scalable PHP/Laravel backend architecture.">
-  <meta name="keywords" content="Shekhar Luitel Blog, Atlassian Community Kathmandu, ACE Lalitpur, Bitbucket AI, Hermes Agents, Omarchy Linux, Arch Linux Docker PHP, git huddle alias, Veda App">
+  <meta name="keywords" content="Shekhar Luitel Blog, Atlassian Community Kathmandu, Saroj Poddar, The Soaltee Kathmandu, Bitbucket AI, Rovo Dev, Smart Commits, ACE Lalitpur, Hermes Agents, Om Prakash Sharma, Model Context Protocol, MCP, Multi-agent workflows, Omarchy Linux, Arch Linux Docker legacy PHP, PHP 7.4 Arch Linux, Alacritty Starship Zsh, git huddle alias, git daily standup command, Veda App 3 years retrospective, BCA intern to full stack developer, Veda Inventory Symphony, Aabhyas App Laravel React, high concurrency MySQL REST APIs, tech blogs Nepal">
   <meta name="author" content="Shekhar Luitel">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://shekharluitel.com.np/blog/">
 
-  <meta property="og:type" content="blog">
+  <!-- Open Graph / Social Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Shekhar Luitel Engineering Journal">
   <meta property="og:url" content="https://shekharluitel.com.np/blog/">
   <meta property="og:title" content="Engineering Blog & Technical Publications · Shekhar Luitel">
   <meta property="og:description" content="Articles on Atlassian community events, AI-driven DevOps, Linux workstation craft, and production backend architecture.">
   <meta property="og:image" content="https://shekharluitel.com.np/images/atlassian-community-kathmandu.jpg">
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Engineering Blog & Publications · Shekhar Luitel">
   <meta name="twitter:description" content="Articles on Atlassian community events, AI-driven DevOps, Linux workstation craft, and production backend architecture.">
@@ -27,6 +31,73 @@
 
   <link rel="icon" href="/images/logosashwatum.png" type="image/png">
   <link rel="stylesheet" href="/css/developer.css?v=3.2">
+
+  <!-- Interconnected JSON-LD Schema for Google & AI Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Blog",
+        "@id": "https://shekharluitel.com.np/blog/#blog",
+        "name": "Shekhar Luitel Engineering Notes & Publications",
+        "description": "Technical publication space by Shekhar Luitel covering Atlassian events, AI-native platforms, Linux workstation ergonomics, and backend engineering architectures.",
+        "url": "https://shekharluitel.com.np/blog/",
+        "inLanguage": "en-US",
+        "author": {
+          "@type": "Person",
+          "name": "Shekhar Luitel",
+          "jobTitle": "Full Stack Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Veda App",
+            "url": "https://veda-app.com"
+          },
+          "url": "https://shekharluitel.com.np/",
+          "sameAs": [
+            "https://www.linkedin.com/in/shekhar-luitel33/"
+          ]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Shekhar Luitel"
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform",
+            "url": "https://shekharluitel.com.np/blog/atlassian-community-kathmandu-bitbucket-ai/",
+            "datePublished": "2026-06-21"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents",
+            "url": "https://shekharluitel.com.np/blog/ai-first-product-hermes-agents-om-prakash/",
+            "datePublished": "2026-07-24"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup",
+            "url": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/",
+            "datePublished": "2026-09-10"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "Why I Use This Command: Supercharge Your Daily Standups with a Single Git Alias",
+            "url": "https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/",
+            "datePublished": "2026-09-14"
+          },
+          {
+            "@type": "BlogPosting",
+            "headline": "From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App",
+            "url": "https://shekharluitel.com.np/blog/three-years-at-veda-app-journey/",
+            "datePublished": "2026-09-01"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <style>
     /* Robust Inline Styles for Dev.to Experience & Cache Immunity */
@@ -52,7 +123,7 @@
 
     .blog-search-box {
       position: relative;
-      max-width: 580px;
+      max-width: 620px;
       width: 100%;
     }
 
@@ -64,8 +135,8 @@
       border: 1px solid var(--border-subtle);
       color: var(--text-primary);
       border-radius: var(--radius-full);
-      padding: 0.75rem 1.25rem 0.75rem 2.85rem;
-      font-size: 0.92rem;
+      padding: 0.8rem 1.25rem 0.8rem 2.85rem;
+      font-size: 0.94rem;
       outline: none;
       transition: all 0.2s ease;
       font-family: var(--font-sans);
@@ -73,7 +144,7 @@
 
     .blog-search-box input:focus {
       border-color: var(--accent-cyan);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.16);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
       background: var(--bg-surface-elevated);
     }
 
@@ -445,7 +516,7 @@
         <span class="search-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </span>
-        <input type="search" id="blog-search-input" placeholder="Search by topic, tech, or title (e.g., atlassian, docker, git, symfony)..." aria-label="Search articles">
+        <input type="search" id="blog-search-input" placeholder="Search by topic, keyword, sentence, tool (e.g., atlassian, saroj, hermes, omarchy, docker, git standup, veda)..." aria-label="Search articles">
       </div>
 
       <div class="blog-categories-bar" role="tablist" aria-label="Filter blog articles by category">
@@ -473,7 +544,7 @@
     </div>
 
     <!-- Featured Spotlight Article (Dev.to Hero Banner Style) -->
-    <article class="devto-featured-card" id="featured-article-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev saroj poddar soaltee ci cd devops smart commits">
+    <article class="devto-featured-card" id="featured-article-card" data-category="atlassian" data-keywords="atlassian community kathmandu the soaltee saroj poddar bitbucket ai rovo dev smart commits jira bitbucket pipelines devops nepal ci cd automated pr reviews pull request summary intelligent repository autonomous agent nepali developers what was discussed at atlassian kathmandu who spoke at atlassian community kathmandu">
       <div class="devto-featured-cover">
         <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">
           <img src="/images/atlassian-community-kathmandu.jpg" alt="Atlassian Community Event at The Soaltee Kathmandu">
@@ -534,7 +605,7 @@
     <!-- All Articles Grid (Dev.to Card Style) -->
     <div class="blog-grid" id="blog-articles-grid">
       <!-- Article 1: Atlassian Community Kathmandu -->
-      <article class="devto-card" data-category="atlassian" data-keywords="atlassian community kathmandu bitbucket ai rovo dev smart commits saroj poddar soaltee devops nepali developers">
+      <article class="devto-card" data-category="atlassian" data-keywords="atlassian community kathmandu the soaltee saroj poddar bitbucket ai rovo dev smart commits jira bitbucket pipelines devops nepal ci cd automated pr reviews pull request summary intelligent repository autonomous agent nepali developers what was discussed at atlassian kathmandu who spoke at atlassian community kathmandu">
         <div class="devto-cover-wrap">
           <a href="/blog/atlassian-community-kathmandu-bitbucket-ai/">
             <img src="/images/atlassian-community-kathmandu.jpg" alt="Atlassian Community Kathmandu" class="devto-cover-img">
@@ -578,7 +649,7 @@
       </article>
 
       <!-- Article 2: Atlassian ACE Lalitpur -->
-      <article class="devto-card" data-category="atlassian" data-keywords="atlassian ace lalitpur hermes agents om prakash sharma ai first product management jira confluence slack mcp model context protocol">
+      <article class="devto-card" data-category="atlassian" data-keywords="atlassian community event ace lalitpur hermes agents om prakash sharma ai first product organization model context protocol mcp multi agent orchestration jira confluence slack automation autonomous software delivery agile backlog decomposition who presented hermes agents how to build ai first product organizations">
         <div class="devto-cover-wrap">
           <a href="/blog/ai-first-product-hermes-agents-om-prakash/">
             <img src="/images/hermes-agents-om-prakash.jpg" alt="Om Prakash Sharma presenting Hermes Agents at ACE Lalitpur" class="devto-cover-img">
@@ -622,7 +693,7 @@
       </article>
 
       <!-- Article 3: Omarchy & Arch Linux -->
-      <article class="devto-card" data-category="linux" data-keywords="omarchy arch linux developers docker legacy php fast workstation tiling window manager terminal efficiency alacritty zsh starship">
+      <article class="devto-card" data-category="linux" data-keywords="omarchy arch linux developer guide workstation setup tiling window manager hyprland sway alacritty zsh starship terminal speed memory footprint 350mb idle docker legacy php php 7.4 php 8.0 compile aur glibc openssl 3 docker compose backend engineering why use arch linux for web development how to run old php on arch linux">
         <div class="devto-card-body">
           <div class="devto-author-row">
             <div class="devto-author-meta">
@@ -661,7 +732,7 @@
       </article>
 
       <!-- Article 4: Git Standup Command -->
-      <article class="devto-card" data-category="git" data-keywords="git standup alias huddle git log no-merges since yesterday author pretty format productivity terminal command">
+      <article class="devto-card" data-category="git" data-keywords="git standup alias huddle git log no merges since yesterday author pretty format markdown bullet points terminal productivity morning standup prep recall yesterday work git command git config global alias huddle daily agile scrum meeting bash cli tricks how to get yesterday commits in git what git command for standup">
         <div class="devto-card-body">
           <div class="devto-author-row">
             <div class="devto-author-meta">
@@ -700,7 +771,7 @@
       </article>
 
       <!-- Article 5: Veda 3 Years Retrospective -->
-      <article class="devto-card" data-category="career" data-keywords="veda app career retrospective bca intern full stack developer symfony react laravel codeigniter mysql api performance">
+      <article class="devto-card" data-category="career" data-keywords="veda app career retrospective 3 years shekhar luitel bca intern to full stack developer nihareeka college high concurrency backend systems rest apis sub 150ms mysql indexing slow query explain veda inventory symphony multi tenant erp logistics symfony react aabhyas app online exam prep laravel react ingrails edtech nepal shekhar experience at veda">
         <div class="devto-card-body">
           <div class="devto-author-row">
             <div class="devto-author-meta">
@@ -741,8 +812,8 @@
 
       <!-- Empty State container -->
       <div id="empty-search-msg" class="empty-results-msg" style="display: none;">
-        <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">No articles match your filter</p>
-        <p style="font-size: 0.9rem;">Try clearing the search query or selecting "All Articles".</p>
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--text-primary);">No articles match your query</p>
+        <p style="font-size: 0.9rem;">Try searching for different terms (e.g., atlassian, docker, git, veda) or click "All Articles".</p>
       </div>
     </div>
   </main>
@@ -762,7 +833,7 @@
 
   <script src="/js/developer.js"></script>
 
-  <!-- Interactive Search, Category Filtering & All Articles Navigation Script -->
+  <!-- High-Intelligence Multi-Term Search, Category Filtering & Navigation Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const categoryPills = document.querySelectorAll('.category-pill');
@@ -776,17 +847,52 @@
       let currentCategory = 'all';
       let searchQuery = '';
 
+      function normalize(str) {
+        return (str || '')
+          .toLowerCase()
+          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()?"'’]/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      }
+
+      function textMatchesQuery(haystack, query) {
+        if (!query) return true;
+        const normHaystack = normalize(haystack);
+        const normQuery = normalize(query);
+
+        // 1. Direct substring match (covers exact phrases, sentences, words)
+        if (normHaystack.includes(normQuery)) return true;
+
+        // 2. Multi-word tokenized search: every token must be found in haystack
+        const queryTokens = normQuery.split(' ').filter(t => t.length > 1);
+        if (queryTokens.length === 0) return true;
+
+        const allMatch = queryTokens.every(tok => normHaystack.includes(tok));
+        if (allMatch) return true;
+
+        // 3. For 3+ words, match if at least 60% of search terms match
+        if (queryTokens.length >= 3) {
+          const matchCount = queryTokens.filter(tok => normHaystack.includes(tok)).length;
+          if (matchCount >= Math.ceil(queryTokens.length * 0.6)) return true;
+        }
+
+        return false;
+      }
+
       function filterArticles() {
         let visibleCount = 0;
 
         articles.forEach(card => {
-          const category = card.getAttribute('data-category');
-          const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-          const title = (card.querySelector('.devto-card-title') || card.querySelector('h3')).textContent.toLowerCase();
-          const excerpt = (card.querySelector('.devto-excerpt') || card.querySelector('p')).textContent.toLowerCase();
+          const category = card.getAttribute('data-category') || '';
+          const keywords = card.getAttribute('data-keywords') || '';
+          const title = (card.querySelector('.devto-card-title') || card.querySelector('h3') || {}).textContent || '';
+          const excerpt = (card.querySelector('.devto-excerpt') || card.querySelector('p') || {}).textContent || '';
+          const tags = Array.from(card.querySelectorAll('.devto-tag')).map(t => t.textContent).join(' ');
+
+          const fullSearchableText = `${title} ${excerpt} ${keywords} ${tags} ${category}`;
 
           const matchesCategory = (currentCategory === 'all' || category === currentCategory);
-          const matchesSearch = !searchQuery || title.includes(searchQuery) || excerpt.includes(searchQuery) || keywords.includes(searchQuery);
+          const matchesSearch = textMatchesQuery(fullSearchableText, searchQuery);
 
           if (matchesCategory && matchesSearch) {
             card.classList.remove('hidden');
@@ -798,12 +904,16 @@
 
         // Handle featured card visibility
         if (featuredCard) {
-          const featCategory = featuredCard.getAttribute('data-category');
-          const featKeywords = (featuredCard.getAttribute('data-keywords') || '').toLowerCase();
-          const featTitle = featuredCard.querySelector('h2').textContent.toLowerCase();
+          const featCategory = featuredCard.getAttribute('data-category') || '';
+          const featKeywords = featuredCard.getAttribute('data-keywords') || '';
+          const featTitle = (featuredCard.querySelector('.devto-featured-title') || featuredCard.querySelector('h2') || {}).textContent || '';
+          const featExcerpt = (featuredCard.querySelector('.devto-excerpt') || featuredCard.querySelector('p') || {}).textContent || '';
+          const featTags = Array.from(featuredCard.querySelectorAll('.devto-tag')).map(t => t.textContent).join(' ');
+
+          const fullFeatText = `${featTitle} ${featExcerpt} ${featKeywords} ${featTags} ${featCategory}`;
 
           const matchesFeatCat = (currentCategory === 'all' || featCategory === currentCategory);
-          const matchesFeatSearch = !searchQuery || featTitle.includes(searchQuery) || featKeywords.includes(searchQuery);
+          const matchesFeatSearch = textMatchesQuery(fullFeatText, searchQuery);
 
           if (matchesFeatCat && matchesFeatSearch) {
             featuredCard.style.display = '';
@@ -847,10 +957,10 @@
         });
       });
 
-      // Search input changes
+      // Search input changes (instant matching on keyup/input)
       if (searchInput) {
         searchInput.addEventListener('input', (e) => {
-          searchQuery = e.target.value.trim().toLowerCase();
+          searchQuery = e.target.value.trim();
           filterArticles();
         });
       }

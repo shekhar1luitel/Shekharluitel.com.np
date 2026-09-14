@@ -10,16 +10,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <meta name="description" content="My journey learning Omarchy & Arch Linux as a backend engineer. Why it boosted my daily productivity, the hurdle of compiling older PHP versions on rolling-release Arch, and why Docker is the cleanest solution.">
-  <meta name="keywords" content="Omarchy, Arch Linux for developers, Linux developer workflow, Omarchy usages, Docker for legacy PHP, Arch Linux PHP setup, Shekhar Luitel">
+  <meta name="keywords" content="Omarchy Linux, Arch Linux developer guide, Docker legacy PHP, Arch Linux PHP 7.4, Arch Linux PHP 8.0, AUR old php, Hyprland developer setup, Arch Linux Alacritty Zsh, rolling release Linux backend development, Linux memory footprint, Docker compose PHP MySQL, Omarchy workstation, Arch Linux for web developers, Shekhar Luitel Linux setup, Omarchy vs Ubuntu, Veda App backend engineer">
   <meta name="author" content="Shekhar Luitel">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Shekhar Luitel Engineering Journal">
   <meta property="og:url" content="https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/">
   <meta property="og:title" content="My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup">
   <meta property="og:description" content="A realistic look into adopting Arch Linux and Omarchy as a developer, plus why Docker is essential for legacy PHP stacks.">
   <meta property="og:image" content="https://shekharluitel.com.np/images/profile.jpg">
+  <meta property="article:published_time" content="2026-09-10T09:00:00+05:45">
+  <meta property="article:modified_time" content="2026-09-14T23:45:00+05:45">
+  <meta property="article:author" content="https://shekharluitel.com.np/">
+  <meta property="article:section" content="Linux & Workstations">
+  <meta property="article:tag" content="Linux">
+  <meta property="article:tag" content="Omarchy">
+  <meta property="article:tag" content="Arch Linux">
+  <meta property="article:tag" content="Docker">
+  <meta property="article:tag" content="PHP">
 
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="My Experience Learning Omarchy & Arch Linux · Shekhar Luitel">
   <meta name="twitter:description" content="Why Omarchy and Arch Linux became my go-to productive developer environment.">
@@ -27,26 +40,104 @@
   <link rel="icon" href="/images/logosashwatum.png" type="image/png">
   <link rel="stylesheet" href="/css/developer.css?v=3.2">
 
+  <!-- Interconnected JSON-LD Graph for Google & AI Search Engines -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup",
-    "description": "My journey learning Omarchy & Arch Linux as a backend engineer. Why it boosted my daily productivity, the hurdle of compiling older PHP versions on rolling-release Arch, and why Docker is the cleanest solution.",
-    "author": {
-      "@type": "Person",
-      "name": "Shekhar Luitel",
-      "url": "https://shekharluitel.com.np"
-    },
-    "datePublished": "2026-09-10",
-    "dateModified": "2026-09-14",
-    "mainEntityOfPage": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/",
-    "publisher": {
-      "@type": "Person",
-      "name": "Shekhar Luitel"
-    }
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/#article",
+        "isPartOf": {
+          "@type": "WebPage",
+          "@id": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/"
+        },
+        "headline": "My Experience Learning Omarchy & Arch Linux: A Productive Developer Setup (And Why I Use Docker for Legacy PHP)",
+        "description": "A realistic review of adopting Omarchy and Arch Linux as a daily backend engineer, addressing the hurdle of compiling older PHP versions against rolling-release glibc/OpenSSL, and why Docker is the optimal production solution.",
+        "image": "https://shekharluitel.com.np/images/profile.jpg",
+        "datePublished": "2026-09-10T09:00:00+05:45",
+        "dateModified": "2026-09-14T23:45:00+05:45",
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/",
+        "author": {
+          "@type": "Person",
+          "name": "Shekhar Luitel",
+          "jobTitle": "Full Stack Developer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Veda App",
+            "url": "https://veda-app.com"
+          },
+          "url": "https://shekharluitel.com.np/",
+          "sameAs": [
+            "https://www.linkedin.com/in/shekhar-luitel33/"
+          ]
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Shekhar Luitel",
+          "url": "https://shekharluitel.com.np/"
+        },
+        "keywords": [
+          "Omarchy Linux",
+          "Arch Linux developer setup",
+          "Docker legacy PHP",
+          "Arch Linux PHP 7.4",
+          "Alacritty terminal",
+          "Starship prompt",
+          "Tiling window manager",
+          "Backend developer Linux",
+          "Shekhar Luitel"
+        ],
+        "about": [
+          { "@type": "Thing", "name": "Arch Linux", "sameAs": "https://en.wikipedia.org/wiki/Arch_Linux" },
+          { "@type": "Thing", "name": "Docker (software)", "sameAs": "https://en.wikipedia.org/wiki/Docker_(software)" },
+          { "@type": "Thing", "name": "PHP", "sameAs": "https://en.wikipedia.org/wiki/PHP" },
+          { "@type": "Thing", "name": "Linux", "sameAs": "https://en.wikipedia.org/wiki/Linux" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Omarchy Linux and what makes it productive for developers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Omarchy is a customized, keyboard-centric distribution built upon Arch Linux. It features tiling window management, a pre-configured shell environment (Alacritty, Zsh, Starship), and an ultra-low ~350MB idle memory footprint that leaves system resources available for compilation, database servers, and Docker containers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why do older PHP versions fail to compile on Arch Linux?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because Arch Linux is a rolling-release operating system with modern glibc, OpenSSL 3.x, and updated ICU libraries. Legacy versions like PHP 7.4 or 7.2 depend on deprecated OpenSSL 1.1 APIs and older compiler standards, leading to build errors when compiling natively from the AUR."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the recommended solution for legacy PHP on Arch Linux?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The cleanest solution is keeping your host Arch OS on modern native PHP 8+ and containerizing legacy PHP projects using Docker Compose with official alpine-based PHP runtime images."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why choose Arch Linux over Ubuntu or Debian for backend engineering?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Arch Linux provides bleeding-edge compiler toolchains, the vast Arch User Repository (AUR), native Linux kernel performance with zero VM virtualization overhead, and complete customization freedom."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
+
   <style>
     .article-container { max-width: 820px; margin: 0 auto; padding-top: calc(var(--header-height) + 2rem); padding-bottom: 5rem; }
     .article-header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 1.75rem; }
@@ -102,7 +193,7 @@
 
     <header class="article-header">
       <div class="blog-card-meta" style="margin-bottom: 0.5rem;">
-        <span class="blog-badge">Linux & Dev Tools</span>
+        <span class="blog-badge blog-badge-linux">Linux & Workstation</span>
         <span>8 min read</span>
       </div>
       <h1 class="section-title" style="margin-top: 0.5rem; font-size: clamp(1.9rem, 3.5vw, 2.75rem);">
@@ -116,6 +207,17 @@
         <span>Engineering Notes</span>
       </div>
     </header>
+
+    <!-- AI Quick Summary / Direct Answer Snippet for Search Engines & LLMs -->
+    <div class="ai-quick-summary" aria-label="Quick Summary">
+      <div class="summary-title">💡 Quick Summary & AI Overview</div>
+      <ul>
+        <li><strong>Distribution:</strong> Omarchy (Custom Arch Linux with tiling window managers & minimal bloat).</li>
+        <li><strong>Memory Footprint:</strong> ~350MB idle RAM usage, maximizing available memory for backend databases.</li>
+        <li><strong>The Problem:</strong> Rolling-release Arch Linux ships OpenSSL 3.x and modern glibc, breaking legacy PHP (7.4/8.0) compilation from AUR.</li>
+        <li><strong>The Solution:</strong> Keep the host Arch system pristine on modern PHP 8+, and run legacy PHP applications inside isolated Docker containers via <code>docker compose</code>.</li>
+      </ul>
+    </div>
 
     <article class="article-body">
       <p>
@@ -212,6 +314,39 @@
       <p>
         Adopting Omarchy and Arch Linux isn't about bragging rights — it's about building an environment that respects your time and lets you focus on code. If you're considering the switch, go for it! Just remember: use Docker for older runtime versions, and enjoy the speed.
       </p>
+
+      <!-- Interactive FAQ Section for Google Rich Results & AI Search Queries -->
+      <section class="article-faq-section" aria-label="Frequently Asked Questions">
+        <h2 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1.25rem;">Frequently Asked Questions (FAQ)</h2>
+
+        <details class="faq-card" open>
+          <summary>What is Omarchy Linux?</summary>
+          <div class="faq-card-body">
+            Omarchy is an optimized, keyboard-driven Linux distribution built on Arch Linux, configured with minimal tiling window managers (Hyprland/Sway) and terminal workflows, idling around ~350MB of RAM.
+          </div>
+        </details>
+
+        <details class="faq-card">
+          <summary>Why is downloading old PHP versions hard on Arch Linux?</summary>
+          <div class="faq-card-body">
+            Because Arch Linux is a rolling-release distribution that ships modern OpenSSL 3.x and updated GCC/glibc libraries. Older PHP builds from AUR require deprecated OpenSSL 1.1 headers, leading to compilation errors.
+          </div>
+        </details>
+
+        <details class="faq-card">
+          <summary>How should developers run legacy PHP on Arch Linux?</summary>
+          <div class="faq-card-body">
+            Instead of compiling deprecated packages onto the host system, run legacy PHP versions (PHP 7.4, 7.2) inside lightweight Docker containers using Docker Compose.
+          </div>
+        </details>
+
+        <details class="faq-card">
+          <summary>What terminal setup does Shekhar Luitel use?</summary>
+          <div class="faq-card-body">
+            Alacritty terminal emulator with JetBrains Mono Nerd Font, Zsh shell, Starship prompt, and custom Git workflow aliases.
+          </div>
+        </details>
+      </section>
     </article>
 
     <!-- Relevant Posts Section -->
@@ -223,7 +358,7 @@
         <article class="blog-card">
           <div>
             <div class="blog-card-meta">
-              <span class="blog-badge">Git & Productivity</span>
+              <span class="blog-badge blog-badge-git">Git & Productivity</span>
               <span>4 min read</span>
             </div>
             <h4 class="blog-card-title">
@@ -242,7 +377,7 @@
         <article class="blog-card">
           <div>
             <div class="blog-card-meta">
-              <span class="blog-badge">Event Reflection</span>
+              <span class="blog-badge blog-badge-atlassian">Atlassian Event</span>
               <span>5 min read</span>
             </div>
             <h4 class="blog-card-title">
@@ -268,6 +403,7 @@
         <a href="https://www.linkedin.com/in/shekhar-luitel33/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="/blog/">Blog</a>
         <a href="/resume/">Resume</a>
+        <a href="/feed.xml" target="_blank" rel="noopener">RSS Feed</a>
       </div>
     </div>
   </footer>

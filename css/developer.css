@@ -1587,6 +1587,101 @@ a {
   gap: 0.5rem;
 }
 
+/* AI Quick Summary & GEO Direct Answer Block */
+.ai-quick-summary {
+  background: rgba(14, 165, 233, 0.08);
+  border: 1px solid rgba(14, 165, 233, 0.28);
+  border-left: 4px solid var(--accent-cyan);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0 2.25rem;
+}
+
+.ai-quick-summary .summary-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+}
+
+.ai-quick-summary ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.ai-quick-summary li {
+  margin-bottom: 0.45rem;
+}
+
+.ai-quick-summary li:last-child {
+  margin-bottom: 0;
+}
+
+/* FAQ Section for Google & AI Search */
+.article-faq-section {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.faq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-card:hover {
+  border-color: var(--border-active);
+}
+
+.faq-card summary {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.faq-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-card summary::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  transition: transform 0.2s;
+}
+
+.faq-card[open] summary::after {
+  content: '−';
+}
+
+.faq-card-body {
+  padding: 0 1.25rem 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 0.85rem;
+}
+
 /* Responsive Media Queries */
 @media (max-width: 960px) {
   .hero-grid {
