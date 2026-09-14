@@ -1,39 +1,42 @@
 const { DateTime } = require("luxon");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginSitemap = require("@11ty/eleventy-plugin-sitemap");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ["njk", "md"],
-    init: ({ hljs }) => {
-      hljs.configure({
-        ignoreUnescapedHTML: true,
-      });
-    },
-  });
-  eleventyConfig.addPlugin(pluginSitemap, {
-    sitemap: {
-      hostname: "https://shekharluitel.com.np",
-    },
   });
 
   eleventyConfig.addPassthroughCopy({ "assets/img": "img" });
   eleventyConfig.addPassthroughCopy({ "assets/js": "js" });
   eleventyConfig.addPassthroughCopy({ "assets/css": "css" });
+  eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("CV");
+  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("CNAME");
   eleventyConfig.addWatchTarget("assets/css/");
   eleventyConfig.addWatchTarget("assets/js/");
 
-  eleventyConfig.addFilter("capitalize", (value = "") => value.charAt(0).toUpperCase() + value.slice(1));
+  eleventyConfig.addFilter("capitalize", (value) => {
+    if (!value) return "";
+    const str = String(value);
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  });
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toLocaleString(DateTime.DATE_FULL);
   });
 
-
-  eleventyConfig.addFilter("formatTag", (value = "") => value.split("-").map(part => part.charAt(0).toUpperCase() + part.slice(1)).join(" "));
+  eleventyConfig.addFilter("formatTag", (value) => {
+    if (!value) return "";
+    return String(value)
+      .split("-")
+      .filter(Boolean)
+      .map(part => (part ? part.charAt(0).toUpperCase() + part.slice(1) : ""))
+      .join(" ");
+  });
 
   eleventyConfig.addFilter("uniqueTags", (items = []) => {
     const tags = new Set();

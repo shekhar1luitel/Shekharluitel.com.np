@@ -1,11 +1,14 @@
 ---
 layout: page.njk
 title: Contact
-description: Get in touch with Shekhar Luitel for collaborations, consulting, or speaking.
+description: Get in touch with Shekhar Luitel for software development, full-stack collaborations, consulting, or engineering opportunities.
 permalink: /contact/
 ---
 <section>
-  <p>You can reach me directly at <a href="mailto:hello@shekharluitel.com.np">hello@shekharluitel.com.np</a>. For projects that need a little more context, use the form below and I'll respond within two working days.</p>
+  <p>You can reach me directly at <a href="mailto:shekharluitelofficial@gmail.com">shekharluitelofficial@gmail.com</a> or by phone at <a href="tel:+9779846684310">+977 9846684310</a>.</p>
+
+  <p>Connect with me professionally on <a href="https://www.linkedin.com/in/shekhar-luitel33/" target="_blank" rel="noopener">LinkedIn (shekhar-luitel33)</a> or view my code on <a href="https://github.com/shekhar1luitel" target="_blank" rel="noopener">GitHub (shekhar1luitel)</a>.</p>
+
   <form method="post" data-netlify="true" name="contact" data-form>
     <input type="hidden" name="form-name" value="contact">
     <label for="contact-name">Name</label>

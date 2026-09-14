@@ -1,32 +1,39 @@
 ---
 layout: page.njk
 title: About
-description: Learn more about Shekhar Luitel, an education-tech builder focused on resilient backend systems and thoughtful UX.
+description: Learn more about Shekhar Luitel, Full Stack Developer at Veda App focused on resilient backend systems, MySQL optimization, and clean web applications.
 permalink: /about/
 ---
 <section>
-  <p>I'm Shekhar Luitel, a software engineer building education technology that helps learners in Nepal thrive. My work blends backend engineering with accessible interfaces so students and administrators can trust the tools they use every day.</p>
-  <p>Across roles at <strong>Loksewa Quiz Hub</strong> and client platforms, I lead teams to ship pragmatic solutions: data pipelines, exam delivery systems, and automation that reduce repetitive work for educators.</p>
+  <p>I'm <strong>Shekhar Luitel</strong>, a Full Stack Developer (Mid Backend - Jr. Frontend) based in Biratnagar and Lalitpur, Nepal. I specialize in building resilient, scalable web applications and high-availability RESTful APIs using <strong>PHP, Laravel, CodeIgniter, React, and MySQL</strong>.</p>
+  <p>At <strong>Veda App (वेद)</strong>, Nepal's premier education technology platform, I engineer core backend services, optimize high-traffic database operations, build mobile API layers, and integrate secure payment solutions like ConnectIPS.</p>
 </section>
+
 <section>
-  <h2>Skills snapshot</h2>
+  <h2>Technical Stack</h2>
   <ul>
-    <li>Python, FastAPI, SQLAlchemy, Alembic</li>
-    <li>PostgreSQL, Redis, and queue-driven workflows</li>
-    <li>Docker, CI/CD, observability</li>
-    <li>PHP (CodeIgniter, Laravel) for legacy uplift</li>
-    <li>JavaScript with progressive enhancement, React Native fundamentals</li>
+    <li><strong>Backend Engineering:</strong> PHP 8+, Laravel, CodeIgniter 3/4, HMVC/MVC architectures</li>
+    <li><strong>Frontend Delivery:</strong> JavaScript (ES6+), React.js, Vue.js, Modern CSS, responsive UI</li>
+    <li><strong>Database & Performance:</strong> MySQL, relational modeling, indexing strategies, query profiling</li>
+    <li><strong>APIs & Security:</strong> RESTful APIs, ConnectIPS payment gateway, RBAC, webhooks, multi-tenant isolation</li>
+    <li><strong>DevOps & Tools:</strong> Ubuntu/Linux, Git/GitHub, Postman, Laragon, XAMPP</li>
   </ul>
 </section>
+
 <section>
-  <h2>Highlights from Loksewa Quiz Hub</h2>
+  <h2>Engineering Milestones at Veda App</h2>
   <ul>
-    <li>Scaled the quiz engine to support national-level exam prep with real-time leaderboards.</li>
-    <li>Built an analytics cockpit so mentors can personalize study plans backed by engagement data.</li>
-    <li>Introduced LLM-driven content drafting pipelines that cut publishing time in half.</li>
+    <li>Architected backend services handling high-concurrency requests across hundreds of institutions.</li>
+    <li>Implemented the automated ConnectIPS payment processing engine and transaction ledger reconciliation.</li>
+    <li>Engineered the comprehensive examination result ledger and grading engine.</li>
+    <li>Collaborated with frontend and mobile teams to deliver reliable, sub-second API endpoints.</li>
   </ul>
 </section>
+
 <section>
-  <h2>Beyond the screen</h2>
-  <p>When I'm not shipping features, you'll find me mentoring aspiring developers, reading about regional education policy, or sketching wireframes for the next community project.</p>
+  <h2>Education & Credentials</h2>
+  <ul>
+    <li><strong>Bachelor of Computer Applications (BCA)</strong> · Nihareeka College (Completed / Graduated)</li>
+    <li><strong>Diploma in Computer Hardware and Networking</strong> · The COIT Institute (2019)</li>
+  </ul>
 </section>

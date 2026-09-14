@@ -2,17 +2,17 @@
   "name": "Shekhar Luitel",
   "url": "https://shekharluitel.com.np",
   "language": "en",
-  "title": "Shekhar Luitel · Builder of education-tech tools",
-  "description": "Portfolio and writing of Shekhar Luitel — builder of education-tech tools blending Python, FastAPI, and thoughtful UX.",
+  "title": "Shekhar Luitel · Full Stack Developer",
+  "description": "Portfolio of Shekhar Luitel — Full Stack Developer specializing in PHP, Laravel, CodeIgniter, React, MySQL, RESTful APIs, and scalable architectures.",
   "author": {
     "name": "Shekhar Luitel",
-    "email": "hello@shekharluitel.com.np",
+    "email": "shekharluitelofficial@gmail.com",
+    "phone": "+977 9846684310",
     "social": {
-      "github": "https://github.com/shekharluitel",
-      "linkedin": "https://www.linkedin.com/in/shekharluitel",
-      "x": "https://x.com/shekharluitel",
-      "mastodon": "https://hachyderm.io/@shekharluitel"
+      "github": "https://github.com/shekhar1luitel",
+      "linkedin": "https://www.linkedin.com/in/shekhar-luitel33/",
+      "x": "https://x.com/shekharluitel"
     }
   },
-  "themeOptions": ["system", "light", "dark", "berry", "blueprint"]
+  "themeOptions": ["dark", "light"]
 }

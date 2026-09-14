@@ -8,13 +8,11 @@
     "@type": "Person",
     "name": "{{ site.name }}",
     "url": "{{ site.url }}",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Full Stack Developer",
     "description": "{{ site.description }}",
     "sameAs": [
       "{{ site.author.social.github }}",
-      "{{ site.author.social.linkedin }}",
-      "{{ site.author.social.x }}",
-      "{{ site.author.social.mastodon }}"
+      "{{ site.author.social.linkedin }}"
     ]
   }
   </script>
@@ -23,19 +21,21 @@
 {% block content %}
 <section data-hero>
   <note-pad>
+    <p tone="muted"><strong style="color: #10b981;">● Full Stack Developer (Mid Backend - Jr. Frontend) @ Veda App (वेद)</strong></p>
     <h1>Namaste, I'm {{ site.name }}.</h1>
-    <p>Builder of education-tech tools connecting students, educators, and institutions with resilient software.</p>
-    <p>I work across Python/FastAPI, SQLAlchemy, Postgres, PHP (CodeIgniter & Laravel), and emerging AI copilots.</p>
+    <p>Engineering resilient backend APIs, scalable database architectures, and reactive interfaces.</p>
+    <p>Specializing in <strong>PHP (Laravel, CodeIgniter), React, Vue, MySQL, and RESTful APIs</strong>. BCA Graduate from Nihareeka College.</p>
     <p>
-      <a href="/work/" variant="solid">Explore work</a>
-      <a href="/notes/" variant="ghost">Read notes</a>
+      <a href="/work/" variant="solid">Explore Projects</a>
+      <a href="/CV/resume.html" variant="ghost" target="_blank" rel="noopener">Printable CV ↗</a>
+      <a href="/resume/" variant="ghost">View Resume</a>
     </p>
   </note-pad>
 </section>
 <section>
   <header>
-    <h2>Featured projects</h2>
-    <p tone="muted">A quick tour of platforms and integrations I've shipped recently.</p>
+    <h2>Featured production systems</h2>
+    <p tone="muted">Key platforms, microservices, and payment integrations delivered in production.</p>
   </header>
   <div data-project-strip>
     {% for project in collections.featuredProjects %}
@@ -51,8 +51,8 @@
         {% endif %}
         <p>
           {% set linkCount = 0 %}
-          {% if project.data.links.live %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.live }}">Live</a>{% endif %}
-          {% if project.data.links.repo %}{% if linkCount > 0 %} · {% endif %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.repo }}">Code</a>{% endif %}
+          {% if project.data.links.live %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.live }}" target="_blank" rel="noopener">Live</a>{% endif %}
+          {% if project.data.links.repo %}{% if linkCount > 0 %} · {% endif %}{% set linkCount = linkCount + 1 %}<a href="{{ project.data.links.repo }}" target="_blank" rel="noopener">Code</a>{% endif %}
         </p>
       </project-card>
     {% endfor %}
@@ -61,20 +61,32 @@
 </section>
 <section>
   <header>
-    <h2>Latest notes</h2>
-    <p tone="muted">Fresh thinking on classless CSS, backend craftsmanship, and learning logs.</p>
+    <h2>Career Snapshot</h2>
+    <p tone="muted">Proven track record in high-availability software development.</p>
   </header>
   <ul data-note-list>
-    {% for note in collections.recentNotes %}
-      <li>
-        <article>
-          <h3><a href="{{ note.url }}">{{ note.data.title }}</a></h3>
-          <p tone="muted">{{ note.data.excerpt }}</p>
-          <p data-meta>{{ note.date | readableDate }}</p>
-        </article>
-      </li>
-    {% endfor %}
+    <li>
+      <article>
+        <h3>Full Stack Developer · Veda App (वेद)</h3>
+        <p tone="muted">Architecting enterprise backend services in PHP/Laravel/CodeIgniter and delivering reactive interfaces with JavaScript & React.</p>
+        <p data-meta>Nov 2025 – Present</p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h3>Back End Developer · Veda App (वेद)</h3>
+        <p tone="muted">Developed and tuned high-throughput RESTful APIs, optimized complex MySQL queries, and improved database indexing.</p>
+        <p data-meta>Dec 2023 – Nov 2025</p>
+      </article>
+    </li>
+    <li>
+      <article>
+        <h3>Jr. Web Developer · Infinite IT Solutions</h3>
+        <p tone="muted">Responsive web interface delivery using HTML, CSS, JavaScript, and collaborative Git workflows.</p>
+        <p data-meta>Jul 2023 – Dec 2023</p>
+      </article>
+    </li>
   </ul>
-  <p tone="muted"><a href="/notes/">Browse all notes →</a></p>
+  <p tone="muted"><a href="/resume/">View complete resume & credentials →</a></p>
 </section>
 {% endblock %}

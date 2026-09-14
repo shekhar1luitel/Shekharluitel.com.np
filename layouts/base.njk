@@ -11,7 +11,7 @@
   <link rel="alternate" type="application/atom+xml" title="Notes feed" href="/feed.xml">
   <meta property="og:title" content="{{ title or site.title }}">
   <meta property="og:description" content="{{ description or site.description }}">
-  <meta property="og:type" content="{% if ogType %}{{ ogType }}{% elseif page.url startsWith '/notes/' %}article{% else %}website{% endif %}">
+  <meta property="og:type" content="{% if ogType %}{{ ogType }}{% elseif '/notes/' in page.url %}article{% else %}website{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:image" content="{{ site.url }}/img/social-card.svg">
   <meta name="twitter:card" content="summary_large_image">

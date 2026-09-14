@@ -1,11 +1,4 @@
 {% extends "base.njk" %}
-{% set nav = namespace(newer = null, older = null) %}
-{% for item in collections.notes %}
-  {% if item.url == page.url %}
-    {% if not loop.first %}{% set nav.newer = collections.notes[loop.index0 - 1] %}{% endif %}
-    {% if not loop.last %}{% set nav.older = collections.notes[loop.index0 + 1] %}{% endif %}
-  {% endif %}
-{% endfor %}
 
 {% block headExtra %}
   {{ super() }}
@@ -42,15 +35,6 @@
     {% endif %}
   </header>
   {{ content | safe }}
-  <nav data-pagination aria-label="More notes">
-    <ul>
-      {% if nav.older %}
-        <li><a href="{{ nav.older.url }}">← {{ nav.older.data.title }}</a></li>
-      {% endif %}
-      {% if nav.newer %}
-        <li><a href="{{ nav.newer.url }}">{{ nav.newer.data.title }} →</a></li>
-      {% endif %}
-    </ul>
-  </nav>
+  <p tone="muted"><a href="/notes/">← Back to notes</a></p>
 </article>
 {% endblock %}

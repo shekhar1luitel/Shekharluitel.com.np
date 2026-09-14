@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shekhar Luitel - Full Stack Developer Resume / CV</title>
+  
+  <meta name="description" content="Resume of Shekhar Luitel — Full Stack Developer specializing in PHP, Laravel, CodeIgniter, React, MySQL, and scalable RESTful APIs.">
+  <meta name="author" content="Shekhar Luitel">
+  <link rel="canonical" href="https://shekharluitel.com.np/CV/resume.html">
+  <link rel="icon" href="/images/logosashwatum.png" type="image/png">
+
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --muted: #64748b;
+      --accent: #0284c7;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --paper: #ffffff;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--primary);
+      line-height: 1.55;
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .resume-actions-bar {
+      max-width: 860px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-print {
+      background: var(--accent);
+      color: #ffffff;
+      border: 1px solid var(--accent);
+    }
+
+    .btn-print:hover {
+      background: #0369a1;
+    }
+
+    .btn-back {
+      background: #ffffff;
+      color: var(--secondary);
+      border: 1px solid var(--border);
+    }
+
+    .btn-back:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* Paper Container (A4 Proportioned) */
+    .resume-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--paper);
+      padding: 3rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Header */
+    header.cv-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .cv-name {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--primary);
+    }
+
+    .cv-title {
+      font-size: 1.15rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.35rem;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-size: 0.88rem;
+      color: var(--secondary);
+      text-align: right;
+    }
+
+    .cv-contact a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cv-contact a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .cv-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    p.summary-text {
+      font-size: 0.93rem;
+      color: var(--secondary);
+      line-height: 1.6;
+    }
+
+    /* Experience Items */
+    .exp-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .exp-role {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .exp-company {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-family: var(--font-mono);
+    }
+
+    .exp-bullets {
+      padding-left: 1.25rem;
+      margin-top: 0.35rem;
+      color: var(--secondary);
+      font-size: 0.9rem;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Skills Table / Grid */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .skills-table td {
+      padding-block: 0.35rem;
+      vertical-align: top;
+    }
+
+    .skills-table td.skill-label {
+      font-weight: 700;
+      color: var(--primary);
+      width: 22%;
+      padding-right: 1rem;
+    }
+
+    .skills-table td.skill-val {
+      color: var(--secondary);
+    }
+
+    /* Education & Certs */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.65rem;
+      font-size: 0.9rem;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .edu-school {
+      color: var(--secondary);
+    }
+
+    .edu-badge {
+      display: inline-block;
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 4px;
+      margin-left: 0.4rem;
+      font-weight: 600;
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+
+      .resume-actions-bar {
+        display: none;
+      }
+
+      .resume-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+
+      @page {
+        margin: 1.5cm 1.5cm;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cv-contact {
+        text-align: left;
+      }
+      .resume-container {
+        padding: 1.75rem;
+      }
+      .skills-table td.skill-label {
+        width: 32%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen-Only Actions -->
+  <div class="resume-actions-bar">
+    <a href="/" class="btn-action btn-back">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn-action btn-print">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Print / Save as PDF
+    </button>
+  </div>
+
+  <main class="resume-container">
+    <!-- Header -->
+    <header class="cv-header">
+      <div>
+        <h1 class="cv-name">Shekhar Luitel</h1>
+        <p class="cv-title">Full Stack Developer</p>
+      </div>
+      <div class="cv-contact">
+        <span>Phone: <a href="tel:+9779846684310">+977 9846684310</a></span>
+        <span>Email: <a href="mailto:shekharluitelofficial@gmail.com">shekharluitelofficial@gmail.com</a></span>
+        <span>Address: Biratnagar / Lalitpur, Nepal</span>
+        <span>Portfolio: <a href="https://shekharluitel.com.np">shekharluitel.com.np</a></span>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/shekhar-luitel33/" target="_blank" rel="noopener">linkedin.com/in/shekhar-luitel33/</a></span>
+        <span>GitHub: <a href="https://github.com/shekhar1luitel" target="_blank" rel="noopener">github.com/shekhar1luitel</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="cv-section">
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary-text">
+        Full Stack Developer with 2+ years of production experience specializing in Laravel, PHP, CodeIgniter, React, and MySQL backend development. Skilled in building resilient RESTful APIs, designing scalable database structures, and maintaining production systems. Working knowledge of React and frontend integration, with a strong focus on performance, clean code, security, and system reliability.
+      </p>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="cv-section">
+      <h2 class="section-heading">Professional Experience</h2>
+
+      <!-- Current Role -->
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Full Stack Developer | Mid Backend - Jr. Frontend</span> · 
+            <span class="exp-company">Veda App (वेद)</span>
+          </div>
+          <span class="exp-date">Nov 2025 – Present (~5 months)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Designed and implemented backend services using <strong>PHP, Laravel, and CodeIgniter</strong> to enhance enterprise application performance.</li>
+          <li>Collaborated with front-end developers utilizing <strong>JavaScript and React</strong> for seamless, reactive data integration.</li>
+          <li>Developed APIs to support mobile applications, ensuring high availability, sub-second latency, and scalability.</li>
+          <li>Engaged in agile teamwork, participating in sprint planning and code reviews to deliver quality features on time.</li>
+        </ul>
+      </article>
+
+      <!-- Mid/Backend Role -->
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Back End Developer</span> · 
+            <span class="exp-company">Veda App (वेद)</span>
+          </div>
+          <span class="exp-date">Dec 2023 – Nov 2025 (~2 Years)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Developed and maintained RESTful APIs using <strong>PHP and MySQL</strong>, optimizing for peak performance.</li>
+          <li>Implemented database structures and indexing strategies to support data integrity and improve retrieval speeds.</li>
+          <li>Participated in code reviews and contributed to team knowledge-sharing sessions and architecture standards.</li>
+        </ul>
+      </article>
+
+      <!-- Jr Role -->
+      <article class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Jr. Web Developer</span> · 
+            <span class="exp-company">Infinite IT Solutions</span>
+          </div>
+          <span class="exp-date">Jul 2023 – Dec 2023 (6 Months)</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Built responsive web interfaces using <strong>HTML, CSS, and JavaScript</strong>.</li>
+          <li>Collaborated with senior developers to resolve production bugs and deploy updates.</li>
+          <li>Gained hands-on experience with Git, version control workflows, and collaborative releases.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Technical Stack -->
+    <section class="cv-section">
+      <h2 class="section-heading">Technical Stack</h2>
+      <table class="skills-table">
+        <tbody>
+          <tr>
+            <td class="skill-label">Backend:</td>
+            <td class="skill-val">PHP 8+, Laravel, CodeIgniter 3/4</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Frontend:</td>
+            <td class="skill-val">JavaScript (ES6+), React.js, Vue.js, HTML5, CSS3 / Modern CSS</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Database:</td>
+            <td class="skill-val">MySQL (Relational Schema Design, Indexing, Query Optimization, ACID Transactions)</td>
+          </tr>
+          <tr>
+            <td class="skill-label">API & Integrations:</td>
+            <td class="skill-val">RESTful APIs, ConnectIPS, Payment Gateways (eSewa, Khalti), Webhooks, JSON</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Architecture:</td>
+            <td class="skill-val">MVC, HMVC, Multi-tenant Systems, Role-based Access Control (RBAC), Security</td>
+          </tr>
+          <tr>
+            <td class="skill-label">DevOps & Linux:</td>
+            <td class="skill-val">Ubuntu / Linux, Git & GitHub, Deployment, Production Debugging</td>
+          </tr>
+          <tr>
+            <td class="skill-label">Tools:</td>
+            <td class="skill-val">Postman, Laragon, XAMPP, VS Code</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section">
+      <h2 class="section-heading">Education</h2>
+      
+      <div class="edu-item">
+        <div>
+          <span class="edu-degree">Bachelor of Computer Applications (BCA)</span>
+          <span class="edu-badge">Completed / Graduated</span>
+          <div class="edu-school">Nihareeka College · Tribhuvan University Affiliated</div>
+        </div>
+        <span class="exp-date">2022 – 2026</span>
+      </div>
+
+      <div class="edu-item">
+        <div>
+          <span class="edu-degree">Diploma in Computer Hardware and Networking</span>
+          <span class="edu-badge">Certified</span>
+          <div class="edu-school">The COIT Institute</div>
+        </div>
+        <span class="exp-date">2019</span>
+      </div>
+    </section>
+
+    <!-- Key Project Highlights -->
+    <section class="cv-section">
+      <h2 class="section-heading">Key Project Highlights</h2>
+      <ul class="exp-bullets">
+        <li><strong>Veda App Core SaaS & Mobile APIs:</strong> Scalable backend microservices in PHP/Laravel powering educational institutions, with sub-150ms endpoint latency and multi-tenant data isolation.</li>
+        <li><strong>ConnectIPS Payment Gateway Engine:</strong> Automated end-to-end fee processing, cryptographic payload validation, idempotent reconciliation, and audit ledgers.</li>
+        <li><strong>Examination Result Ledger System:</strong> High-throughput grading calculation and PDF transcript engine processing institution-wide grade sheets.</li>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
