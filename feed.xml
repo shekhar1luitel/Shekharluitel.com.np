@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Shekhar Luitel — Engineering Blog &amp; Publications</title>
+    <link>https://shekharluitel.com.np/blog/</link>
+    <description>Technical publications on Atlassian community events, AI-driven DevOps, Linux workstation craft, and high-concurrency backend architecture by Shekhar Luitel.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 15 Sep 2026 00:40:00 +0545</lastBuildDate>
+    <atom:link href="https://shekharluitel.com.np/feed.xml" rel="self" type="application/rss+xml" />
+    <managingEditor>shekharluitelofficial@gmail.com (Shekhar Luitel)</managingEditor>
+    <webMaster>shekharluitelofficial@gmail.com (Shekhar Luitel)</webMaster>
+
+    <item>
+      <title>Why I Use This Command: Supercharge Your Daily Standups with a Single Git Alias</title>
+      <link>https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/</link>
+      <guid isPermaLink="true">https://shekharluitel.com.np/blog/why-i-use-git-huddle-command-daily-standups/</guid>
+      <pubDate>Mon, 14 Sep 2026 08:00:00 +0545</pubDate>
+      <category>Git &amp; Productivity</category>
+      <description><![CDATA[How a single custom Git alias fetches a clean bullet list of yesterday's commits across all branches, saving hours during morning standups.]]></description>
+    </item>
+
+    <item>
+      <title>My Experience Learning Omarchy &amp; Arch Linux: A Productive Developer Setup</title>
+      <link>https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/</link>
+      <guid isPermaLink="true">https://shekharluitel.com.np/blog/omarchy-linux-developer-guide/</guid>
+      <pubDate>Thu, 10 Sep 2026 09:00:00 +0545</pubDate>
+      <category>Linux &amp; Workstation</category>
+      <description><![CDATA[A realistic look into adopting Arch Linux and Omarchy as a daily backend engineer, solving legacy PHP compilation via Docker, and maximizing terminal efficiency.]]></description>
+    </item>
+
+    <item>
+      <title>From Intern to Full Stack Developer: 3 Years of Building High-Concurrency Backend Systems at Veda App</title>
+      <link>https://shekharluitel.com.np/blog/three-years-at-veda-app-journey/</link>
+      <guid isPermaLink="true">https://shekharluitel.com.np/blog/three-years-at-veda-app-journey/</guid>
+      <pubDate>Tue, 01 Sep 2026 09:00:00 +0545</pubDate>
+      <category>Career &amp; Architecture</category>
+      <description><![CDATA[An honest retrospective on starting as an engineering intern in 2023 while finishing my BCA, optimizing heavy MySQL queries, and shipping REST APIs supporting 50k+ active users.]]></description>
+    </item>
+
+    <item>
+      <title>From Ideas to Delivery: Building AI-First Product Organizations with Hermes Agents</title>
+      <link>https://shekharluitel.com.np/blog/ai-first-product-hermes-agents-om-prakash/</link>
+      <guid isPermaLink="true">https://shekharluitel.com.np/blog/ai-first-product-hermes-agents-om-prakash/</guid>
+      <pubDate>Fri, 24 Jul 2026 14:00:00 +0545</pubDate>
+      <category>Atlassian Community Events</category>
+      <description><![CDATA[Key takeaways from Om Prakash Sharma's session at ACE Lalitpur on architecting AI-First product organizations, multi-agent systems, and deploying Hermes Agents with Jira and Slack.]]></description>
+    </item>
+
+    <item>
+      <title>Inside Atlassian Community Kathmandu: The Evolution of Bitbucket into an AI-Native Platform</title>
+      <link>https://shekharluitel.com.np/blog/atlassian-community-kathmandu-bitbucket-ai/</link>
+      <guid isPermaLink="true">https://shekharluitel.com.np/blog/atlassian-community-kathmandu-bitbucket-ai/</guid>
+      <pubDate>Sun, 21 Jun 2026 10:00:00 +0545</pubDate>
+      <category>Atlassian Community Events</category>
+      <description><![CDATA[Reflections and event highlights from the Atlassian Community gathering at The Soaltee Kathmandu with Saroj Poddar. Exploring Bitbucket's transformation into an AI-native workspace with Atlassian Intelligence and Rovo Dev.]]></description>
+    </item>
+  </channel>
+</rss>
